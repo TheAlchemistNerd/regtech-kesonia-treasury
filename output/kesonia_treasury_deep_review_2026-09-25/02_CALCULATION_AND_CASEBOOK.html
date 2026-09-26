@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>KESONIA and treasury: derivations and checked teaching
+cases</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="review.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a
+href="#kesonia-and-treasury-derivations-and-checked-teaching-cases"
+id="toc-kesonia-and-treasury-derivations-and-checked-teaching-cases">KESONIA
+and treasury: derivations and checked teaching cases</a>
+<ul>
+<li><a href="#one-dictionary-before-any-formula"
+id="toc-one-dictionary-before-any-formula">1. One dictionary before any
+formula</a></li>
+<li><a href="#from-an-overnight-fixing-to-period-interest"
+id="toc-from-an-overnight-fixing-to-period-interest">2. From an
+overnight fixing to period interest</a>
+<ul>
+<li><a href="#historical-verification-58-september-2025"
+id="toc-historical-verification-58-september-2025">Historical
+verification: 5–8 September 2025</a></li>
+<li><a href="#implementation-specification-for-part-2"
+id="toc-implementation-specification-for-part-2">Implementation
+specification for Part 2</a></li>
+</ul></li>
+<li><a
+href="#from-spot-rates-to-discount-factors-forwards-and-par-coupons"
+id="toc-from-spot-rates-to-discount-factors-forwards-and-par-coupons">3.
+From spot rates to discount factors, forwards and par coupons</a></li>
+<li><a href="#from-monetary-economics-to-a-customer-margin"
+id="toc-from-monetary-economics-to-a-customer-margin">4. From monetary
+economics to a customer margin</a>
+<ul>
+<li><a href="#one-year-illustration-kes-thousands"
+id="toc-one-year-illustration-kes-thousands">One-year illustration, KES
+thousands</a></li>
+</ul></li>
+<li><a href="#deposit-replication-maturity-and-rate-pass-through"
+id="toc-deposit-replication-maturity-and-rate-pass-through">5. Deposit
+replication: maturity and rate pass-through</a></li>
+<li><a href="#one-opening-balance-sheet-three-different-risk-views"
+id="toc-one-opening-balance-sheet-three-different-risk-views">6. One
+opening balance sheet, three different risk views</a>
+<ul>
+<li><a href="#earnings-view" id="toc-earnings-view">Earnings
+view</a></li>
+<li><a href="#economic-value-view"
+id="toc-economic-value-view">Economic-value view</a></li>
+<li><a href="#cash-view" id="toc-cash-view">Cash view</a></li>
+</ul></li>
+<li><a href="#optionality-hedging-and-counterparty-exposure"
+id="toc-optionality-hedging-and-counterparty-exposure">7. Optionality,
+hedging and counterparty exposure</a>
+<ul>
+<li><a href="#cva-teaching-calculation"
+id="toc-cva-teaching-calculation">CVA teaching calculation</a></li>
+</ul></li>
+<li><a href="#how-these-cases-become-empirical-work"
+id="toc-how-these-cases-become-empirical-work">8. How these cases become
+empirical work</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="kesonia-and-treasury-derivations-and-checked-teaching-cases">KESONIA
+and treasury: derivations and checked teaching cases</h1>
+<p><strong>25 September 2026 · Companion to the detailed material
+review</strong></p>
+<p>The cases below establish reusable calculations and teaching
+examples. Except for the explicitly sourced historical benchmark
+observations, numbers are <strong>hypothetical</strong>, not current
+market quotations, portfolio findings or regulatory thresholds. The <a
+href="verify_examples.py">independent calculation script</a> produces <a
+href="checked_examples.json">checked results</a>. It does not execute
+code embedded in the pasted conversation or the draft articles.</p>
+<h2 id="one-dictionary-before-any-formula">1. One dictionary before any
+formula</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Unit or boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mi>i</mi></msub><annotation encoding="application/x-tex">r_i</annotation></semantics></math></td>
+<td>Applicable overnight fixing</td>
+<td>Annual decimal rate</td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>n</mi><mi>i</mi></msub><annotation encoding="application/x-tex">n_i</annotation></semantics></math></td>
+<td>Days to which that fixing applies</td>
+<td>Calendar days after the approved observation mapping</td>
+</tr>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mi>j</mi></msub><annotation encoding="application/x-tex">A_j</annotation></semantics></math></td>
+<td>Accumulation factor through interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math></td>
+<td>Dimensionless; begins at 1</td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mrow><mi>K</mi><mi>E</mi><mi>S</mi></mrow></msub><annotation encoding="application/x-tex">R_{KES}</annotation></semantics></math></td>
+<td>Annualised compounded benchmark for a specified period</td>
+<td>Annual rate; not a full customer APR</td>
+</tr>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math></td>
+<td>Customer margin in this example</td>
+<td>Annual rate; separate from allocated capital</td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>t</mi></msub><annotation encoding="application/x-tex">B_t</annotation></semantics></math></td>
+<td>Interest-bearing principal</td>
+<td>Currency, on a specified date</td>
+</tr>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">D(0,t)</annotation></semantics></math></td>
+<td>Discount factor</td>
+<td>Price of one future currency unit under a stated valuation
+basis</td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><msub><mi>C</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">EC_t</annotation></semantics></math></td>
+<td>Allocated economic capital</td>
+<td>Currency; distinct from a prudential requirement</td>
+</tr>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">S(t)</annotation></semantics></math></td>
+<td>Survival probability</td>
+<td>Probability under a stated measure and event definition</td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>C</mi><msub><mi>R</mi><mrow><mi>c</mi><mi>p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">CCR_{cp}</annotation></semantics></math></td>
+<td>Counterparty credit risk</td>
+<td>Risk category; avoid using “CCR” for both this and a compounded
+rate</td>
+</tr>
+</tbody>
+</table>
+<p>The official “K” premium can be written
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mi>R</mi><mi>B</mi><mi>C</mi><mi>P</mi></mrow></msub><annotation encoding="application/x-tex">K_{RBCP}</annotation></semantics></math>
+where needed, following the controlled Mwendo chapter. Use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mi>c</mi><mi>a</mi><mi>p</mi></mrow></msub><annotation encoding="application/x-tex">K_{cap}</annotation></semantics></math>
+for capital. All results need a date, horizon, entity, currency and
+calculation version.</p>
+<h2 id="from-an-overnight-fixing-to-period-interest">2. From an
+overnight fixing to period interest</h2>
+<p>For a constant principal and an approved sequence of rate/day-weight
+pairs, on ACT/365:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>j</mi></msub><mo>=</mo><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>j</mi></munderover><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><msub><mi>r</mi><mi>i</mi></msub><mfrac><msub><mi>n</mi><mi>i</mi></msub><mn>365</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>F</mi><mo>=</mo><msub><mi>A</mi><mi>n</mi></msub><mo>−</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">A_j=\prod_{i=1}^{j}\left(1+r_i\frac{n_i}{365}\right),\qquad F=A_n-1.</annotation></semantics></math></p>
+<p>For total interest-period length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+where the mapping makes these weights cover that period:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi>K</mi><mi>E</mi><mi>S</mi></mrow></msub><mo>=</mo><mi>F</mi><mfrac><mn>365</mn><mi>d</mi></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">R_{KES}=F\frac{365}{d}.</annotation></semantics></math></p>
+<p>If the contract adds its margin simply, rather than compounding the
+margin:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><msub><mi>B</mi><mn>0</mn></msub><mi>F</mi><mo>+</mo><msub><mi>B</mi><mn>0</mn></msub><mi>k</mi><mfrac><mi>d</mi><mn>365</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">I=B_0F+B_0k\frac{d}{365}.</annotation></semantics></math></p>
+<p>This follows directly from accumulating the benchmark return and
+adding the separately defined margin accrual. A contract that compounds
+the full rate needs a different calculation. For fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>0</mn></msub><annotation encoding="application/x-tex">B_0</annotation></semantics></math>,
+interval accrual can be reconciled through:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><msub><mi>I</mi><mi>j</mi></msub><mo>=</mo><msub><mi>B</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>A</mi><mi>j</mi></msub><mo>−</mo><msub><mi>A</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>B</mi><mn>0</mn></msub><mi>k</mi><mfrac><msub><mi>n</mi><mi>j</mi></msub><mn>365</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\Delta I_j=B_0(A_j-A_{j-1})+B_0k\frac{n_j}{365}.</annotation></semantics></math></p>
+<p>Summing these increments returns period interest. Multiplying the
+final annualised period rate by each day’s principal is not a general
+substitute for this calculation. With changing principal, adopt the
+product’s explicit balance/accrual rule and partition the ledger at
+every relevant balance event.</p>
+<h3 id="historical-verification-58-september-2025">Historical
+verification: 5–8 September 2025</h3>
+<p>CBK lists the 5 September fixing as <strong>9.4618%</strong>. Its
+published index is <strong>100.10451025</strong> on 5 September and
+<strong>100.18235974</strong> on 8 September. <a
+href="https://www.centralbank.go.ke/kesonia/">CBK fixing series</a>, <a
+href="https://www.centralbank.go.ke/kesonia-compounded-index/">CBK
+compounded index</a>.</p>
+<p>The three-day observation-span factor from the fixing is:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi>f</mi><mi>i</mi><mi>x</mi><mi>i</mi><mi>n</mi><mi>g</mi></mrow></msub><mo>=</mo><mn>0.094618</mn><mfrac><mn>3</mn><mn>365</mn></mfrac><mo>=</mo><mn>0.00077768219178</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">F_{fixing}=0.094618\frac{3}{365}=0.00077768219178.</annotation></semantics></math></p>
+<p>The index comparison is:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi>i</mi><mi>n</mi><mi>d</mi><mi>e</mi><mi>x</mi></mrow></msub><mo>=</mo><mfrac><mn>100.18235974</mn><mn>100.10451025</mn></mfrac><mo>−</mo><mn>1</mn><mo>=</mo><mn>0.00077768214245</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">F_{index}=\frac{100.18235974}{100.10451025}-1=0.00077768214245.</annotation></semantics></math></p>
+<p>On a hypothetical KES 1 million, the two methods give KES
+777.68219178 and KES 777.68214245: a difference of about <strong>KES
+0.00004933</strong>, consistent with using rounded published index
+values. Both round to KES 777.68. Adding a hypothetical simple 3% margin
+for the same three days gives KES 246.57534247, and total illustrative
+interest of <strong>KES 1,024.26</strong>.</p>
+<p>This verifies the <strong>historical benchmark observation
+span</strong>. It is not a customer invoice and does not demonstrate a
+complete five-day-lookback contract. That requires a separate mapping
+from the customer’s accrual dates to these or other observation dates.
+An index ratio is an independent check only when its boundaries, day
+weights and conventions match the calculation being verified.</p>
+<h3 id="implementation-specification-for-part-2">Implementation
+specification for Part 2</h3>
+<ol type="1">
+<li>Read the contract and interest-period version, including date
+endpoints and margin rule.</li>
+<li>Create accrual intervals on a half-open date basis: start included,
+end excluded.</li>
+<li>Resolve observation dates using the approved lookback/calendar
+convention. Preserve both observation and accrual dates.</li>
+<li>Join observations by value date and by the information available at
+the calculation cutoff. Keep republications as new versions.</li>
+<li>Partition intervals for balance events; clip weekend/holiday spans
+at period endpoints.</li>
+<li>Validate coverage, uniqueness, units, positive factors and approved
+fallback status.</li>
+<li>Calculate factors and cash; retain sufficient internal precision and
+round at defined output points.</li>
+<li>Compare with an independent calculation, approve the result, and
+post/reconcile the identified version.</li>
+</ol>
+<p>For the fixed-principal benchmark calculation, an aggregate such as
+<code>expm1(sum(log1p(rate × days / 365)))</code> is numerically useful.
+SQL syntax and decimal precision depend on the database. The primary
+grouping key must include contract and interest period. This is an
+algorithmic specification, not a deployable replacement for Part 2’s
+SQL.</p>
+<h2 id="from-spot-rates-to-discount-factors-forwards-and-par-coupons">3.
+From spot rates to discount factors, forwards and par coupons</h2>
+<p>Assume annual compounding, annual payments, one currency, and
+hypothetical spot rates of 3%, 3.5% and 4% at years 1, 2 and 3.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><msub><mi>z</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>−</mo><mi>t</mi></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>f</mi><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></msub><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>D</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>D</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>1</mn><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo>−</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">D(0,t)=(1+z_t)^{-t},\qquad f_{a,b}=\left(\frac{D(0,a)}{D(0,b)}\right)^{1/(b-a)}-1.</annotation></semantics></math></p>
+<table>
+<thead>
+<tr class="header">
+<th>Maturity</th>
+<th style="text-align: right;">Spot rate</th>
+<th style="text-align: right;">Discount factor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 year</td>
+<td style="text-align: right;">3.0000%</td>
+<td style="text-align: right;">0.9708737864</td>
+</tr>
+<tr class="even">
+<td>2 years</td>
+<td style="text-align: right;">3.5000%</td>
+<td style="text-align: right;">0.9335107004</td>
+</tr>
+<tr class="odd">
+<td>3 years</td>
+<td style="text-align: right;">4.0000%</td>
+<td style="text-align: right;">0.8889963587</td>
+</tr>
+</tbody>
+</table>
+<p>The implied one-year forward from year 1 to 2 is
+<strong>4.002427%</strong>; from year 2 to 3 it is
+<strong>5.007258%</strong>. A three-year instrument with annual coupons
+and unit redemption prices at par when:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>=</mo><mi>c</mi><munderover><mo>∑</mo><mrow><mi>t</mi><mo>=</mo><mn>1</mn></mrow><mn>3</mn></munderover><mi>D</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>D</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>c</mi><mo>=</mo><mn>3.973810</mn><mi>%</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">1=c\sum_{t=1}^{3}D(0,t)+D(0,3),\qquad c=3.973810\%.</annotation></semantics></math></p>
+<p>The forward rates and par coupon are different descriptions derived
+from these assumptions. They are not additional observed Kenyan rates. A
+production curve needs instrument-specific day counts, settlement,
+calendars, interpolation, instrument repricing checks and a documented
+extrapolation policy. A forecasting curve may also differ from the
+discounting curve.</p>
+<p><strong>Business use:</strong> compare a borrower’s projected reset
+payments with the dates of receipts; compare the lender’s expected asset
+cash with its financing schedule. Keep a frozen-base scenario and
+alternative rate paths so the reader sees sensitivity rather than
+mistaking one curve for a prediction.</p>
+<h2 id="from-monetary-economics-to-a-customer-margin">4. From monetary
+economics to a customer margin</h2>
+<p>Define the exposure-time denominator over the pricing horizon:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><munder><mo>∑</mo><mi>t</mi></munder><mi>E</mi><mrow><mo stretchy="true" form="prefix">[</mo><msubsup><mi>B</mi><mi>t</mi><mrow><mi>i</mi><mi>n</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi></mrow></msubsup><mo stretchy="true" form="postfix">]</mo></mrow><mi>Δ</mi><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">H=\sum_t E[B_t^{interest}]\Delta t.</annotation></semantics></math></p>
+<p>In an undiscounted teaching model with a simply accrued margin, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mi>b</mi></msub><annotation encoding="application/x-tex">I_b</annotation></semantics></math>
+be expected benchmark interest,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>f</mi></msub><annotation encoding="application/x-tex">F_f</annotation></semantics></math>
+expected fee income,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>f</mi></msub><annotation encoding="application/x-tex">C_f</annotation></semantics></math>
+funding cost,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>o</mi></msub><annotation encoding="application/x-tex">C_o</annotation></semantics></math>
+operating cost,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+expected credit loss and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>E</mi><mi>C</mi></mrow><annotation encoding="application/x-tex">hEC</annotation></semantics></math>
+the required capital return. Solve:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>b</mi></msub><mo>+</mo><mi>k</mi><mi>H</mi><mo>+</mo><msub><mi>F</mi><mi>f</mi></msub><mo>−</mo><msub><mi>C</mi><mi>f</mi></msub><mo>−</mo><msub><mi>C</mi><mi>o</mi></msub><mo>−</mo><mi>L</mi><mo>=</mo><mi>h</mi><mi>E</mi><mi>C</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">I_b+kH+F_f-C_f-C_o-L=hEC,</annotation></semantics></math></p>
+<p>so that:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mi>f</mi></msub><mo>+</mo><msub><mi>C</mi><mi>o</mi></msub><mo>+</mo><mi>L</mi><mo>+</mo><mi>h</mi><mi>E</mi><mi>C</mi><mo>−</mo><msub><mi>F</mi><mi>f</mi></msub><mo>−</mo><msub><mi>I</mi><mi>b</mi></msub></mrow><mi>H</mi></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">k=\frac{C_f+C_o+L+hEC-F_f-I_b}{H}.</annotation></semantics></math></p>
+<p>The numerator is money and the denominator is money-years. Their
+ratio is an annual rate. Interest collectibility, loss definition and
+balance forecasting must be mutually consistent; do not count unpaid
+interest both as absent income and again as the same loss. A discounted
+lifetime version needs dated cash flows and a specified hurdle
+methodology. Avoid adding a capital hurdle charge again if the same
+required return is already fully embedded in the chosen valuation
+criterion.</p>
+<h3 id="one-year-illustration-kes-thousands">One-year illustration, KES
+thousands</h3>
+<p>Assume a constant 1,000 interest-bearing balance for a year; 90
+benchmark interest; 100 funding cost; 20 operating cost; 15 principal
+credit loss; 5 fees; and 10 required return on 50 allocated capital.
+Interest is assumed fully collectible for this simplified illustration,
+and taxes are omitted.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th style="text-align: right;">Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Benchmark interest</td>
+<td style="text-align: right;">90</td>
+</tr>
+<tr class="even">
+<td>Required margin income</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td>Total interest</td>
+<td style="text-align: right;">140</td>
+</tr>
+<tr class="even">
+<td>Fees</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td>Funding, operating cost and expected loss</td>
+<td style="text-align: right;">135</td>
+</tr>
+<tr class="even">
+<td>Return before the capital hurdle</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td>Economic surplus after the hurdle</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>The required margin is <strong>5%</strong>, producing 14% interest
+plus the separately stated fee. The 10 return equals a hypothetical 20%
+pre-tax capital hurdle on 50. This is not an APR calculation or an
+accounting recognition schedule. It demonstrates why the
+benchmark-to-customer spread must be reconciled to the institution’s
+costs before being described as profit.</p>
+<p>An internal FTP charge can allocate the funding component across
+departments. In a consolidated lender model, eliminate internal
+transfers and retain external funding costs once. For an SPV, the actual
+note coupon and expenses enter the cash waterfall; an internal valuation
+hurdle does not become a cash payment.</p>
+<h2 id="deposit-replication-maturity-and-rate-pass-through">5. Deposit
+replication: maturity and rate pass-through</h2>
+<p>Assume a hypothetical 1 billion deposit-funded replication portfolio.
+Allocate 20% to three-month instruments yielding 3%, 30% to two-year
+instruments yielding 3.75%, and 50% to five-year instruments yielding
+4.5%. Each bucket is initially spread uniformly across its monthly
+maturity rungs.</p>
+<p>The opening weighted yield is:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>0.03</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>0.3</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>0.0375</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>0.5</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>0.045</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3.975</mn><mi>%</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">0.2(0.03)+0.3(0.0375)+0.5(0.045)=3.975\%.</annotation></semantics></math></p>
+<p>After a parallel 2-percentage-point rise, only maturing rungs
+reinvest at the new rate. At the end of month one, the annualised yield
+increases by:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.02</mn><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>0.2</mn><mn>3</mn></mfrac><mo>+</mo><mfrac><mn>0.3</mn><mn>24</mn></mfrac><mo>+</mo><mfrac><mn>0.5</mn><mn>60</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0.175</mn><mi>%</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">0.02\left(\frac{0.2}{3}+\frac{0.3}{24}+\frac{0.5}{60}\right)=0.175\%.</annotation></semantics></math></p>
+<p>The resulting annualised yield is <strong>4.15%</strong>. If all
+three-month exposure had instead matured immediately, the result would
+differ; the schedule must state which structure it represents.</p>
+<p>With immediate deposit-rate pass-through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>,
+deposit cost increases by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>×</mo><mn>2</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">\beta\times2\%</annotation></semantics></math>.
+Holding balances fixed, the month-one annualised NII change is:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assumed beta</th>
+<th style="text-align: right;">Annualised deposit-cost increase</th>
+<th style="text-align: right;">Annualised asset-income increase</th>
+<th style="text-align: right;">NII change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>25%</td>
+<td style="text-align: right;">5.00 million</td>
+<td style="text-align: right;">1.75 million</td>
+<td style="text-align: right;">−3.25 million</td>
+</tr>
+<tr class="even">
+<td>75%</td>
+<td style="text-align: right;">15.00 million</td>
+<td style="text-align: right;">1.75 million</td>
+<td style="text-align: right;">−13.25 million</td>
+</tr>
+</tbody>
+</table>
+<p>These are <strong>annualised run rates at month one</strong>, not
+realised full-year earnings. Forecast subsequent rollovers and rate
+changes to obtain actual period income. Re-estimate balance retention
+separately: stable balances are not legally locked funding, and a low
+beta is not proof of a long behavioural maturity.</p>
+<h2 id="one-opening-balance-sheet-three-different-risk-views">6. One
+opening balance sheet, three different risk views</h2>
+<p>This separate example uses KES millions. Opening assets are 800
+fixed-rate loans and 200 liquid assets; deposits are 900 and equity is
+100. Loan yield is 10%, liquid-asset yield 6%, and deposit cost 3.5%.
+Opening annualised NII is <strong>60.5</strong>. Ignore fees, losses,
+operating costs and taxes for this sensitivity exercise.</p>
+<h3 id="earnings-view">Earnings view</h3>
+<p>Apply a hypothetical +2 percentage-point rate shock, with loans
+unchanged over the horizon, liquid-asset income fully repricing and
+deposits repricing by beta. Hold balances constant:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mi>N</mi><mi>I</mi><mi>I</mi><mo>=</mo><mn>200</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>0.02</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>900</mn><mi>β</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0.02</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\Delta NII=200(0.02)-900\beta(0.02).</annotation></semantics></math></p>
+<p>The annualised change is <strong>−0.5</strong> at beta 25% and
+<strong>−9.5</strong> at beta 75%. A 12-month forecast requires an
+explicit reset schedule; these calculations assume the stated repricing
+effects apply throughout that year.</p>
+<h3 id="economic-value-view">Economic-value view</h3>
+<p>Assume modified durations of 3 years for loans, 0.25 for liquid
+assets and 2 for deposits. For a parallel shock, a first-order
+approximation is:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mi>E</mi><mi>V</mi><mi>E</mi><mo>≈</mo><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>∑</mo><mi>a</mi></munder><msub><mi>V</mi><mi>a</mi></msub><msub><mi>D</mi><mi>a</mi></msub><mo>−</mo><munder><mo>∑</mo><mi>l</mi></munder><msub><mi>V</mi><mi>l</mi></msub><msub><mi>D</mi><mi>l</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>Δ</mi><mi>y</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\Delta EVE\approx-\left(\sum_a V_aD_a-\sum_l V_lD_l\right)\Delta y.</annotation></semantics></math></p>
+<p>This gives <strong>−13</strong>. If an alternative behavioural
+assumption shortens deposit duration to 0.5 years, it gives
+<strong>−40</strong>. The weighted liability contribution matters;
+subtracting unweighted asset and liability durations would not reproduce
+these results.</p>
+<p>These are alternative sensitivities at the opening snapshot. They do
+not automatically determine an accounting equity write-down, a
+share-price change or today’s cash requirement. Full valuation should
+reprice cash flows, including options and curve shape; the linear
+approximation omits convexity.</p>
+<h3 id="cash-view">Cash view</h3>
+<p>Within the 200 liquid-asset balance, assume only 70 can actually be
+made available inside the stress window without further financing or
+sale. Add 10 receipts. Assume 90 deposit withdrawals, 20 committed loan
+draws and 5 hedge-collateral payments:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>a</mi><mi>s</mi><msub><mi>h</mi><mrow><mi>e</mi><mi>n</mi><mi>d</mi></mrow></msub><mo>=</mo><mn>70</mn><mo>+</mo><mn>10</mn><mo>−</mo><mn>90</mn><mo>−</mo><mn>20</mn><mo>−</mo><mn>5</mn><mo>=</mo><mo>−</mo><mn>35</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">Cash_{end}=70+10-90-20-5=-35.</annotation></semantics></math></p>
+<p>Additional funding of <strong>35</strong> is needed merely to reach
+zero, and more would be needed for a positive minimum buffer. Specify
+saleability, haircuts, encumbrance and facility conditions before
+counting additional sources.</p>
+<p>The cash stress changes balances. Its withdrawals and replacement
+funding would therefore require a new NII forecast and valuation.
+<strong>Do not add the three outputs together or describe them as one
+fully integrated simulation.</strong> They demonstrate separate views of
+the same opening balance sheet; the proposed laboratory must reconcile
+their evolving paths.</p>
+<h2 id="optionality-hedging-and-counterparty-exposure">7. Optionality,
+hedging and counterparty exposure</h2>
+<p>For an instrument with path-dependent prepayment, an option-adjusted
+spread
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+can be defined implicitly by a valuation equation such as:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi>m</mi><mi>a</mi><mi>r</mi><mi>k</mi><mi>e</mi><mi>t</mi></mrow></msub><mo>=</mo><msup><mi>E</mi><mi>ℚ</mi></msup><mrow><mo stretchy="true" form="prefix">[</mo><munder><mo>∑</mo><mi>t</mi></munder><msub><mi>D</mi><mi>ω</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>s</mi><mi>t</mi></mrow></msup><mi>C</mi><msub><mi>F</mi><mrow><mi>ω</mi><mo>,</mo><mi>t</mi></mrow></msub><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">P_{market}=E^{\mathbb Q}\left[\sum_t D_{\omega}(0,t)e^{-st}CF_{\omega,t}\right].</annotation></semantics></math></p>
+<p>Specify the interest-rate process, risk-neutral calibration,
+prepayment model and cash-flow conventions before solving. OAS is
+model-dependent. A historical refinancing response estimated under the
+real-world measure cannot be transferred to valuation without explaining
+how it is used. US mortgage prepayment conventions can be teaching
+benchmarks; Kenyan product behaviour needs its own evidence.</p>
+<p>A receive-floating/pay-fixed swap may offset part of the rate-up
+exposure of a fixed-rate asset funded by repricing liabilities. Size it
+using the relevant cash-flow and sensitivity analysis. Then show basis
+risk, changing notionals, costs, collateral and counterparty exposure.
+An economic hedge and accounting hedge designation are distinct
+decisions.</p>
+<h3 id="cva-teaching-calculation">CVA teaching calculation</h3>
+<p>For this simplified independent-exposure/default example, use
+undiscounted expected positive exposure
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><msub><mi>E</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">EE_j</annotation></semantics></math>,
+deterministic discount factors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>j</mi></msub><annotation encoding="application/x-tex">D_j</annotation></semantics></math>,
+constant LGD and <strong>unconditional marginal</strong> default
+probabilities
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mi>P</mi><msub><mi>D</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\Delta PD_j</annotation></semantics></math>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>V</mi><mi>A</mi><mo>≈</mo><mi>L</mi><mi>G</mi><mi>D</mi><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>D</mi><mi>j</mi></msub><mi>E</mi><msub><mi>E</mi><mi>j</mi></msub><mi>Δ</mi><mi>P</mi><msub><mi>D</mi><mi>j</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">CVA\approx LGD\sum_jD_jEE_j\Delta PD_j.</annotation></semantics></math></p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Annual interval</th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>j</mi></msub><annotation encoding="application/x-tex">D_j</annotation></semantics></math></th>
+<th style="text-align: right;">Base
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><msub><mi>E</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">EE_j</annotation></semantics></math></th>
+<th style="text-align: right;">Base
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mi>P</mi><msub><mi>D</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\Delta PD_j</annotation></semantics></math></th>
+<th style="text-align: right;">Stress
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><msub><mi>E</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">EE_j</annotation></semantics></math></th>
+<th style="text-align: right;">Stress
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mi>P</mi><msub><mi>D</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\Delta PD_j</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: right;">5,000,000</td>
+<td style="text-align: right;">1.0%</td>
+<td style="text-align: right;">12,000,000</td>
+<td style="text-align: right;">6.0%</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td style="text-align: right;">0.90</td>
+<td style="text-align: right;">3,500,000</td>
+<td style="text-align: right;">1.5%</td>
+<td style="text-align: right;">8,000,000</td>
+<td style="text-align: right;">8.0%</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: right;">1,500,000</td>
+<td style="text-align: right;">2.0%</td>
+<td style="text-align: right;">4,000,000</td>
+<td style="text-align: right;">10.0%</td>
+</tr>
+</tbody>
+</table>
+<p>With LGD 60%, base CVA is <strong>72,150</strong>, stressed CVA
+<strong>960,000</strong>, and the increase <strong>887,850</strong>, in
+the same currency units as exposure. These are recalculated teaching
+values. Do not discount
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>E</mi></mrow><annotation encoding="application/x-tex">EE</annotation></semantics></math>
+again if it already includes discounting. If input probabilities are
+conditional hazards
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mi>j</mi></msub><annotation encoding="application/x-tex">q_j</annotation></semantics></math>,
+first obtain marginal probabilities
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>t</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>q</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">S(t_{j-1})q_j</annotation></semantics></math>.
+With wrong-way risk, exposure and default must be evaluated jointly
+rather than factored as above.</p>
+<p>CVA valuation, counterparty exposure measures and prudential CVA
+capital are separate outputs. The advanced module should specify each
+independently; this example makes no capital-compliance calculation.</p>
+<h2 id="how-these-cases-become-empirical-work">8. How these cases become
+empirical work</h2>
+<p>Use a longitudinal contract panel joined to rates and events by
+information-availability date. Estimate deposit pass-through and
+retention separately; estimate prepayment, default, cure and recovery
+timing using appropriate competing states. Reserve later periods and
+unseen vintages for validation. Fit transformations and select policies
+using training data only.</p>
+<p>Compare a transparent baseline against richer models on cash-flow
+forecast error, calibration, timing, subgroup reliability, uncertainty
+and operating cost. Reconcile economic results with accounting records.
+An offline gain in discrimination is useful evidence, but it does not
+establish profitable deployment or the causal value of a proposed
+intervention.</p>
+<p>The next artefact should be a small, fully reconciled scenario
+laboratory using these case definitions. A large model becomes
+meaningful only when its component schedules and business decisions can
+be inspected.</p>
+</body>
+</html>

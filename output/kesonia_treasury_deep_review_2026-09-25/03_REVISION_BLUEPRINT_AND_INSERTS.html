@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Revision blueprint and proposed article additions</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="review.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#revision-blueprint-and-proposed-article-additions"
+id="toc-revision-blueprint-and-proposed-article-additions">Revision
+blueprint and proposed article additions</a>
+<ul>
+<li><a
+href="#part-1-from-benchmark-reform-to-a-financial-decision-architecture"
+id="toc-part-1-from-benchmark-reform-to-a-financial-decision-architecture">1.
+Part 1: from benchmark reform to a financial decision architecture</a>
+<ul>
+<li><a href="#proposed-insertion-after-the-benchmarkpremium-explanation"
+id="toc-proposed-insertion-after-the-benchmarkpremium-explanation">Proposed
+insertion after the benchmark/premium explanation</a></li>
+<li><a
+href="#proposed-insertion-at-the-start-of-the-architecture-section"
+id="toc-proposed-insertion-at-the-start-of-the-architecture-section">Proposed
+insertion at the start of the architecture section</a></li>
+</ul></li>
+<li><a
+href="#part-2-from-compounding-mathematics-to-verified-contract-cash"
+id="toc-part-2-from-compounding-mathematics-to-verified-contract-cash">2.
+Part 2: from compounding mathematics to verified contract cash</a>
+<ul>
+<li><a href="#proposed-insertion-before-the-sql"
+id="toc-proposed-insertion-before-the-sql">Proposed insertion before the
+SQL</a></li>
+<li><a href="#proposed-data-contract"
+id="toc-proposed-data-contract">Proposed data contract</a></li>
+</ul></li>
+<li><a
+href="#part-3-from-risk-estimates-to-pricing-funding-and-outcomes"
+id="toc-part-3-from-risk-estimates-to-pricing-funding-and-outcomes">3.
+Part 3: from risk estimates to pricing, funding and outcomes</a>
+<ul>
+<li><a href="#proposed-replacement-for-a-stand-alone-margin-formula"
+id="toc-proposed-replacement-for-a-stand-alone-margin-formula">Proposed
+replacement for a stand-alone margin formula</a></li>
+<li><a href="#proposed-addition-to-the-ftp-discussion"
+id="toc-proposed-addition-to-the-ftp-discussion">Proposed addition to
+the FTP discussion</a></li>
+<li><a href="#proposed-addition-to-the-behavioural-discussion"
+id="toc-proposed-addition-to-the-behavioural-discussion">Proposed
+addition to the behavioural discussion</a></li>
+<li><a href="#accounting-decision-table"
+id="toc-accounting-decision-table">Accounting decision table</a></li>
+</ul></li>
+<li><a href="#part-4-from-controlled-calculations-to-controlled-action"
+id="toc-part-4-from-controlled-calculations-to-controlled-action">4.
+Part 4: from controlled calculations to controlled action</a>
+<ul>
+<li><a
+href="#proposed-insertion-what-straight-through-processing-contributes"
+id="toc-proposed-insertion-what-straight-through-processing-contributes">Proposed
+insertion: what straight-through processing contributes</a></li>
+<li><a href="#proposed-insertion-decision-support-and-execution"
+id="toc-proposed-insertion-decision-support-and-execution">Proposed
+insertion: decision support and execution</a></li>
+</ul></li>
+<li><a href="#deliver-the-next-work-in-six-gates"
+id="toc-deliver-the-next-work-in-six-gates">5. Deliver the next work in
+six gates</a></li>
+<li><a href="#what-to-do-with-the-shorter-existing-notes"
+id="toc-what-to-do-with-the-shorter-existing-notes">6. What to do with
+the shorter existing notes</a></li>
+<li><a href="#explicit-additions-following-the-remaining-work-review"
+id="toc-explicit-additions-following-the-remaining-work-review">7.
+Explicit additions following the remaining-work review</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="revision-blueprint-and-proposed-article-additions">Revision
+blueprint and proposed article additions</h1>
+<p><strong>25 September 2026 · Editorial specification for the four
+KESONIA articles</strong></p>
+<p>The following is a practical incorporation plan. It preserves the
+four-part structure and reuses the stronger definitions already in the
+controlled pricing chapter. Proposed paragraphs are supplied for later
+integration; the canonical articles have not been rewritten in this
+review.</p>
+<h2
+id="part-1-from-benchmark-reform-to-a-financial-decision-architecture">1.
+Part 1: from benchmark reform to a financial decision architecture</h2>
+<p><strong>Suggested title:</strong> <em>KESONIA, cash flows and the
+architecture of credit decisions.</em></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Existing placement</th>
+<th>Revision or addition</th>
+<th>Exhibit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Introduction and Section I</td>
+<td>Open with a borrower whose cash receipts and debt payments occur on
+different dates; explain the pricing reform in that context</td>
+<td>One-page borrower/lender/treasury decision map</td>
+</tr>
+<tr class="even">
+<td>Section II, benchmark plus premium</td>
+<td>Introduce the quantity dictionary and separate benchmark history,
+projected resets, customer margin and lender funding</td>
+<td>Curve atlas from the material review</td>
+</tr>
+<tr class="odd">
+<td>Sections III–IV, data flow and layers</td>
+<td>Map responsibilities across contract, market data, calculation,
+risk, accounting and reporting; align section and diagram labels</td>
+<td>Versioned information flow with as-of timestamps</td>
+</tr>
+<tr class="even">
+<td>Section V, vendor landscape</td>
+<td>Classify products by actual responsibility and evidenced
+interfaces</td>
+<td>Capability matrix in the software review</td>
+</tr>
+<tr class="odd">
+<td>Section VI, engineering principles</td>
+<td>Explain replay, calendar handling, independent verification and
+exception ownership</td>
+<td>“A fixing was corrected after posting” walkthrough</td>
+</tr>
+<tr class="even">
+<td>Section VII, series roadmap</td>
+<td>Make each article answer a business question and identify its
+demonstrable output</td>
+<td>Four-part reader journey</td>
+</tr>
+</tbody>
+</table>
+<h3
+id="proposed-insertion-after-the-benchmarkpremium-explanation">Proposed
+insertion after the benchmark/premium explanation</h3>
+<blockquote>
+<p>A lending benchmark is one input into a dated financial agreement.
+The borrower needs to understand the amount and timing of payments. The
+lender needs to understand the income likely to be collected and the
+costs of funding, servicing and bearing risk. Treasury needs to
+understand how those receipts line up with deposits, wholesale funding
+and other obligations. The same contract therefore produces several
+useful measures, each with its own purpose. Our architecture carries
+their common source data forward while keeping their meanings
+distinct.</p>
+</blockquote>
+<h3
+id="proposed-insertion-at-the-start-of-the-architecture-section">Proposed
+insertion at the start of the architecture section</h3>
+<blockquote>
+<p>Every calculation should be recoverable from a specific contract
+version, information cutoff, rate source, calendar, balance history and
+approved set of assumptions. This allows us to explain a change in a
+result: the contract changed, a new fixing arrived, a balance moved,
+behaviour was re-estimated, or an earlier record was corrected.
+Assigning these responsibilities to systems is an implementation choice.
+The requirement is that the resulting cash, risk and accounting records
+reconcile.</p>
+</blockquote>
+<p><strong>Acceptance evidence:</strong> the reader can trace one loan
+from observed benchmark to contract payment and distinguish that payment
+from a forecast, an internal transfer price and an accounting entry.</p>
+<h2
+id="part-2-from-compounding-mathematics-to-verified-contract-cash">2.
+Part 2: from compounding mathematics to verified contract cash</h2>
+<p><strong>Suggested title:</strong> <em>Computing KESONIA interest:
+calendars, observations, balances and reconciliation.</em></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Existing placement</th>
+<th>Revision or addition</th>
+<th>Exhibit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sections I–II</td>
+<td>State the accumulation-factor derivation, annualisation and
+simple-margin assumption</td>
+<td>Casebook §2</td>
+</tr>
+<tr class="even">
+<td>Sections III–IV</td>
+<td>Specify the entire observation/accrual mapping and endpoint
+clipping</td>
+<td>Date table showing accrual start/end, observation date, publication
+time, weight and source version</td>
+</tr>
+<tr class="odd">
+<td>Section V, schema</td>
+<td>Add interest-period, balance-event and calculation-version
+records</td>
+<td>Proposed data contract below</td>
+</tr>
+<tr class="even">
+<td>Sections VI–VIII, SQL</td>
+<td>Rebuild around validated interval rows and contract-period grouping;
+make rate joins, calculated outputs and posting scope explicit</td>
+<td>Pseudocode plus independently calculated fixtures before
+dialect-specific SQL</td>
+</tr>
+<tr class="odd">
+<td>Section IX, scale</td>
+<td>Replace a generic scale assertion with measured workloads and
+accuracy/latency targets</td>
+<td>Benchmark plan covering normal runs and corrections</td>
+</tr>
+<tr class="even">
+<td>Conclusion</td>
+<td>Explain how verified actual accrual becomes the starting point for
+projected cash flows</td>
+<td>Actual-versus-forecast bridge</td>
+</tr>
+</tbody>
+</table>
+<h3 id="proposed-insertion-before-the-sql">Proposed insertion before the
+SQL</h3>
+<blockquote>
+<p>The calculation begins with a complete interval ledger. Each row
+identifies an accrual span, its applicable observation, the number of
+days, the relevant principal and the governing convention. The aggregate
+query then combines rows whose meaning has already been established.
+This makes the result inspectable: a reviewer can check which fixing was
+used, why it was used, and how a balance change affected the amount. The
+database implementation should preserve that explanation rather than
+hiding contract interpretation inside a formula.</p>
+</blockquote>
+<h3 id="proposed-data-contract">Proposed data contract</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Record</th>
+<th>Essential fields</th>
+<th>Business reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Contract version</td>
+<td>Legal entities, currency, rate/index, margin rule, reset and payment
+schedules, fees, conventions, effective dates</td>
+<td>Determines what may be charged and when</td>
+</tr>
+<tr class="even">
+<td>Fixing version</td>
+<td>Source, value date, publication/receipt times, decimal rate,
+correction status, hash</td>
+<td>Establishes information availability and provenance</td>
+</tr>
+<tr class="odd">
+<td>Balance event</td>
+<td>Contract, effective date, recorded time, amount, type, source
+transaction</td>
+<td>Supports draws, repayments, reversals and delayed reporting</td>
+</tr>
+<tr class="even">
+<td>Observation map</td>
+<td>Period, accrual interval, observation date, day weight, calendar
+version, fallback decision</td>
+<td>Makes the lookback and calendar calculation testable</td>
+</tr>
+<tr class="odd">
+<td>Calculation run</td>
+<td>Purpose, cutoff, input versions, formula version, scenario,
+reviewer, status</td>
+<td>Separates actual accrual from forecast and historical replay</td>
+</tr>
+<tr class="even">
+<td>Result/event</td>
+<td>Factor, interest, fees, due date, approval, posting ID, settlement
+status</td>
+<td>Connects calculated amounts to accounting and cash</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fixtures:</strong> ordinary business days; weekend; holiday;
+partial final span; period boundaries; missing fixing; corrected fixing;
+simple versus compounded margin; principal change; duplicate input;
+rerun after posting. Define numerical tolerances from precision and
+rounding rules. These are meaningful requirements for future engine
+testing, not claims that the current SQL passes them.</p>
+<h2 id="part-3-from-risk-estimates-to-pricing-funding-and-outcomes">3.
+Part 3: from risk estimates to pricing, funding and outcomes</h2>
+<p><strong>Suggested title:</strong> <em>Pricing credit through the
+cycle: expected loss, funding, behaviour and accounting.</em></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Existing placement</th>
+<th>Revision or addition</th>
+<th>Exhibit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Section I, margin formulation</td>
+<td>Derive the rate from money, exposure-time and a stated return
+criterion</td>
+<td>Casebook §4</td>
+</tr>
+<tr class="even">
+<td>Sections II–IV, credit models</td>
+<td>Align PD horizon, EAD, loss/recovery timing and expected interest;
+use uncertainty in decisions</td>
+<td>Model-input-to-cash-flow table</td>
+</tr>
+<tr class="odd">
+<td>Sections V–VII, explanations and governance</td>
+<td>Explain the monetary price bridge alongside predictive drivers;
+compare simple and complex models on deployment-relevant evidence</td>
+<td>Reasons for change, calibration, feature availability and monitoring
+record</td>
+</tr>
+<tr class="even">
+<td>Sections VIII–IX, IFRS 9</td>
+<td>Introduce an accounting event decision table before journals</td>
+<td>Market reset / correction / modification / derecognition /
+forbearance / write-off</td>
+</tr>
+<tr class="odd">
+<td>Section X, FTP</td>
+<td>Develop matched funding, contingent drawdowns and deposit
+replication</td>
+<td>Casebook §§3–5</td>
+</tr>
+<tr class="even">
+<td>Section XI, ALM</td>
+<td>Show NII, EVE and cash sensitivity from the same opening position;
+specify how an integrated path will reconcile</td>
+<td>Casebook §6</td>
+</tr>
+<tr class="odd">
+<td>Section XII, audit</td>
+<td>Preserve the route from prediction to proposed action, approval,
+contract change and subsequent outcome</td>
+<td>Decision record</td>
+</tr>
+</tbody>
+</table>
+<h3 id="proposed-replacement-for-a-stand-alone-margin-formula">Proposed
+replacement for a stand-alone margin formula</h3>
+<blockquote>
+<p>We begin by forecasting monetary amounts over the chosen pricing
+horizon: interest and fees, funding and servicing costs, expected credit
+losses and the return required on allocated capital. The proposed margin
+is the rate that reconciles those amounts against the balance expected
+to earn it. This exposes the source of the price. A higher margin may
+reflect a funding change, slower recovery, higher utilisation or a
+different return requirement; it cannot be explained adequately by a
+default score alone.</p>
+</blockquote>
+<h3 id="proposed-addition-to-the-ftp-discussion">Proposed addition to
+the FTP discussion</h3>
+<blockquote>
+<p>A floating-rate loan can reset frequently while still tying up
+funding for several years. Its interest-rate reset horizon and its
+liquidity horizon are therefore different inputs. A revolving commitment
+also creates exposure before it is drawn: the institution may need cash
+precisely when market funding becomes more expensive. Our
+transfer-pricing policy should make those funding and optionality
+components visible, then reconcile internal allocations to the
+institution’s external costs.</p>
+</blockquote>
+<h3 id="proposed-addition-to-the-behavioural-discussion">Proposed
+addition to the behavioural discussion</h3>
+<blockquote>
+<p>Deposit pricing and deposit retention should be estimated separately.
+One model asks how much and how quickly the institution changes the rate
+paid to a customer. Another asks how much of the balance remains under
+different conditions. Loan customers have options too: they may prepay,
+extend their effective borrowing period, or increase utilisation. These
+behaviours alter future cash flows, so their assumptions should be
+visible in both the base forecast and stress scenarios.</p>
+</blockquote>
+<h3 id="accounting-decision-table">Accounting decision table</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Trigger</th>
+<th>Required distinction</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scheduled benchmark reset</td>
+<td>Existing contract operation versus negotiated change</td>
+<td>Revised contractual cash-flow schedule and applicable interest
+treatment</td>
+</tr>
+<tr class="even">
+<td>Corrected fixing or balance record</td>
+<td>Correction versus new economic agreement</td>
+<td>Linked adjustment and reconciliation</td>
+</tr>
+<tr class="odd">
+<td>Proposed customer-margin change</td>
+<td>Model recommendation versus legal authority/effective terms</td>
+<td>Approved or declined proposal; contract version if changed</td>
+</tr>
+<tr class="even">
+<td>Borrower modification</td>
+<td>Asset analysis versus lender’s own liability analysis</td>
+<td>Assessment, carrying-value effect and accounting decision</td>
+</tr>
+<tr class="odd">
+<td>Financial difficulty</td>
+<td>Commercial change versus forbearance/credit deterioration</td>
+<td>Credit and accounting assessment linked to the event</td>
+</tr>
+<tr class="even">
+<td>Hedge transaction</td>
+<td>Economic risk reduction versus accounting designation</td>
+<td>Separate trade, valuation and hedge-accounting records</td>
+</tr>
+</tbody>
+</table>
+<p>For assets modified without derecognition, IFRS 9 §5.4.3 provides the
+carrying-amount and modification-result basis, including the applicable
+original effective-rate rule. The ten-percent test in B3.3.6 concerns
+liabilities; it should not be copied into the loan-asset workflow as a
+universal test. <a
+href="https://www.ifrs.org/content/dam/ifrs/publications/pdf-standards/english/2022/issued/part-a/ifrs-9-financial-instruments.pdf?bypass=on">IFRS
+9 §5.4.3</a>, <a
+href="https://www.ifrs.org/content/dam/ifrs/publications/pdf-standards/english/2021/issued/part-a/ifrs-9-financial-instruments.pdf?bypass=on">IFRS
+9 B3.3.6</a>. These paragraph references support the editorial
+distinction; implementation requires the applicable current edition and
+approved accounting policy.</p>
+<p><strong>Acceptance evidence:</strong> one example reconciles customer
+cost, lender economics and funding allocation, while an event table
+explains why a risk refresh does not automatically produce a new invoice
+or journal.</p>
+<h2 id="part-4-from-controlled-calculations-to-controlled-action">4.
+Part 4: from controlled calculations to controlled action</h2>
+<p><strong>Suggested title:</strong> <em>RegTech and treasury
+operations: approvals, straight-through processing and
+reconciliation.</em></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Existing placement</th>
+<th>Revision or addition</th>
+<th>Exhibit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sections I–II, sweep and validation</td>
+<td>Define separate calculation, submission and trade workflows;
+introduce explicit exception states</td>
+<td>State transitions and ownership</td>
+</tr>
+<tr class="even">
+<td>Sections III–V, evidence/security/approval</td>
+<td>Tie approval to the exact result version and authorised action;
+preserve receipts, corrections and retries</td>
+<td>End-to-end event chain</td>
+</tr>
+<tr class="odd">
+<td>Sections VI–VIII, vendor discussions</td>
+<td>Add MORS and Abrigo in the roles documented by their vendors; retain
+Oracle, SAP and D365 with module-specific boundaries</td>
+<td><a href="05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.html">Software and STP
+review</a></td>
+</tr>
+<tr class="even">
+<td>Section IX, roadmap</td>
+<td>Deliver through acceptance gates; include tests from the first
+stage</td>
+<td>Prioritised delivery table below</td>
+</tr>
+<tr class="odd">
+<td>Sections X–XI, future reporting</td>
+<td>Treat protocol and market connectivity as verified integration
+requirements</td>
+<td>Interface contract and external acknowledgement</td>
+</tr>
+</tbody>
+</table>
+<h3
+id="proposed-insertion-what-straight-through-processing-contributes">Proposed
+insertion: what straight-through processing contributes</h3>
+<blockquote>
+<p>Straight-through processing carries an authorised transaction through
+connected systems with little repeated manual entry. In treasury, that
+may connect a reviewed hedge proposal to an order, execution
+confirmation, booking, settlement and reconciliation. In lending, it may
+connect a verified accrual to an approved accounting event and
+statement. The shared requirement is continuity of identity and
+evidence: we can follow the same business event across systems and
+identify exceptions without losing its meaning.</p>
+</blockquote>
+<h3 id="proposed-insertion-decision-support-and-execution">Proposed
+insertion: decision support and execution</h3>
+<blockquote>
+<p>An ALM model estimates exposures and evaluates possible responses. An
+FTP model assigns internal funding costs and credits. A treasury
+management system and execution service manage trades and their
+lifecycle. Some products combine these capabilities, but the
+responsibilities still need to be distinguished. A model result becomes
+an executed position only through the institution’s authorised workflow,
+and residual exposure must be measured again after execution.</p>
+</blockquote>
+<h2 id="deliver-the-next-work-in-six-gates">5. Deliver the next work in
+six gates</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Gate</th>
+<th>Deliverable</th>
+<th>Evidence required before the next stage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1: definitions and contracts</td>
+<td>Financial quantity dictionary, applicable convention sheet and event
+taxonomy</td>
+<td>Owners agree dates, units, scope and accounting boundaries</td>
+</tr>
+<tr class="even">
+<td>2: deterministic cash</td>
+<td>Small KESONIA calculator plus borrower and SPV schedules</td>
+<td>Independent amounts agree; cash and balances reconcile; corrections
+replay</td>
+</tr>
+<tr class="odd">
+<td>3: curves and funding</td>
+<td>Versioned projection/discount/funding curves and FTP
+calculation</td>
+<td>Input instruments or assumptions identified; curve instruments
+reprice; internal transfers reconcile</td>
+</tr>
+<tr class="even">
+<td>4: behaviour and scenarios</td>
+<td>Deposit, prepayment, utilisation, default and recovery estimates
+where data allow</td>
+<td>Longitudinal data, out-of-time validation and uncertainty
+analysis</td>
+</tr>
+<tr class="odd">
+<td>5: workflows</td>
+<td>Calculation, approval, exception, submission and simulated trade
+workflows</td>
+<td>Duplicate, delayed, rejected and partially completed events handled
+correctly</td>
+</tr>
+<tr class="even">
+<td>6: platform integration</td>
+<td>Selected system interfaces and operational monitoring</td>
+<td>Sandbox acceptance, supported products/currencies, access controls,
+operational ownership and reconciliation</td>
+</tr>
+</tbody>
+</table>
+<p>The advanced derivative and capital laboratories follow only where
+the business case and data support them. This order is a proposed
+implementation sequence, not a committed delivery schedule or a purchase
+recommendation.</p>
+<h2 id="what-to-do-with-the-shorter-existing-notes">6. What to do with
+the shorter existing notes</h2>
+<p>Keep the compounding/term-structure note as the concise conceptual
+introduction. Keep the CBK/K fragment as historical source material,
+with the money-to-margin case as its developed successor. Treat the
+enhancement and gap reports as dated planning evidence. Their useful
+requirements should migrate into the acceptance backlog, with a
+destination and status for each. No unique text needs to be discarded to
+make this transition.</p>
+<p>The older September 23 review remains the cross-project entry point.
+This package develops its KESONIA branch. The cumulative screenshot
+catalogue and wholesale revision of neighbouring manuscripts remain
+separate work.</p>
+<h2 id="explicit-additions-following-the-remaining-work-review">7.
+Explicit additions following the remaining-work review</h2>
+<p>The treasury paste’s regulatory and accounting subjects need visible
+destinations beyond a general advanced-work label:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Addition</th>
+<th>Placement</th>
+<th>Completion evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>FRTB and regulatory book boundaries</td>
+<td>Part 1 scope map; Part 3 risk-method interfaces; Part 4 desk/data
+controls; specialist appendix</td>
+<td>Scoped standardised example and a separate
+internal-model/data-validation specification; see the <a
+href="07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.html">FRTB note</a></td>
+</tr>
+<tr class="even">
+<td>LCR/NSFR and operational liquidity</td>
+<td>Part 3 integrated bank scenario; Part 4 source-to-report
+controls</td>
+<td>Classified balance sheet and commitments, applicable
+weights/haircuts, ratio reconciliation and a separate cash-survival
+schedule</td>
+</tr>
+<tr class="odd">
+<td>IFRS 9 hedge accounting</td>
+<td>Part 3 immediately after the accounting decision table</td>
+<td>Fair-value and cash-flow hedge examples with designation, valuation,
+journals, ineffectiveness and reconciliation</td>
+</tr>
+<tr class="even">
+<td>Kenyan market and rule applicability</td>
+<td>Part 1 institutional scope; Parts 2–4 input and interface
+requirements</td>
+<td>Dated rule map and evidence of instruments, quotations, terms and
+system support; identify proxies and synthetic examples</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="06_WHAT_REMAINS_TO_BE_DEVELOPED.html">eighteen-item
+register</a> specifies the remaining methods and evidence. These
+additions make the future work explicit; they do not imply that the
+numerical modules have already been delivered.</p>
+</body>
+</html>

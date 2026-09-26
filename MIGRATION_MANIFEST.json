@@ -1,0 +1,318 @@
+{
+  "date": "2026-09-26",
+  "source_head": "1420ffef345910e90aad8fad28c8acc537cad248",
+  "files": [
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "relative_path": "docs/research/kesonia/ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "source_sha256": "3268a23322c2a4ab320e35d0440e3efa2c91b79cafb7ccad918ea6b96f4f6952",
+      "destination_sha256": "750aa87e920cce3f3bed6d5dc2601b4fe298bfca12933cc3ebc3d2c5e5f3cf3c",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\cbk_kesonia_k_framework.md",
+      "relative_path": "docs/research/kesonia/cbk_kesonia_k_framework.md",
+      "source_sha256": "9c300c59adc6a564c471315b4035e8dae13dc7a64886b127289f3b019fd288df",
+      "destination_sha256": "9c300c59adc6a564c471315b4035e8dae13dc7a64886b127289f3b019fd288df",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\FRTB_SCOPE_AND_DEVELOPMENT_NOTE_2026-09-25.md",
+      "relative_path": "docs/research/kesonia/FRTB_SCOPE_AND_DEVELOPMENT_NOTE_2026-09-25.md",
+      "source_sha256": "44a2db4dc8acfca4c7795c85321405068aa9d2f62e1ff00c8a8e366342898acf",
+      "destination_sha256": "aaf67d3b94140f4e01776394695be5736f4f482a8bffd27b0c2c940c37ac6911",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\KESONIA_COMPOUNDING_TERM_STRUCTURE_AND_FUNDING_CURVE_NOTE.md",
+      "relative_path": "docs/research/kesonia/KESONIA_COMPOUNDING_TERM_STRUCTURE_AND_FUNDING_CURVE_NOTE.md",
+      "source_sha256": "1318a5e0a483a8c2c10e4e0b3dd3878bad9df9421cb7e482d5d70f8641bae587",
+      "destination_sha256": "1318a5e0a483a8c2c10e4e0b3dd3878bad9df9421cb7e482d5d70f8641bae587",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "relative_path": "docs/research/kesonia/Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "source_sha256": "1a918d2e74993209c958198106af31b4b1a5fc4079c275009bd52140f5536ac4",
+      "destination_sha256": "1a918d2e74993209c958198106af31b4b1a5fc4079c275009bd52140f5536ac4",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "relative_path": "docs/research/kesonia/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "source_sha256": "b1af86504e332333e08fba8cfc75ce2ac37c99197390a7f743ef0aeb2298a32d",
+      "destination_sha256": "b1af86504e332333e08fba8cfc75ce2ac37c99197390a7f743ef0aeb2298a32d",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "relative_path": "docs/research/kesonia/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "source_sha256": "efa7a219e681475efbf7c7eabe47cc77b12372362d0efb82491bcd38fab0d999",
+      "destination_sha256": "efa7a219e681475efbf7c7eabe47cc77b12372362d0efb82491bcd38fab0d999",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "relative_path": "docs/research/kesonia/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "source_sha256": "e2eb8de37e650549d0642970af73335a1ed21a80b82947c29bd9f8fbf6bdab36",
+      "destination_sha256": "e2eb8de37e650549d0642970af73335a1ed21a80b82947c29bd9f8fbf6bdab36",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\RegTech_Gap_Analysis_Report.md",
+      "relative_path": "docs/research/kesonia/RegTech_Gap_Analysis_Report.md",
+      "source_sha256": "6c98e18a7ea7c46add237b3e8e420b93586ef5879f42c6f9ff408f108043c1d4",
+      "destination_sha256": "6c98e18a7ea7c46add237b3e8e420b93586ef5879f42c6f9ff408f108043c1d4",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\RegTech_KESONIA_Enhancement_Report.md",
+      "relative_path": "docs/research/kesonia/RegTech_KESONIA_Enhancement_Report.md",
+      "source_sha256": "e0d86e310b2b74d7e957cee4f482e5382b4ea2b95febf48ac83c0604bf4660d2",
+      "destination_sha256": "e0d86e310b2b74d7e957cee4f482e5382b4ea2b95febf48ac83c0604bf4660d2",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\STP_AND_ALM_FTP_SOFTWARE_REVIEW_2026-09-25.md",
+      "relative_path": "docs/research/kesonia/STP_AND_ALM_FTP_SOFTWARE_REVIEW_2026-09-25.md",
+      "source_sha256": "4483378f9ec8d86e5014c1f5a348de1a3c76ef9964a02f5aece1cc344d1d9e31",
+      "destination_sha256": "9d0e8f2b586d2c71e0b96bc3ef0df210e445b3ed9b1b8de2f7327ec38dfcfeb5",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\TREASURY_CURVES_AND_BUSINESS_ANALYSIS_DETAILED_REVIEW_2026-09-25.md",
+      "relative_path": "docs/research/kesonia/TREASURY_CURVES_AND_BUSINESS_ANALYSIS_DETAILED_REVIEW_2026-09-25.md",
+      "source_sha256": "42bdb13cda15e99b80f31f5c3a51e2469061299dcf849df0088214fe6fe69d07",
+      "destination_sha256": "ca3bc0d9be7245010a769c944532765d3b7ffa59cc8a68fb1beeaf5d2d216d44",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\TREASURY_REMAINING_WORK_REGISTER_2026-09-25.md",
+      "relative_path": "docs/research/kesonia/TREASURY_REMAINING_WORK_REGISTER_2026-09-25.md",
+      "source_sha256": "e462a9c59fb778d6233d3670fe9324b35c71a5d4630678ce38b49b33c21f04a2",
+      "destination_sha256": "d68a8888fda25269255abe435c1833c1f4ccc83d7dc19abd645929302ad9a6d4",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\00_READ_ME.html",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/00_READ_ME.html",
+      "source_sha256": "a5f3f39449792bee8b038a903be965dc23054fba650eb5334da3419ec9bc2754",
+      "destination_sha256": "a5f3f39449792bee8b038a903be965dc23054fba650eb5334da3419ec9bc2754",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\00_READ_ME.md",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/00_READ_ME.md",
+      "source_sha256": "cc5b94f2e5cb8fe9e5ad9a6d00f8b6009e01711f56128cb92736eb3feaaef1e1",
+      "destination_sha256": "7eedde96c198999a8b7b2908c6411d6fde3d3171fb1b3a60aea42d40b112bb65",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\01_DETAILED_MATERIAL_REVIEW.html",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/01_DETAILED_MATERIAL_REVIEW.html",
+      "source_sha256": "39380434150b5d120f3f4a0f6dea53147ace921f447123363b8bd8fcc8f1e3c4",
+      "destination_sha256": "39380434150b5d120f3f4a0f6dea53147ace921f447123363b8bd8fcc8f1e3c4",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\01_DETAILED_MATERIAL_REVIEW.md",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/01_DETAILED_MATERIAL_REVIEW.md",
+      "source_sha256": "2928f83432327ed54a4cc6efde16d4cb9bfbd6b0d6240dcc749063c656b1a0e9",
+      "destination_sha256": "dd6ee7b614308057020fbae1beb5dc3d60c1d0e731c6ea81faa4f0a80aa314e9",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\02_CALCULATION_AND_CASEBOOK.html",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/02_CALCULATION_AND_CASEBOOK.html",
+      "source_sha256": "abf546d4c49abdb17f410e203845604691f6a82ea4c939a32fc638b6db601df7",
+      "destination_sha256": "abf546d4c49abdb17f410e203845604691f6a82ea4c939a32fc638b6db601df7",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\02_CALCULATION_AND_CASEBOOK.md",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/02_CALCULATION_AND_CASEBOOK.md",
+      "source_sha256": "3ec2d8cc7d2b160d8d98a5b1780e85eee7bc693c656e47157a83c9593c66ea3c",
+      "destination_sha256": "179140898930396e952e7d4523c6773c4a31a0855d03b7f24da99426be9eb136",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\03_REVISION_BLUEPRINT_AND_INSERTS.html",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/03_REVISION_BLUEPRINT_AND_INSERTS.html",
+      "source_sha256": "59df11ad62e5116aea3de541d6400ab301c5ef2fb82edc69d9004efcfc16bfb2",
+      "destination_sha256": "59df11ad62e5116aea3de541d6400ab301c5ef2fb82edc69d9004efcfc16bfb2",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\03_REVISION_BLUEPRINT_AND_INSERTS.md",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/03_REVISION_BLUEPRINT_AND_INSERTS.md",
+      "source_sha256": "5c10fff866b64c814ce445ba5b1b54c9ee5df0907884d5e3d43d6f855f2b3e8c",
+      "destination_sha256": "f568bdc9cd615c3c4c1d4d82876ed9d007cd6125fd29c5843f2bd64ae489ed65",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\04_READING_MAP_AND_REFERENCES.html",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/04_READING_MAP_AND_REFERENCES.html",
+      "source_sha256": "f17b81cad74eb8deab228927b7a752dbe690f1b17985c42b146f251ea9d29242",
+      "destination_sha256": "f17b81cad74eb8deab228927b7a752dbe690f1b17985c42b146f251ea9d29242",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\04_READING_MAP_AND_REFERENCES.md",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/04_READING_MAP_AND_REFERENCES.md",
+      "source_sha256": "18faadd5fe974433787ea06375c1aeca4e36460a9e400a2e92f78f9ed74be823",
+      "destination_sha256": "3cf05cbc1c1c0f2b6cd6b626d407af01abf9a5582f4b9615d3714f04db28bb62",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.html",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.html",
+      "source_sha256": "51844614489438de20f2fa7bf0f9ef6e23e63e2564f34c38a105468891d22d2f",
+      "destination_sha256": "51844614489438de20f2fa7bf0f9ef6e23e63e2564f34c38a105468891d22d2f",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.md",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.md",
+      "source_sha256": "6965130c1585713874f0430d8304172f39f9994ceaba9c943a174db2f842208e",
+      "destination_sha256": "6965130c1585713874f0430d8304172f39f9994ceaba9c943a174db2f842208e",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\06_WHAT_REMAINS_TO_BE_DEVELOPED.html",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/06_WHAT_REMAINS_TO_BE_DEVELOPED.html",
+      "source_sha256": "eaa3d969983100ba2532dc23b361a459ba6e1bc68e51c23901034562505a593a",
+      "destination_sha256": "eaa3d969983100ba2532dc23b361a459ba6e1bc68e51c23901034562505a593a",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\06_WHAT_REMAINS_TO_BE_DEVELOPED.md",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/06_WHAT_REMAINS_TO_BE_DEVELOPED.md",
+      "source_sha256": "c0ef29ce59cd9697f871e2cb412253db3f1cc9aba4db2cae6f67ccc249e4ab76",
+      "destination_sha256": "b05c71eab953c2468fe541f51cd140a3bb32249fa5716151310264d134d8f4f3",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.html",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.html",
+      "source_sha256": "44fc85cc73e0eb8f8ae5ba697c650570185d4f6180cd9fa7f326a6ba7dd97f0e",
+      "destination_sha256": "44fc85cc73e0eb8f8ae5ba697c650570185d4f6180cd9fa7f326a6ba7dd97f0e",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.md",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.md",
+      "source_sha256": "1caa6fc435e9f4fcd5b4ab2dbf4d3ba4f772ad3671d4441506da046718ece67e",
+      "destination_sha256": "59bc0b874452063eb4ff2ddce4285cb00b1645ff5d9fc71fbc00d5c4f2e63478",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\build_reading_pack.py",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/build_reading_pack.py",
+      "source_sha256": "856dec5ecce79fb9bccefcf515ea7c3e0dc56d609d4c1b00346fa023d4fd52eb",
+      "destination_sha256": "f2a6d9b3b9a85b49635368f1dee7d369c58bcf6c2dd50947a0e9403a6bbca806",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\checked_examples.json",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/checked_examples.json",
+      "source_sha256": "bbcb6d77f646d607c577187602cb812a623448b012a2e2fdc6ed7ff3e93684bc",
+      "destination_sha256": "bbcb6d77f646d607c577187602cb812a623448b012a2e2fdc6ed7ff3e93684bc",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\delivery_verification.json",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/delivery_verification.json",
+      "source_sha256": "283f25e297b7070e00a4bd52c318c302a25e767b65c71cdb8071c2c6880ff396",
+      "destination_sha256": "283f25e297b7070e00a4bd52c318c302a25e767b65c71cdb8071c2c6880ff396",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\reading_manifest.json",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/reading_manifest.json",
+      "source_sha256": "8533807dc66ca2cc15efe0f9508acbb2bc99f6921e224cab656d73828472010e",
+      "destination_sha256": "8533807dc66ca2cc15efe0f9508acbb2bc99f6921e224cab656d73828472010e",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\review.css",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/review.css",
+      "source_sha256": "122d5094dcbd1521aa10a92b8f470b51d8c8bde2db58fa075d725709867b5234",
+      "destination_sha256": "122d5094dcbd1521aa10a92b8f470b51d8c8bde2db58fa075d725709867b5234",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\verify_examples.py",
+      "relative_path": "output/kesonia_treasury_deep_review_2026-09-25/verify_examples.py",
+      "source_sha256": "64b8c4f01cc3c034bc649e06835ea3c443225d8552bef5eb107e26130d2c8f29",
+      "destination_sha256": "64b8c4f01cc3c034bc649e06835ea3c443225d8552bef5eb107e26130d2c8f29",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\pricing_treasury_cross_project_review_2026-09-23\\source_01_original.txt",
+      "relative_path": "output/pricing_treasury_cross_project_review_2026-09-23/source_01_original.txt",
+      "source_sha256": "a48f4fe6b0c42f60c99cfe1ba00e62b39202ba670b6635053089ade191cac2ba",
+      "destination_sha256": "a48f4fe6b0c42f60c99cfe1ba00e62b39202ba670b6635053089ade191cac2ba",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\pricing_treasury_cross_project_review_2026-09-23\\source_02_original.txt",
+      "relative_path": "output/pricing_treasury_cross_project_review_2026-09-23/source_02_original.txt",
+      "source_sha256": "b0911816334781e63755c0a85cd33d86e7b3f49591e7f71554c3bcc520fb7359",
+      "destination_sha256": "b0911816334781e63755c0a85cd33d86e7b3f49591e7f71554c3bcc520fb7359",
+      "adapted": false
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\pricing_treasury_cross_project_review_2026-09-23\\02_WORKING_FORMULATIONS_AND_EXAMPLES.md",
+      "relative_path": "output/pricing_treasury_cross_project_review_2026-09-23/02_WORKING_FORMULATIONS_AND_EXAMPLES.md",
+      "source_sha256": "90cfacc7800959cab137253720dcac80d7c61d2aeae542bf016ee6475484c21f",
+      "destination_sha256": "02fbe55287181ee18d62c43c1deaf6aff4ebb0584290f883bd84c3670aa4edea",
+      "adapted": true
+    },
+    {
+      "repository": "regtech-kesonia-treasury",
+      "source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\pricing_treasury_cross_project_review_2026-09-23\\review.css",
+      "relative_path": "output/pricing_treasury_cross_project_review_2026-09-23/review.css",
+      "source_sha256": "9ad69d8f669ec64a17938bf8047f32dc3b4c03d826c621b447b14e0ff49bad9a",
+      "destination_sha256": "9ad69d8f669ec64a17938bf8047f32dc3b4c03d826c621b447b14e0ff49bad9a",
+      "adapted": false
+    }
+  ]
+}

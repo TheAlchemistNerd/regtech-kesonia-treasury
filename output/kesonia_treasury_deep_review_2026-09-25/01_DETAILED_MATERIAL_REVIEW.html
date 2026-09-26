@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>KESONIA, treasury curves and the business decisions they
+support</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="review.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a
+href="#kesonia-treasury-curves-and-the-business-decisions-they-support"
+id="toc-kesonia-treasury-curves-and-the-business-decisions-they-support">KESONIA,
+treasury curves and the business decisions they support</a>
+<ul>
+<li><a href="#what-the-new-material-contributes"
+id="toc-what-the-new-material-contributes">1. What the new material
+contributes</a></li>
+<li><a href="#what-is-already-covered-and-what-deserves-development"
+id="toc-what-is-already-covered-and-what-deserves-development">2. What
+is already covered, and what deserves development</a></li>
+<li><a href="#the-organizing-framework-six-questions"
+id="toc-the-organizing-framework-six-questions">3. The organizing
+framework: six questions</a></li>
+<li><a href="#a-curve-atlas-for-the-series"
+id="toc-a-curve-atlas-for-the-series">4. A curve atlas for the
+series</a></li>
+<li><a href="#the-practical-gains-for-each-core-part"
+id="toc-the-practical-gains-for-each-core-part">5. The practical gains
+for each core part</a>
+<ul>
+<li><a href="#part-1-make-the-business-purpose-visible"
+id="toc-part-1-make-the-business-purpose-visible">Part 1 — make the
+business purpose visible</a></li>
+<li><a href="#part-2-make-the-calculation-reproducible"
+id="toc-part-2-make-the-calculation-reproducible">Part 2 — make the
+calculation reproducible</a></li>
+<li><a href="#part-3-connect-the-rate-to-the-business-economics"
+id="toc-part-3-connect-the-rate-to-the-business-economics">Part 3 —
+connect the rate to the business economics</a></li>
+<li><a href="#part-4-make-governance-demonstrable"
+id="toc-part-4-make-governance-demonstrable">Part 4 — make governance
+demonstrable</a></li>
+</ul></li>
+<li><a href="#how-the-business-analysis-context-improves-the-teaching"
+id="toc-how-the-business-analysis-context-improves-the-teaching">6. How
+the business-analysis context improves the teaching</a></li>
+<li><a href="#what-belongs-in-the-core-and-what-goes-further"
+id="toc-what-belongs-in-the-core-and-what-goes-further">7. What belongs
+in the core, and what goes further</a></li>
+<li><a href="#recommended-next-editorial-step"
+id="toc-recommended-next-editorial-step">8. Recommended next editorial
+step</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="kesonia-treasury-curves-and-the-business-decisions-they-support">KESONIA,
+treasury curves and the business decisions they support</h1>
+<p><strong>25 September 2026 · Detailed development review · Proposed
+additions, not an implemented treasury system</strong></p>
+<h2 id="what-the-new-material-contributes">1. What the new material
+contributes</h2>
+<p>The treasury paste can make the KESONIA series substantially more
+useful by connecting a correctly calculated lending rate to the
+decisions surrounding it: <strong>how the loan is funded, when its cash
+arrives, how behaviour changes that cash, what the institution earns,
+and what it can safely distribute.</strong></p>
+<p>The existing series already has considerable substance on benchmark
+ingestion, compounding, credit modelling, accounting and controlled
+reporting. Its short compounding/term-structure note already makes the
+essential distinction between a realised overnight accumulation and a
+curve across future maturities. The new work should develop that
+foundation into calculations and business cases.</p>
+<p>There is also a stronger existing source than the older gap reports
+suggest: <a
+href="file:///C:/Users/Nevo/Downloads/insuretech%20%26%20embedded%20finance/docs/controlled-specifications/Part_5_KESONIA_Pricing_and_Capital_Orchestration.md">the
+controlled Mwendo pricing and capital chapter</a> already separates
+customer prices, note coupons, FTP, valuation hurdles, regulatory
+capital and SPV protections. It specifies cohort cash flows, a
+waterfall, reserves, repricing mismatch and accounting event boundaries.
+Bring those definitions into the research series before expanding the
+theory.</p>
+<p>This review read <strong>all nine existing Markdown files in
+<code>docs/research/kesonia</code>, the entire 180-line treasury paste,
+and the controlled pricing chapter</strong>. Some paste lines contain
+whole conversations. The review includes the later material on
+derivatives, capital, insurance and modelling; embedded prompts were
+treated as source content. The <a
+href="04_READING_MAP_AND_REFERENCES.html">reading map</a> records
+coverage. Adjacent business-analysis work is carried forward from the <a
+href="file:///C:/Users/Nevo/Downloads/insuretech%20%26%20embedded%20finance/output/pricing_treasury_cross_project_review_2026-09-23/06_BUSINESS_CREDIT_AND_OWNER_EARNINGS_FOLLOWUP_2026-09-25.md">completed
+Owner Earnings follow-up</a>; its workbooks were not audited here.</p>
+<h2 id="what-is-already-covered-and-what-deserves-development">2. What
+is already covered, and what deserves development</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Existing material</th>
+<th>Developed foundation</th>
+<th>Useful next contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Part 1: reform and enterprise architecture</td>
+<td>Benchmark reform, ingestion, calculation, pricing, accounting and
+reporting layers</td>
+<td>Organise the layers around decisions, legal entities and dated cash
+flows; introduce the curve atlas below</td>
+</tr>
+<tr class="even">
+<td>Part 2: daily compounding and SQL</td>
+<td>Compound-factor mathematics, calendars, data tables, lookback,
+reconciliation and scale</td>
+<td>A complete observation-to-accrual mapping, corrected period-based
+computational specification, historical verification and balance-event
+examples</td>
+</tr>
+<tr class="odd">
+<td>Part 3: AI pricing and IFRS 9</td>
+<td>PD/LGD/EAD, explanatory tools, model governance, accounting, FTP and
+ALM</td>
+<td>Derive the margin from monetary economics; develop deposit behaviour
+and matched funding; separate NII, EVE, liquidity and payout</td>
+</tr>
+<tr class="even">
+<td>Part 4: reporting and platforms</td>
+<td>Validation, evidence retention, approvals, vendor integration and a
+roadmap</td>
+<td>A calculation-to-decision workflow, scenario controls, replayable
+reporting and acceptance gates tied to demonstrable outputs</td>
+</tr>
+<tr class="odd">
+<td>Compounding/term/funding note</td>
+<td>Correct separation of historical accrual, future maturity structure
+and bank funding</td>
+<td>Expand into a worked curve laboratory; use it as the conceptual
+entry point</td>
+</tr>
+<tr class="even">
+<td>September 23 additional review</td>
+<td>Four-part revision direction and advanced extensions</td>
+<td>This package supplies the detailed placements, draft paragraphs,
+equations, examples and evidence requirements</td>
+</tr>
+<tr class="odd">
+<td>CBK/K framework fragment</td>
+<td>Relationship between customer pricing and wholesale funding</td>
+<td>Replace the informal spread story with an institution-specific
+net-return bridge and contractual repricing rules</td>
+</tr>
+<tr class="even">
+<td>Enhancement report</td>
+<td>Candidate architecture, analytics and control requirements</td>
+<td>Convert candidates into a dated delivery backlog with owners and
+acceptance evidence</td>
+</tr>
+<tr class="odd">
+<td>Gap analysis</td>
+<td>Earlier inventory of desired capabilities</td>
+<td>Retain as historical rationale; reassess individual items against
+the newer controlled chapter rather than restating everything as
+absent</td>
+</tr>
+</tbody>
+</table>
+<p>“Covered” here means developed in writing. It does not mean a model
+has been fitted, SQL deployed, controls independently tested or a
+regulator’s interface integrated.</p>
+<h2 id="the-organizing-framework-six-questions">3. The organizing
+framework: six questions</h2>
+<ol type="1">
+<li><strong>What was agreed?</strong> Identify borrower, lender,
+currency, balance, benchmark, margin, reset dates, fees, options and
+payment dates.</li>
+<li><strong>What is now known?</strong> Distinguish the benchmark’s
+value date from publication and ingestion times, and distinguish
+available information from subsequently revised data.</li>
+<li><strong>What cash is expected?</strong> Build principal, interest,
+fee, prepayment, drawdown, default, cure and recovery schedules under
+named scenarios.</li>
+<li><strong>What funds that cash?</strong> Assign funding and liquidity
+costs, commitments, collateral needs and refinancing dates to the same
+exposure.</li>
+<li><strong>What is the effect?</strong> Report customer cost, lender
+economics, accounting results, earnings sensitivity, economic value,
+cash shortfall and capital capacity separately.</li>
+<li><strong>What changes?</strong> Record the responsible owner,
+decision, approval, contractual effective date and subsequently observed
+outcome.</li>
+</ol>
+<p>These questions supply a coherent narrative from business analysis to
+treasury and RegTech. A dashboard becomes useful when a change in its
+measurements leads to an accountable decision.</p>
+<h2 id="a-curve-atlas-for-the-series">4. A curve atlas for the
+series</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Object</th>
+<th>What it measures</th>
+<th>Appropriate use and required evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Overnight fixing history</td>
+<td>Observed rates through calendar time</td>
+<td>Accrual using source, value date, publication time and applicable
+day spans</td>
+</tr>
+<tr class="even">
+<td>Compounded index/period factor</td>
+<td>Accumulation over a historical observation interval</td>
+<td>Independent benchmark verification where boundaries and conventions
+match</td>
+</tr>
+<tr class="odd">
+<td>Par curve</td>
+<td>Coupons that price specified instruments at par across
+maturities</td>
+<td>Describe coupon frequency, instrument type, settlement, credit and
+quotation conventions</td>
+</tr>
+<tr class="even">
+<td>Zero curve/discount factors</td>
+<td>Value today of future units of currency</td>
+<td>Discount cash flows with a curve appropriate to the claim and
+valuation purpose</td>
+</tr>
+<tr class="odd">
+<td>Forward curve</td>
+<td>Rates implied between future dates by a consistent curve
+construction</td>
+<td>Project floating cash flows under stated conventions; an implied
+forward is not an assured future fixing</td>
+</tr>
+<tr class="even">
+<td>Swap curve</td>
+<td>Market swap quotations across tenors</td>
+<td>Build a curve only from evidenced instruments; an overnight
+benchmark does not establish a liquid local swap market</td>
+</tr>
+<tr class="odd">
+<td>Basis curve</td>
+<td>Differences between identified indices or funding currencies across
+tenors</td>
+<td>Diagnose asset/liability mismatch and specify any hedge’s actual
+index and collateral terms</td>
+</tr>
+<tr class="even">
+<td>Institutional funding/FTP curve</td>
+<td>Costs and internal allocation of financing an exposure over its
+life</td>
+<td>Combine evidenced funding inputs, liquidity and optionality policies
+without repeating costs elsewhere</td>
+</tr>
+<tr class="odd">
+<td>Credit spread/survival structure</td>
+<td>Market compensation or forecast default timing, according to the
+model’s purpose</td>
+<td>Label market valuation versus real-world prediction; a spread is not
+itself a physical default probability</td>
+</tr>
+<tr class="even">
+<td>Behavioural profiles</td>
+<td>Expected deposit retention, repricing, prepayment and
+utilisation</td>
+<td>Estimate from longitudinal data with segment, regime, horizon and
+uncertainty recorded</td>
+</tr>
+<tr class="odd">
+<td>Liquidity ladder</td>
+<td>Dated receipts, payments and available funding</td>
+<td>Find the lowest-cash date and the amount of financing available
+then</td>
+</tr>
+<tr class="even">
+<td>Vintage/loss profile</td>
+<td>Performance by origination cohort and loan age</td>
+<td>Feed seasoning and recovery timing into cash forecasts; keep
+denominators and exit states explicit</td>
+</tr>
+</tbody>
+</table>
+<p>For every object, store <strong>currency, valuation/as-of date,
+purpose, units, day count, compounding, tenor dates, source, version and
+status</strong>. Historical observations, market-derived quantities,
+calibrated forecasts and illustrative assumptions should be visibly
+labelled. Government yields may provide market context; they should not
+silently become KESONIA projections or a bank’s own funding cost.</p>
+<h2 id="the-practical-gains-for-each-core-part">5. The practical gains
+for each core part</h2>
+<h3 id="part-1-make-the-business-purpose-visible">Part 1 — make the
+business purpose visible</h3>
+<p>Lead with a business whose customer pays after its loan instalment
+falls due. Then follow that loan into the lender’s funding and risk
+systems. This gives the reader a reason to care about the distinction
+between contractual rate, expected collection, funding maturity and
+realised cash.</p>
+<p>The CBK framework adopts compounded KESONIA for in-scope
+variable-rate lending, specifies a five-day lookback, and describes
+separate premium and fee disclosures. Its Appendix I is the anchor for
+the benchmark calculation. The series should distinguish this published
+requirement from the detailed date-mapping decisions needed to implement
+it. <a
+href="https://www.centralbank.go.ke/wp-content/uploads/2025/08/Revised-Risk-based-Credit-Pricing-Model.pdf">CBK
+revised framework, August 2025</a>.</p>
+<p>The architecture should identify systems by responsibility: contract
+master, market-data store, calculation service, risk models, accounting
+subledger, general ledger and reporting. The selected ERP may own
+several responsibilities, but the article should not require one vendor
+to perform all of them. Reconciliation remains an explicit control
+between these records.</p>
+<h3 id="part-2-make-the-calculation-reproducible">Part 2 — make the
+calculation reproducible</h3>
+<p>Develop the calendar and observation mapping before SQL. Give each
+interest period its own identifier. Show how the applicable fixing, day
+weight and principal balance were selected. The SQL should consume
+validated interval rows, rather than attempting to discover all contract
+rules inside an aggregate query.</p>
+<p>A five-day lookback is not implemented by retaining only the final
+five days of observations. The engine needs a mapping for the whole
+relevant period. Specify the applicable business-day convention and
+whether observation weights shift; support the approved interpretation
+with worked fixtures. A payment delay, an observation shift and a rate
+lookback are different transformations.</p>
+<p>The <a href="02_CALCULATION_AND_CASEBOOK.html">casebook</a> provides a
+historical index reconciliation and the constant-principal derivation.
+Extend it with amortisation, partial periods, publication corrections,
+fallback and a rounded-index tolerance. That produces a much stronger
+article than unbenchmarked claims about millions of loans.</p>
+<h3 id="part-3-connect-the-rate-to-the-business-economics">Part 3 —
+connect the rate to the business economics</h3>
+<p>First calculate expected monetary income and costs over a defined
+horizon. Then solve for the margin. Display funding, servicing, loss,
+capital hurdle and fees separately. An estimated PD is an input into
+that calculation; it is not the whole price.</p>
+<p>Develop funds transfer pricing as an internal allocation whose
+maturity and behavioural assumptions can be inspected. The BIS
+liquidity-transfer-pricing paper supports matching marginal funding
+costs to the product and recognising contingent liquidity use. It is
+practice guidance, not a Kenyan regulatory tariff. <a
+href="https://www.bis.org/publications/fsi-paper-10-liquidity-transfer-pricing-guide-better-practice">BIS/FSI
+liquidity transfer pricing paper</a>.</p>
+<p>The treasury paste’s strongest practical addition is the distinction
+between <strong>deposit beta</strong>—how deposit rates respond—and
+<strong>deposit retention</strong>—how balances persist. Low rate
+sensitivity does not prove long-lasting balances. Use separate estimates
+and stress both. Replication ladders can allocate funding value, but
+their internal credits do not create additional consolidated income.</p>
+<p>Maintain four outputs: earnings over a stated horizon; present-value
+sensitivity; dated cash availability; and capital/distribution capacity.
+Basel’s current IRRBB chapter treats earnings and economic value as
+complementary perspectives and addresses behavioural assumptions. The
+bank framework is a reference for bank analysis; its application to a
+particular Kenyan institution needs a separate jurisdictional mapping.
+<a
+href="https://www.bis.org/committees/bcbs/basel-framework/standard/srp/31/inforce/2026-01-01/published/2024-07-16">Basel
+SRP31, effective January 2026</a>.</p>
+<p>Finally, separate a risk-model refresh from a proposed price, an
+authorised contract change and an accounting event. Explain the change
+in business terms before supplying SHAP or another statistical
+explanation.</p>
+<h3 id="part-4-make-governance-demonstrable">Part 4 — make governance
+demonstrable</h3>
+<p>Use one workflow: prepare data, validate, calculate, review
+exceptions, approve the identified result, sign/package the approved
+version where required, submit through the verified channel, receive
+acknowledgement and reconcile. A corrected fixing creates a new
+calculation version with a traceable adjustment.</p>
+<p>Expand the vendor discussions into interface requirements: what data
+arrive, which service calculates, what is posted, who approves, how an
+error is retried, and what evidence survives. An encrypted payload or
+model explanation alone does not establish compliance. Confirm actual
+reporting specifications and vendor capabilities when implementation
+choices are made.</p>
+<p>Move tests into every delivery stage. A deterministic, reviewed
+pricing baseline should work before an advanced machine-learning model
+is introduced. Additional complexity should earn its place through
+measurable improvement, operational reliability and a useful
+decision.</p>
+<p>The <a href="05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.html">targeted software
+review</a> now verifies the products and workflow examples named in the
+treasury paste against primary vendor material. The <a
+href="06_WHAT_REMAINS_TO_BE_DEVELOPED.html">remaining-work register</a>
+distinguishes documented capabilities and completed teaching examples
+from the fuller methods and implementations still to develop.</p>
+<h2 id="how-the-business-analysis-context-improves-the-teaching">6. How
+the business-analysis context improves the teaching</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Destination</th>
+<th>Useful addition</th>
+<th>Boundary that preserves meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Making Business Credit Work, Part 2</td>
+<td>Put customer receipts, loan repayment and facility expiry on one
+dated schedule</td>
+<td>Commercial margin and cash available to repay are different
+quantities</td>
+</tr>
+<tr class="even">
+<td>Owner Earnings Project 1</td>
+<td>Link debt schedules to the owner’s minimum cash, maintenance
+spending and withdrawals</td>
+<td>Borrowing increases financing cash, not owner earnings; direct
+receipt/payment forecasts already contain working-capital timing</td>
+</tr>
+<tr class="odd">
+<td>Owner Earnings Project 2, Parts 7–9</td>
+<td>Add commitment/refinancing calendars and a bank
+earnings-to-capital-to-distribution bridge</td>
+<td>EVE is not share-market value; accounting earnings are not
+automatically distributable cash</td>
+</tr>
+<tr class="even">
+<td>Mwendo Pamoja</td>
+<td>Implement the existing cohort/waterfall design with curve, reset,
+collection and refund timing scenarios</td>
+<td>A refund receivable reaches available funds only when received under
+the transaction’s rules; internal FTP is not an SPV payment</td>
+</tr>
+<tr class="odd">
+<td>Underwrite to Collect and its whitepaper</td>
+<td>Show how rate stress changes affordability, utilisation, collection
+timing, recovery value and lender action</td>
+<td>Better prediction does not by itself establish the causal benefit of
+a collection intervention</td>
+</tr>
+<tr class="even">
+<td>SokoIntel financial analytics workbench</td>
+<td>Reuse a quantity dictionary, dated cash-flow schema and reconciled
+calculation outputs</td>
+<td>A shared interface can present different sector models without
+forcing one universal valuation formula</td>
+</tr>
+<tr class="odd">
+<td>IFRS 17 material</td>
+<td>Connect insurer claims, investment cash, reinsurance receipts and
+remittance restrictions to dates</td>
+<td>Insurer accounting, lender receivables, SPV debt and parent
+distributions belong to different records</td>
+</tr>
+<tr class="even">
+<td>Bayesian relativities and credit research</td>
+<td>Supply estimated frequency, severity, behaviour and uncertainty
+where supported by data</td>
+<td>Reuse existing derivations; pricing, discounting and legal cash
+allocation remain separate calculations</td>
+</tr>
+</tbody>
+</table>
+<p>The research contribution can therefore be framed as a testable
+question: <strong>Does adding behavioural and funding information
+improve cash-flow forecasts and decisions beyond a
+benchmark-plus-credit-score approach?</strong> Suitable comparisons
+include payment-timing errors, margin adequacy, calibration by vintage
+and cash-shortfall prediction. Mortgage datasets can support loan age,
+prepayment, delinquency and recovery studies; they do not establish
+Kenyan deposit behaviour, MSME business cash flows or local hedge
+availability.</p>
+<h2 id="what-belongs-in-the-core-and-what-goes-further">7. What belongs
+in the core, and what goes further</h2>
+<p><strong>Core revision:</strong> benchmark and contract conventions;
+money-to-margin pricing; curve purposes; matched funding; deposit and
+loan behaviour; NII/EVE/liquidity separation; accounting events;
+approvals and reconciliation.</p>
+<p><strong>Companion laboratories:</strong> deposit replication,
+scenario cash flows, hedge economics and collateral; borrower order/debt
+calendar; SPV cash waterfall; bank and insurer distributions. These make
+the existing ideas usable without overloading the introductory
+narrative.</p>
+<p><strong>Advanced research:</strong> option-adjusted spreads,
+counterparty valuation, counterparty capital, modelled dependence and
+advanced neural architectures. Preserve these as separate modules with
+their own data, assumptions and validation requirements. FRTB, SA-CVA
+and SA-CCR should not be presented as one interchangeable capital
+calculation. A local derivative strategy requires evidence of
+instruments, prices, documentation and operational ability before any
+deployment claim.</p>
+<h2 id="recommended-next-editorial-step">8. Recommended next editorial
+step</h2>
+<p>Keep the four core articles, expand their worked cases, and add
+companion laboratories as needed. Use the <a
+href="03_REVISION_BLUEPRINT_AND_INSERTS.html">revision blueprint and
+proposed paragraphs</a> to revise each part. Use the <a
+href="02_CALCULATION_AND_CASEBOOK.html">checked casebook</a> for numerical
+teaching material.</p>
+<p>This review is a development package. It does not silently rewrite
+the canonical articles, retire unique derivations, fit empirical models
+or claim that a treasury platform has been built. The immediate gain is
+a precise route from the useful material to publishable explanations and
+testable implementation work.</p>
+</body>
+</html>

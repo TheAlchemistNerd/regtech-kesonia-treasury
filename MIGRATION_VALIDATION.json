@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-26",
+  "checks": [
+    {
+      "name": "KESONIA illustrative arithmetic",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "matched_expected": true,
+      "stdout": "{\n  \"status\": \"All assertions passed; illustrative arithmetic only\",\n  \"historical_benchmark\": {\n    \"factor\": \"0.00077768219178082191780821917808219\",\n    \"index_factor\": \"0.0007776821424487214850541661783\",\n    \"benchmark_interest\": \"777.68219178082191780821917808219\",\n    \"index_interest\": \"777.68214244872148505416617830000\",\n    \"difference_KES\": \"-0.00004933210043275405299978219\",\n    \"hypothetical_spread_interest\": \"246.57534246575342465753424657534\",\n    \"hypothetical_total_interest\": \"1024.2575342465753424657534246575\"\n  },\n  \"curve\": {\n    \"discount_factors\": [\n      \"0.97087378640776699029126213592233\",\n      \"0.93351070036640294989381315783332\",\n      \"0.88899635867091488393263541192535\"\n    ],\n    \"forward_1_to_2\": \"0.0400242718446601941747572815534\",\n    \"forward_2_to_3\": \"0.0500725804569534878293542439730\",\n    \"par_coupon_3y\": \"0.039738097835849623212162850675709\"\n  },\n  \"deposit_ladder\": {\n    \"initial_yield\": \"0.03975\",\n    \"month_one_yield\": \"0.041500000000000000000000000000000\",\n    \"annualised_nii_change_by_beta\": {\n      \"0.25\": \"-3250000.0000000000000000000000000\",\n      \"0.75\": \"-13250000.000000000000000000000000\"\n    }\n  },\n  \"pricing_KES_thousands\": {\n    \"margin_decimal\": \"0.05\",\n    \"interest\": \"140.00\",\n    \"income_with_fees\": \"145.00\",\n    \"return_before_capital_hurdle\": \"10.00\",\n    \"economic_surplus_after_hurdle\": \"0.00\"\n  },\n  \"bank_KES_millions\": {\n    \"initial_nii\": \"60.500\",\n    \"nii_change_by_beta\": {\n      \"0.25\": \"-0.5000\",\n      \"0.75\": \"-9.5000\"\n    },\n    \"eve_change_by_deposit_duration\": {\n      \"2\": \"-13.0000\",\n      \"0.5\": \"-40.0000\"\n    },\n    \"cash_after_stress\": \"-35\",\n    \"additional_funding_to_zero\": \"35\"\n  },\n  \"cva_currency_units\": {\n    \"base\": \"72150.000000\",\n    \"stress\": \"960000.00000\",\n    \"change\": \"887850.000000\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "KESONIA local rendering",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "matched_expected": true,
+      "stdout": "Rendered 8 local review documents\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "File preservation, structural checks, illustrative arithmetic and local HTML rendering; no empirical validation or full PDF rebuild."
+}

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Straight-through processing and ALM/FTP software</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="review.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#straight-through-processing-and-almftp-software"
+id="toc-straight-through-processing-and-almftp-software">Straight-through
+processing and ALM/FTP software</a>
+<ul>
+<li><a href="#direct-answer" id="toc-direct-answer">1. Direct
+answer</a></li>
+<li><a href="#four-responsibilities-to-distinguish"
+id="toc-four-responsibilities-to-distinguish">2. Four responsibilities
+to distinguish</a></li>
+<li><a href="#what-the-vendor-evidence-supports"
+id="toc-what-the-vendor-evidence-supports">3. What the vendor evidence
+supports</a></li>
+<li><a href="#what-to-borrow-from-the-stp-passage"
+id="toc-what-to-borrow-from-the-stp-passage">4. What to borrow from the
+STP passage</a></li>
+<li><a href="#a-reusable-integration-record"
+id="toc-a-reusable-integration-record">5. A reusable integration
+record</a></li>
+<li><a href="#how-this-improves-each-project"
+id="toc-how-this-improves-each-project">6. How this improves each
+project</a></li>
+<li><a href="#a-focused-proof-of-concept"
+id="toc-a-focused-proof-of-concept">7. A focused proof of
+concept</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="straight-through-processing-and-almftp-software">Straight-through
+processing and ALM/FTP software</h1>
+<p><strong>25 September 2026 · Targeted check of the treasury paste and
+KESONIA vendor discussions</strong></p>
+<h2 id="direct-answer">1. Direct answer</h2>
+<p><strong>The relevant passage has now been checked against primary
+vendor material.</strong> The treasury paste discusses automated ALM
+analysis and hedge workflows around physical lines 20–23, then revisits
+behavioural adjustment and portfolio management around lines 27–36. It
+names <strong>Abrigo</strong>, <strong>MORS Software</strong>,
+<strong>Bloomberg</strong> and <strong>Reuters</strong> in this context.
+Oracle, SAP and Microsoft come from the KESONIA articles and the broader
+integration discussion; they are assessed below in their actual product
+roles.</p>
+<p>The useful idea is to connect <strong>analysis → decision → execution
+→ financial records → refreshed analysis</strong>. There is concrete
+vendor evidence for parts of this chain. The current review is
+documentation-based: no licensed installation, API connection, execution
+venue, Kenyan product coverage or live trade has been tested.</p>
+<h2 id="four-responsibilities-to-distinguish">2. Four responsibilities
+to distinguish</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Responsibility</th>
+<th>Business question</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Asset-liability management, ALM</td>
+<td>How do rates, cash flows and customer behaviour affect the balance
+sheet?</td>
+<td>Cash projections, earnings and value sensitivities, funding gaps and
+scenarios</td>
+</tr>
+<tr class="even">
+<td>Funds transfer pricing, FTP</td>
+<td>How should internal funding cost and funding benefit be
+allocated?</td>
+<td>Transfer rates, charges/credits and product/business profitability
+attribution</td>
+</tr>
+<tr class="odd">
+<td>Treasury management and execution</td>
+<td>What transaction is authorised, and what happened to it?</td>
+<td>Proposal, limit check, order, execution, confirmation, collateral
+and settlement records</td>
+</tr>
+<tr class="even">
+<td>Accounting and reporting</td>
+<td>How is the business event recognised and reconciled?</td>
+<td>Subledger events, journals, positions, reports and
+acknowledgements</td>
+</tr>
+</tbody>
+</table>
+<p>STP is the <strong>connected processing of those events</strong>,
+reducing repeated entry and manual hand-offs. It can coexist with
+approvals and exceptions. ALM results do not require a trade in every
+case: management may change product terms, funding composition, limits
+or liquidity buffers instead.</p>
+<h2 id="what-the-vendor-evidence-supports">3. What the vendor evidence
+supports</h2>
+<p>The entries below are a capability map, not a vendor ranking.
+“Documented” means described in the cited vendor source, not
+independently proven in an implementation.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Product or service</th>
+<th>Documented capability</th>
+<th>Useful role in our material</th>
+<th>What remains to establish</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Abrigo ALM</strong></td>
+<td>Instrument cash-flow assumptions, static/dynamic forecasts,
+scenarios, liquidity and EVE reporting; connections to its other
+portfolio-risk tools</td>
+<td>Example of ALCO analysis and controlled scenario reporting</td>
+<td>The reviewed page does not establish a direct swap-execution or
+universal automatic recalibration workflow. <a
+href="https://www.abrigo.com/software/portfolio-risk-cecl/asset-liability/">Abrigo
+ALM</a></td>
+</tr>
+<tr class="even">
+<td><strong>MORS ALM</strong></td>
+<td>Deal-level balance-sheet input, cash-flow drill-down, scenario/NII
+analysis and an optional treasury-management component</td>
+<td>Example of linked bank balance-sheet analysis and treasury
+operations</td>
+<td>Actual modules, data refresh, model settings and instruments in the
+selected deployment. <a
+href="https://morssoftware.com/mors-solution/asset-liability-management/">MORS
+ALM</a></td>
+</tr>
+<tr class="odd">
+<td><strong>MORS FTP</strong></td>
+<td>Configurable internal transfer-pricing rules, ex-ante/ex-post
+analysis and grouping by maturity, currency, product and contingent
+exposure</td>
+<td>Develop the internal pricing and profitability section using
+explicit allocation rules</td>
+<td>The bank’s approved funding methodology and how allocations
+reconcile to external costs. <a
+href="https://morssoftware.com/modules/mors-funds-transfer-pricing/">MORS
+FTP</a></td>
+</tr>
+<tr class="even">
+<td><strong>MORS–Bloomberg workflow</strong></td>
+<td>Pre-deal limit checks; an approved soft-deal identifier; dealer
+entry in Bloomberg; returned confirmation matched to that
+identifier</td>
+<td>Concrete example of an approved deal moving across connected
+systems</td>
+<td>No inference of autonomous hedge selection or blanket KESONIA swap
+support. <a
+href="https://morssoftware.com/mors-enhances-tms-with-bloomberg-trade-workflow-automation/">MORS
+integration description, January 2025</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Bloomberg SEF</strong></td>
+<td>Execution facilities covering rates, credit and currency
+products</td>
+<td>Explain where an eligible trade can be executed</td>
+<td>Product/currency availability, participation, clearing and
+connectivity for the intended institution. <a
+href="https://professional.bloomberg.com/products/trading/electronic-markets/venues/swap-execution-facility/">Bloomberg
+facilities</a></td>
+</tr>
+<tr class="even">
+<td><strong>Tradeweb rates derivatives</strong></td>
+<td>IRS execution protocols and post-trade links including STP to
+MarkitWire and clearing-house connections</td>
+<td>A separately documented rates-execution example; it was added in
+this check, not named as a product in the paste</td>
+<td>Its published list reviewed here does not establish KES/KESONIA
+support. <a
+href="https://www.tradeweb.com/our-markets/institutional/rates/rates-derivatives/">Tradeweb
+rates derivatives</a></td>
+</tr>
+<tr class="odd">
+<td><strong>LSEG Workspace with FXall</strong></td>
+<td>Integrated FX data, analytics and multidealer execution
+workflows</td>
+<td>Replace the broad “Reuters” label with an identified service where
+discussing FX</td>
+<td>FX execution capability does not itself establish an
+interest-rate-swap route. <a
+href="https://www.lseg.com/en/fx/updates/fxall-workspace-integration">LSEG
+Workspace/FXall</a></td>
+</tr>
+<tr class="even">
+<td><strong>Oracle ALM and FTP cash-flow engine</strong></td>
+<td>Cash-flow/repricing logic, rate conversion, option-cost and Monte
+Carlo calculations, and detailed audit output</td>
+<td>Strong technical reference for a common cash-flow engine serving
+different analytical purposes</td>
+<td>Match the documentation to the selected product release and
+deployment. The reviewed guide is the 8.1.2 documentation set. <a
+href="https://docs.oracle.com/en/industries/financial-services/ofs-analytical-applications/analytical-applications-infrastructure/812/cferg/overview6.html">Oracle
+cash-flow guide</a></td>
+</tr>
+<tr class="odd">
+<td><strong>SAP Treasury and Risk Management</strong></td>
+<td>Deal capture, valuation, risk/return analysis and transfer to
+financial accounting; documented APIs</td>
+<td>Treasury transaction and accounting integration, distinct from a
+general ERP label</td>
+<td>Selected release, instrument coverage, configuration and banking
+ALM/FTP fit. The reviewed help page identifies version 2608. <a
+href="https://help.sap.com/docs/SAP_S4HANA_CLOUD/4574d8b965404a45a11e19a8d0fbe96f/cf31a5fa099043919c7076059964b24a.html">SAP
+TRM</a></td>
+</tr>
+<tr class="even">
+<td><strong>SAP Financial Products Subledger</strong></td>
+<td>Accounting portfolio structures and import of external risk/hedge
+portfolio information</td>
+<td>Subledger destination for appropriately defined risk and transaction
+information</td>
+<td>It should not be described as the whole bank ALM/FTP or execution
+system. <a
+href="https://help.sap.com/doc/4234275c8b3b44a8b5503eec0c1c0ad8/2306.005/en-US/Finanzprodukt_Nebenbuch_EN.pdf">SAP
+FPSL documentation</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Dynamics 365 Finance</strong></td>
+<td>Cash forecasting connected to ledger, receivables, payables and
+other transactions; import of external cash forecasts</td>
+<td>Business operating-cash and accounting integration; useful for the
+MSME and workbench cases</td>
+<td>The reviewed pages do not establish a native bank IRRBB/FTP or
+swap-execution engine. <a
+href="https://learn.microsoft.com/en-us/dynamics365/finance/cash-bank-management/cash-flow-forecasting">Cash
+forecasting</a>, <a
+href="https://learn.microsoft.com/en-us/dynamics365/finance/finance-insights/external-data-in-cash-flow">external
+forecast data</a></td>
+</tr>
+</tbody>
+</table>
+<p>Microsoft also documents OData and batch/data-management integration
+patterns. These are possible interfaces, not a ready-made treasury
+model. Choose the pattern according to the entities, transaction
+semantics, volume and recovery requirements. <a
+href="https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/integration-overview">Microsoft
+integration overview</a>.</p>
+<h2 id="what-to-borrow-from-the-stp-passage">4. What to borrow from the
+STP passage</h2>
+<p>The paste’s four-stage narrative is valuable: ingest positions,
+analyse exposure, evaluate a hedge, and connect the approved response to
+downstream processing. Develop it using a transaction whose identity
+survives each hand-off.</p>
+<p>For the proposed series architecture:</p>
+<ol type="1">
+<li><strong>Position and data snapshot.</strong> Lock contract, balance,
+fixing, curve and behavioural-model versions for the run.</li>
+<li><strong>ALM scenario.</strong> Produce NII, EVE and liquidity
+outputs with their separate horizons and assumptions.</li>
+<li><strong>Candidate response.</strong> Compare funding changes,
+product changes, buffers and eligible hedges. Record costs, residual
+risk and constraints.</li>
+<li><strong>Pre-deal review.</strong> Check authorised instruments,
+counterparty capacity, limits, collateral cash and accounting
+implications. Identify the approved proposal precisely.</li>
+<li><strong>Execution.</strong> Send or enter an authorised order
+through the selected service. Preserve order and proposal
+identifiers.</li>
+<li><strong>Confirmation and booking.</strong> Match actual terms to the
+proposal; record partial fills, cancellations and amendments
+explicitly.</li>
+<li><strong>Clearing or bilateral processing.</strong> Apply the actual
+transaction’s arrangement; neither clearing nor a particular collateral
+agreement should be presumed.</li>
+<li><strong>Settlement and accounting.</strong> Record payments,
+positions, valuation and journals according to their distinct
+rules.</li>
+<li><strong>Reconciliation and refreshed risk.</strong> Confirm the
+resulting positions and cash, then rerun relevant exposures. A
+successful execution is not proof that every risk has disappeared.</li>
+</ol>
+<p>This is our proposed target workflow. The vendor matrix establishes
+examples of supporting capabilities; it does not establish that one
+reviewed product supplies every step out of the box.</p>
+<h2 id="a-reusable-integration-record">5. A reusable integration
+record</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field group</th>
+<th>Suggested fields</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identity</td>
+<td>Entity ID, contract/portfolio ID, scenario run ID, proposal ID,
+approval ID, order ID, trade ID, external confirmation ID</td>
+</tr>
+<tr class="even">
+<td>Economic terms</td>
+<td>Currency, instrument/index, direction, notional, start/end dates,
+reset/payment conventions, quoted/executed price</td>
+</tr>
+<tr class="odd">
+<td>Evidence</td>
+<td>Source versions, curve/model versions, calculation hash, approval
+timestamp, authorised user/role</td>
+</tr>
+<tr class="even">
+<td>Lifecycle</td>
+<td>Proposed, approved, sent, acknowledged, executed/partially executed,
+confirmed, booked, settled, reconciled, exception</td>
+</tr>
+<tr class="odd">
+<td>Financial link</td>
+<td>Cash-flow IDs, collateral event IDs, subledger/journal IDs,
+reporting batch ID</td>
+</tr>
+<tr class="even">
+<td>Recovery</td>
+<td>Idempotency key, correlation ID, retry status, original-event
+reference, cancellation/amendment link</td>
+</tr>
+</tbody>
+</table>
+<p>These are design fields, not a claim that all vendors expose this
+schema. Map them to the chosen interfaces. If a message is repeated, the
+workflow must recognise the same business event rather than create
+another trade or journal. If acknowledgement is missing, query/reconcile
+status before assuming that execution failed.</p>
+<h2 id="how-this-improves-each-project">6. How this improves each
+project</h2>
+<ul>
+<li><strong>KESONIA Part 1:</strong> add the responsibility map and
+distinguish analytics, transactions and accounting in the
+architecture.</li>
+<li><strong>KESONIA Part 2:</strong> present accrual-to-ledger STP as a
+replayable calculation and posting workflow, with independent
+verification and adjustments.</li>
+<li><strong>KESONIA Part 3:</strong> turn risk outputs into documented
+response proposals, showing expected benefit, cost and residual
+exposure.</li>
+<li><strong>KESONIA Part 4:</strong> add the vendor matrix, transaction
+identifiers, exception handling and end-to-end reconciliation case.
+Retain “RegTech sweep” as the reporting workflow, separate from order
+routing and settlement.</li>
+<li><strong>Mwendo:</strong> reuse the event chain for collections,
+approved refunds, received cash, reserve changes and waterfall
+allocation. The SPV does not need a bank’s complete ALM or trading stack
+to benefit from those controls.</li>
+<li><strong>SokoIntel:</strong> develop a scenario and decision
+workbench with traceable calculations and explicit export/integration
+contracts. Live trading is a separate product capability and authority
+boundary.</li>
+<li><strong>Business Credit and Owner Earnings:</strong> use
+operating-data integration to connect receipts, commitments, loan
+payments and cash forecasts. These projects gain more from reliable
+dates and reconciliations than from adding a derivatives platform
+description.</li>
+</ul>
+<h2 id="a-focused-proof-of-concept">7. A focused proof of concept</h2>
+<p>Start with a read-only scenario case and a simulated transaction
+lifecycle. The demonstration should ingest a small contract panel,
+generate cash flows, calculate FTP and ALM outputs, record a proposed
+response, and process a simulated confirmation into a position and
+accounting-event record. Then reconcile the result and rerun the
+exposure.</p>
+<p>Test rejected proposals, changed prices, duplicate confirmations,
+partial fills, missing acknowledgements, late fixing corrections and
+settlement failure. Measure processing completion, exception age, manual
+touches, amount/position mismatches and time to reconciliation. Those
+measures make STP operationally meaningful.</p>
+<p>Only a later implementation stage selects licensed products and
+proves instrument eligibility, connectivity and controls in an approved
+environment. <strong>No vendor contact, booking, subscription or
+external transaction was performed for this review.</strong></p>
+</body>
+</html>

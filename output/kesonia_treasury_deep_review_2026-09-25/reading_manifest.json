@@ -1,0 +1,152 @@
+{
+  "date": "2026-09-25",
+  "sources": [
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "lines": 56,
+      "characters": 5520,
+      "words": 697,
+      "sha256": "3268a23322c2a4ab320e35d0440e3efa2c91b79cafb7ccad918ea6b96f4f6952",
+      "coverage": "Full sequential read in this task"
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\cbk_kesonia_k_framework.md",
+      "lines": 20,
+      "characters": 2318,
+      "words": 364,
+      "sha256": "9c300c59adc6a564c471315b4035e8dae13dc7a64886b127289f3b019fd288df",
+      "coverage": "Full sequential read in this task"
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\KESONIA_COMPOUNDING_TERM_STRUCTURE_AND_FUNDING_CURVE_NOTE.md",
+      "lines": 9,
+      "characters": 904,
+      "words": 130,
+      "sha256": "1318a5e0a483a8c2c10e4e0b3dd3878bad9df9421cb7e482d5d70f8641bae587",
+      "coverage": "Full sequential read in this task"
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "lines": 421,
+      "characters": 26497,
+      "words": 3294,
+      "sha256": "1a918d2e74993209c958198106af31b4b1a5fc4079c275009bd52140f5536ac4",
+      "coverage": "Full sequential read in this task"
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "lines": 557,
+      "characters": 23334,
+      "words": 2765,
+      "sha256": "b1af86504e332333e08fba8cfc75ce2ac37c99197390a7f743ef0aeb2298a32d",
+      "coverage": "Full sequential read in this task"
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "lines": 520,
+      "characters": 25601,
+      "words": 3367,
+      "sha256": "efa7a219e681475efbf7c7eabe47cc77b12372362d0efb82491bcd38fab0d999",
+      "coverage": "Full sequential read in this task"
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "lines": 699,
+      "characters": 33773,
+      "words": 4295,
+      "sha256": "e2eb8de37e650549d0642970af73335a1ed21a80b82947c29bd9f8fbf6bdab36",
+      "coverage": "Full sequential read in this task"
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\RegTech_Gap_Analysis_Report.md",
+      "lines": 133,
+      "characters": 14842,
+      "words": 2060,
+      "sha256": "6c98e18a7ea7c46add237b3e8e420b93586ef5879f42c6f9ff408f108043c1d4",
+      "coverage": "Full sequential read in this task"
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\RegTech_KESONIA_Enhancement_Report.md",
+      "lines": 76,
+      "characters": 6088,
+      "words": 863,
+      "sha256": "e0d86e310b2b74d7e957cee4f482e5382b4ea2b95febf48ac83c0604bf4660d2",
+      "coverage": "Full sequential read in this task"
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\pricing_treasury_cross_project_review_2026-09-23\\source_02_original.txt",
+      "lines": 180,
+      "characters": 169469,
+      "words": 23798,
+      "sha256": "b0911816334781e63755c0a85cd33d86e7b3f49591e7f71554c3bcc520fb7359",
+      "coverage": "Full sequential read in this task"
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\controlled-specifications\\Part_5_KESONIA_Pricing_and_Capital_Orchestration.md",
+      "lines": 556,
+      "characters": 25698,
+      "words": 3584,
+      "sha256": "17857553d316b4609c43619c699ec17d0e1f64b4132a13fa23ed43cf0954254a",
+      "coverage": "Full sequential read in this task"
+    }
+  ],
+  "treasury_character_ranges": [
+    [
+      0,
+      23000
+    ],
+    [
+      23000,
+      46000
+    ],
+    [
+      46000,
+      69000
+    ],
+    [
+      69000,
+      92000
+    ],
+    [
+      92000,
+      115000
+    ],
+    [
+      115000,
+      138000
+    ],
+    [
+      138000,
+      161000
+    ],
+    [
+      161000,
+      169469
+    ]
+  ],
+  "supplementary_reads": [
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\pricing_treasury_cross_project_review_2026-09-23\\02_WORKING_FORMULATIONS_AND_EXAMPLES.md",
+      "sha256": "90cfacc7800959cab137253720dcac80d7c61d2aeae542bf016ee6475484c21f",
+      "lines": 210,
+      "coverage": "Full sequential reread",
+      "inclusive_line_ranges": null
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\controlled-specifications\\CREDIT_RISK_MODEL_AND_LOSS_ARCHITECTURE_SPECIFICATION.md",
+      "sha256": "28012027525387607926f40c394c37447cf5b633804cb4da80c041caca750c3c",
+      "lines": 268,
+      "coverage": "Selected passages inspected; not a full reread",
+      "inclusive_line_ranges": [
+        [
+          98,
+          210
+        ],
+        [
+          229,
+          254
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "date": "2026-09-25",
+  "rendered": [
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\00_READ_ME.html",
+      "words_in_markdown": 416,
+      "pandoc_warnings": ""
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\01_DETAILED_MATERIAL_REVIEW.html",
+      "words_in_markdown": 2411,
+      "pandoc_warnings": ""
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\02_CALCULATION_AND_CASEBOOK.html",
+      "words_in_markdown": 2274,
+      "pandoc_warnings": ""
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\03_REVISION_BLUEPRINT_AND_INSERTS.html",
+      "words_in_markdown": 2393,
+      "pandoc_warnings": ""
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\04_READING_MAP_AND_REFERENCES.html",
+      "words_in_markdown": 1282,
+      "pandoc_warnings": ""
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.html",
+      "words_in_markdown": 1611,
+      "pandoc_warnings": ""
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\06_WHAT_REMAINS_TO_BE_DEVELOPED.html",
+      "words_in_markdown": 1920,
+      "pandoc_warnings": ""
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.html",
+      "words_in_markdown": 1140,
+      "pandoc_warnings": ""
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\pricing_treasury_cross_project_review_2026-09-23\\00_READ_ME.html",
+      "words_in_markdown": 526,
+      "pandoc_warnings": ""
+    }
+  ],
+  "project_copies": [
+    "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\TREASURY_CURVES_AND_BUSINESS_ANALYSIS_DETAILED_REVIEW_2026-09-25.md",
+    "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\STP_AND_ALM_FTP_SOFTWARE_REVIEW_2026-09-25.md",
+    "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\TREASURY_REMAINING_WORK_REGISTER_2026-09-25.md",
+    "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\FRTB_SCOPE_AND_DEVELOPMENT_NOTE_2026-09-25.md"
+  ],
+  "local_links_checked": 67,
+  "missing_local_links": [],
+  "source_preservation": [
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\cbk_kesonia_k_framework.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\KESONIA_COMPOUNDING_TERM_STRUCTURE_AND_FUNDING_CURVE_NOTE.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\RegTech_Gap_Analysis_Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\RegTech_KESONIA_Enhancement_Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\pricing_treasury_cross_project_review_2026-09-23\\source_02_original.txt",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\controlled-specifications\\Part_5_KESONIA_Pricing_and_Capital_Orchestration.md",
+      "unchanged": true
+    }
+  ],
+  "casebook_mathml_elements": 53,
+  "calculation_script_exit_code": 0,
+  "verification_scope": "Arithmetic, rendering, local link existence and source preservation; not empirical model validation or visual browser inspection.",
+  "passed": true
+}

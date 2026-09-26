@@ -1,0 +1,17 @@
+commit 9ba498d037e1604751635a103bbd523eb2851071
+Author:     TheAlchemistNerd <nevillemaloba@yahoo.com>
+AuthorDate: Thu Aug 27 18:57:03 2026 +0300
+Commit:     TheAlchemistNerd <nevillemaloba@yahoo.com>
+CommitDate: Thu Aug 27 18:57:03 2026 +0300
+
+    docs(research): organize KESONIA and modelling foundations
+    
+    Move durable Bayesian, neural, macro-data, and launch research out of the draft tree; add the four-part KESONIA and RegTech corpus, data-architecture analysis, and industry engagement material. Preserve substantive modelling notes while leaving transient outlines in local history.
+
+A	docs/research/kesonia/Part1_KESONIA_Reform_and_Enterprise_Architecture.md
+A	docs/research/kesonia/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md
+A	docs/research/kesonia/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md
+A	docs/research/kesonia/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md
+A	docs/research/kesonia/RegTech_Gap_Analysis_Report.md
+A	docs/research/kesonia/RegTech_KESONIA_Enhancement_Report.md
+A	docs/research/kesonia/cbk_kesonia_k_framework.md

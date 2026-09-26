@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>FRTB: scope, useful contribution and development
+requirements</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="review.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a
+href="#frtb-scope-useful-contribution-and-development-requirements"
+id="toc-frtb-scope-useful-contribution-and-development-requirements">FRTB:
+scope, useful contribution and development requirements</a>
+<ul>
+<li><a href="#what-our-earlier-treatment-had-not-completed"
+id="toc-what-our-earlier-treatment-had-not-completed">1. What our
+earlier treatment had not completed</a></li>
+<li><a href="#start-with-the-regulatory-perimeter"
+id="toc-start-with-the-regulatory-perimeter">2. Start with the
+regulatory perimeter</a></li>
+<li><a href="#two-approaches-need-separate-explanations"
+id="toc-two-approaches-need-separate-explanations">3. Two approaches
+need separate explanations</a>
+<ul>
+<li><a href="#standardised-approach"
+id="toc-standardised-approach">Standardised approach</a></li>
+<li><a href="#internal-models-approach"
+id="toc-internal-models-approach">Internal models approach</a></li>
+</ul></li>
+<li><a href="#data-and-desk-validation-are-substantive-work"
+id="toc-data-and-desk-validation-are-substantive-work">4. Data and desk
+validation are substantive work</a></li>
+<li><a href="#keep-the-connected-outputs-distinguishable"
+id="toc-keep-the-connected-outputs-distinguishable">5. Keep the
+connected outputs distinguishable</a></li>
+<li><a href="#where-this-belongs-across-the-documents"
+id="toc-where-this-belongs-across-the-documents">6. Where this belongs
+across the documents</a></li>
+<li><a href="#completion-criteria-for-the-future-frtb-module"
+id="toc-completion-criteria-for-the-future-frtb-module">7. Completion
+criteria for the future FRTB module</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="frtb-scope-useful-contribution-and-development-requirements">FRTB:
+scope, useful contribution and development requirements</h1>
+<p><strong>25 September 2026 · Companion to the KESONIA and treasury
+review</strong></p>
+<h2 id="what-our-earlier-treatment-had-not-completed">1. What our
+earlier treatment had not completed</h2>
+<p>The treasury paste explicitly discusses the Fundamental Review of the
+Trading Book (FRTB), especially around physical lines 78–79. Our earlier
+review routed it to advanced market-risk work. That was a placement
+decision, not a developed treatment. This note supplies the missing
+conceptual structure and a concrete development specification. A
+numerical FRTB capital engine, desk validation exercise and Kenyan
+implementation assessment remain outstanding.</p>
+<p>FRTB matters to the wider programme because a bank can originate
+credit, fund it, hedge interest-rate exposure, trade securities and hold
+positions issued by an SPV. These activities need connected information,
+while their regulatory treatments depend on the activity, instrument,
+book, entity and applicable rules. The useful question is: <strong>what
+happens to risk, cash, accounting and capital when a proposed treasury
+action becomes an actual position?</strong></p>
+<h2 id="start-with-the-regulatory-perimeter">2. Start with the
+regulatory perimeter</h2>
+<p>The Basel banking-book/trading-book boundary has explicit assignment
+and transfer rules. An internal transfer of general interest-rate risk
+from the banking book has conditions, including documentation and a
+dedicated approved desk; the banking-book leg remains in IRRBB
+measurement. We therefore need a book-assignment and
+internal-risk-transfer record, rather than inferring prudential
+classification solely from an accounting label or the fact that Treasury
+owns the position. <a
+href="https://www.bis.org/committees/bcbs/basel-framework/standard/rbc/25/inforce/2023-01-01/published/2020-03-27">Basel
+RBC25, especially §§25.25–25.27</a>.</p>
+<p>For our research design, record legal entity, instrument, purpose,
+regulatory book, accounting category, desk, internal transfer and
+external hedge identifiers separately. A Mwendo investor position also
+needs its own holder-specific assessment. The SPV waterfall alone cannot
+determine a bank investor’s capital treatment.</p>
+<h2 id="two-approaches-need-separate-explanations">3. Two approaches
+need separate explanations</h2>
+<h3 id="standardised-approach">Standardised approach</h3>
+<p>The standardised capital requirement combines the sensitivities-based
+method, default-risk charge and residual-risk add-on:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mrow><mi>S</mi><mi>A</mi></mrow></msub><mo>=</mo><msub><mi>K</mi><mrow><mi>S</mi><mi>b</mi><mi>M</mi></mrow></msub><mo>+</mo><msub><mi>K</mi><mrow><mi>D</mi><mi>R</mi><mi>C</mi></mrow></msub><mo>+</mo><msub><mi>K</mi><mrow><mi>R</mi><mi>R</mi><mi>A</mi><mi>O</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">K_{SA}=K_{SbM}+K_{DRC}+K_{RRAO}.</annotation></semantics></math></p>
+<p>The sensitivities-based calculation uses delta, vega and curvature
+with prescribed aggregation rules. This is a separate calculation from
+an internal expected-shortfall model. <a
+href="https://www.bis.org/committees/bcbs/basel-framework/standard/mar/20/inforce/2023-01-01/published/2020-03-27">Basel
+MAR20, §§20.1–20.4</a>.</p>
+<p><strong>Proposed laboratory:</strong> begin with a small synthetic
+portfolio, retain instrument valuations and sensitivities, map each
+applicable risk factor, and reconcile the components to the total.
+Explain each change in capital after a hedge. Do not assume every
+component is nonzero for every portfolio. Publish the framework version,
+input classifications and independent check alongside the result.</p>
+<h3 id="internal-models-approach">Internal models approach</h3>
+<p>Basel’s internal-model approach uses one-sided 97.5% expected
+shortfall, with stressed calibration and risk-factor liquidity horizons
+of 10, 20, 40, 60 and 120 days. Non-modellable risk factors require
+separate treatment. A simple historical expected-shortfall statistic
+therefore does not reproduce the complete capital requirement. <a
+href="https://www.bis.org/committees/bcbs/basel-framework/standard/mar/33/inforce/2023-01-01/published/2020-06-05">Basel
+MAR33, especially §§33.3–33.5, 33.12 and 33.16</a>.</p>
+<p>For teaching, a general definition for an integrable loss variable
+is:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><msub><mi>S</mi><mi>α</mi></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow></mfrac><msubsup><mo>∫</mo><mi>α</mi><mn>1</mn></msubsup><mi>V</mi><mi>a</mi><msub><mi>R</mi><mi>u</mi></msub><mspace width="0.167em"></mspace><mi>d</mi><mi>u</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">ES_\alpha=\frac{1}{1-\alpha}\int_\alpha^1 VaR_u\,du.</annotation></semantics></math></p>
+<p>This identifies the tail-average idea without treating it as the full
+regulatory algorithm. Our proposed extension should distinguish the
+illustrative distribution calculation, the market-risk model and the
+regulatory aggregation. Each needs its own validation evidence.</p>
+<h2 id="data-and-desk-validation-are-substantive-work">4. Data and desk
+validation are substantive work</h2>
+<p><strong>Risk-factor modellability.</strong> Market observations need
+to satisfy the framework’s evidence requirements. The presence of a long
+spreadsheet or a smooth fitted curve is insufficient evidence by itself.
+<a
+href="https://www.bis.org/committees/bcbs/basel-framework/standard/mar/31/inforce/2023-01-01/published/2020-03-27">Basel
+MAR31, risk-factor eligibility and modelling requirements</a>.</p>
+<p><strong>P&amp;L attribution and backtesting.</strong> P&amp;L
+attribution compares risk-theoretical P&amp;L with hypothetical P&amp;L.
+Backtesting is a distinct exercise using VaR and the specified P&amp;L
+series. VaR therefore still has a validation role; the use of expected
+shortfall does not make it disappear from the framework. <a
+href="https://www.bis.org/committees/bcbs/basel-framework/standard/mar/32/inforce/2023-01-01/published/2020-03-27">Basel
+MAR32, §§32.18–32.26</a>.</p>
+<p><strong>Our proposed evidence set:</strong> daily positions,
+market-data snapshots, curve versions, valuation/model versions,
+risk-factor observations, independently constructed P&amp;L series,
+missing-data explanations, test dates and resulting decisions. Before
+coding eligibility decisions, extract the applicable assessment windows,
+thresholds and transition rules into a versioned specification. A single
+unusual trading day should not be translated into an improvised approval
+rule.</p>
+<p>For KESONIA, the research question becomes concrete: which proposed
+KES risk factors have usable observations, how are proxies justified,
+and what changes when quotations are sparse? This review has not
+established that an executable KES swap market or a sufficient
+modellability history exists for the intended portfolio.</p>
+<h2 id="keep-the-connected-outputs-distinguishable">5. Keep the
+connected outputs distinguishable</h2>
+<p>The following is our proposed workbench organisation, not a claim
+that all modules are implemented:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Module</th>
+<th>Question to answer</th>
+<th>Required connection</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Banking-book ALM/IRRBB</td>
+<td>How do rate and behavioural changes affect earnings and economic
+value?</td>
+<td>Loan/deposit cash flows and internal risk transfers</td>
+</tr>
+<tr class="even">
+<td>FRTB market risk</td>
+<td>What market-risk capital treatment applies to the scoped
+positions?</td>
+<td>Book/desk assignment, valuations, risk factors and validation</td>
+</tr>
+<tr class="odd">
+<td>Counterparty exposure/SA-CCR</td>
+<td>What derivative counterparty exposure is recognised under the
+selected method?</td>
+<td>Netting set, collateral terms and position details</td>
+</tr>
+<tr class="even">
+<td>CVA valuation and CVA capital</td>
+<td>How does counterparty credit affect value, and what separate capital
+calculation applies?</td>
+<td>Exposure paths, spreads, hedges and rule version</td>
+</tr>
+<tr class="odd">
+<td>Liquidity and funding</td>
+<td>Can the institution fund settlements, margin and customer
+withdrawals?</td>
+<td>Dated cash, collateral and funding sources</td>
+</tr>
+<tr class="even">
+<td>Accounting</td>
+<td>What is recognised, where, and when?</td>
+<td>Trade events, measurement policy and hedge designation</td>
+</tr>
+</tbody>
+</table>
+<p>A common trade identifier should join these outputs. A common number
+should not replace them. For example, a hedge proposal should produce
+separate changes in earnings sensitivity, economic-value sensitivity,
+cash needs, accounting results and applicable capital.</p>
+<h2 id="where-this-belongs-across-the-documents">6. Where this belongs
+across the documents</h2>
+<ul>
+<li><strong>KESONIA Part 1:</strong> add a compact map of banking-book,
+trading-book, accounting and legal-entity scope.</li>
+<li><strong>Part 3:</strong> connect instrument sensitivities and
+behavioural cash flows to the appropriate risk calculation; point to the
+specialist laboratory for regulatory detail.</li>
+<li><strong>Part 4:</strong> include market-data lineage, desk/model
+status and exception handling in the operating model. Verify vendor
+support at module and version level.</li>
+<li><strong>SokoIntel workbench:</strong> propose separate valuation,
+scenario, exposure, capital and reporting services linked by position
+and run identifiers. This is an interface proposal, not a fresh audit of
+its entire architecture.</li>
+<li><strong>Mwendo/Underwrite to Collect:</strong> explain investor and
+hedge-counterparty interfaces where relevant. Keep borrower underwriting
+and collection research centred on its own observable outcomes.</li>
+</ul>
+<h2 id="completion-criteria-for-the-future-frtb-module">7. Completion
+criteria for the future FRTB module</h2>
+<ol type="1">
+<li>A jurisdiction- and entity-specific applicability map with dated
+primary authority.</li>
+<li>A documented position/book/desk inventory, including any internal
+transfers.</li>
+<li>A reproducible standardised example with component
+reconciliation.</li>
+<li>An expected-shortfall teaching case clearly separated from a full
+internal-model implementation.</li>
+<li>A market-observation inventory and explicit treatment of weak or
+absent evidence.</li>
+<li>Independently constructed P&amp;L series and the applicable
+validation procedure.</li>
+<li>A hedge comparison linking risk reduction, collateral cash,
+transaction cost and capital.</li>
+<li>An auditable report explaining changes, approvals, exceptions and
+residual exposure.</li>
+</ol>
+<p>These criteria define the outstanding work. The Basel chapters above
+provide the global framework consulted on 25 September 2026; this note
+does not establish their adoption, scope or effective date for a
+particular Kenyan institution. That local mapping belongs in R18 of the
+<a href="06_WHAT_REMAINS_TO_BE_DEVELOPED.html">remaining-work
+register</a>.</p>
+</body>
+</html>
