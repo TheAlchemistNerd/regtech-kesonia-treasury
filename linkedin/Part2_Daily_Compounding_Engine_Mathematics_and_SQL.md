@@ -144,7 +144,7 @@ and consistently implemented in the ERP [8].
 **Figure 3** illustrates the KESONIA daily accrual data flow.
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "themeVariables": {"fontSize": "16px", "fontFamily": "arial"}} }%%
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "themeVariables": {"fontSize": "40px", "fontFamily": "arial"}} }%%
 flowchart LR
     A[CBK Publishes Daily KESONIA] --> B[Reference Rate Repository]
     B --> C[Business Calendar]
@@ -188,7 +188,7 @@ internal consistency [10].
 **Figure 4** shows the SQL six-layer architecture.
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "themeVariables": {"fontSize": "16px", "fontFamily": "arial"}} }%%
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "themeVariables": {"fontSize": "28px", "fontFamily": "arial"}} }%%
 flowchart TD
     subgraph Ingestion [Data Ingestion]
         D1[(kesonia_raw_feed)] --> D2[(kesonia_reference)]
@@ -211,6 +211,69 @@ engine. Each layer is independently auditable and fails safely into the
 exception queue.*
 
 ### Core Table Schema
+
+```mermaid
+---
+title: KESONIA Compounding Engine Database Schema
+---
+%%{init: {"themeVariables": {"fontSize": "36px", "fontFamily": "arial"}} }%%
+erDiagram
+    kesonia_raw_feed {
+        BIGINT feed_id PK "GENERATED ALWAYS AS IDENTITY"
+        DATE publication_date
+        DECIMAL kesonia_rate
+        TIMESTAMP received_ts
+        VARCHAR source_hash "SHA-256"
+    }
+
+    kesonia_reference {
+        DATE value_date PK
+        DECIMAL kesonia_rate
+        BOOLEAN is_business_day
+        TIMESTAMP validated_ts
+    }
+
+    holiday_calendar {
+        DATE calendar_date PK
+        VARCHAR day_type "BUSINESS, WEEKEND, HOLIDAY"
+        INTEGER n_i_weight
+    }
+
+    loan_master {
+        VARCHAR loan_id PK
+        DATE origination_date
+        DATE maturity_date
+        DECIMAL principal
+        DECIMAL risk_margin_k
+        VARCHAR day_count
+    }
+
+    loan_interest_accrual {
+        VARCHAR loan_id PK, FK "REFERENCES loan_master"
+        DATE accrual_date PK
+        DECIMAL effective_rate
+        DECIMAL accrued_interest
+        TIMESTAMP last_calculated
+    }
+
+    audit_log {
+        BIGINT log_id PK "GENERATED ALWAYS AS IDENTITY"
+        TIMESTAMP event_ts
+        VARCHAR layer
+        VARCHAR loan_id
+        DATE value_date
+        VARCHAR action
+        TEXT result
+    }
+
+    loan_master ||--o{ loan_interest_accrual : "1-to-many"
+    loan_master ||--o{ audit_log : "1-to-many (logs)"
+    kesonia_raw_feed ||--|{ kesonia_reference : "feeds"
+    holiday_calendar ||--|{ kesonia_reference : "validates dates"
+    kesonia_reference ||--o{ loan_interest_accrual : "applied to"
+```
+
+*Figure 5: Entity-Relationship Diagram of the Core Table Schema.*
 
     ,  Immutable raw CBK publication record
     CREATE TABLE kesonia_raw_feed (

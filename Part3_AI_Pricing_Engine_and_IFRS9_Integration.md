@@ -54,6 +54,8 @@ but for pricing: a miscalibrated PD underestimates expected loss,
 compressing the risk premium $K$ and eroding portfolio profitability
 during credit stress cycles [3].
 
+It is essential to distinguish this Point-in-Time (PIT) PD from the Through-the-Cycle (TTC) PDs traditionally used in Basel regulatory capital models. While TTC models are designed to abstract away from cyclical economic fluctuations to maintain stable capital requirements, the KESONIA AI pricing engine, much like IFRS 9, mandates the use of PIT estimates. PIT models dynamically capture current macroeconomic realities and immediate behavioral signals. This ensures that the risk premium $K$ actively responds to real-time market shifts alongside the underlying benchmark rate [22].
+
 ### Gradient-Boosted Trees
 
 Gradient-boosted decision trees (GBDTs), -implemented through XGBoost,
@@ -510,6 +512,8 @@ https://docs.oracle.com/en/industries/financial-services/
 [21] Basel Committee on Banking Supervision (2019). *Interest Rate
 Risk in the Banking Book: Frequently Asked Questions (BCBS 368)*. BIS.
 Available at: https://www.bis.org/bcbs/publ/d458.htm
+
+[22] Basel Committee on Banking Supervision (2015). *Guidance on credit risk and accounting for expected credit losses* (BCBS Document d350). Bank for International Settlements. Available at: https://www.bis.org/bcbs/publ/d350.pdf
 
 *Word count (excluding abstract, diagrams, tables, code blocks, and
 references): approximately 2,000 words.* *Diagrams: Figure 5 (AI
