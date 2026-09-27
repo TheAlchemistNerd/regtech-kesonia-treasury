@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-28",
+  "status": "marked_retired_in_place",
+  "canonical_location": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury",
+  "original_location": "C:\\Users\\Nevo\\Documents\\Regulatory Tech for Banks and neobanks",
+  "verified_full_archive_copy": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\_archive\\regtech_consolidation_2026-09-28\\documents",
+  "physical_move_status": "blocked_by_open_process",
+  "physical_move_error": "The process cannot access the file because it is being used by another process.",
+  "attempted_destination": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\_archive\\regtech_consolidation_2026-09-28\\retired-documents",
+  "original_folder_still_exists": true,
+  "original_files_and_git_preserved": true,
+  "retirement_marker": "C:\\Users\\Nevo\\Documents\\Regulatory Tech for Banks and neobanks\\README.md",
+  "pointer": "C:\\Users\\Nevo\\Documents\\Regulatory Tech for Banks and neobanks - CONSOLIDATED.md",
+  "retirement_marker_sha256": "3779f05d9939789f7ef5667b7925a9434315530902c3d1ab8b450110fee70088",
+  "additional_untracked_file_in_original": "README.md",
+  "verified_merge_commit": "50992cf08b9191c014436f6978275e9def541e52"
+}

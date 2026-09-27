@@ -36,7 +36,9 @@ Full filesystem recovery copies, including `.git`, hidden files and ignored lock
 - `C:\Users\Nevo\Downloads\insuretech & embedded finance\_archive\regtech_consolidation_2026-09-28\documents`
 - `C:\Users\Nevo\Downloads\insuretech & embedded finance\_archive\regtech_consolidation_2026-09-28\downloads`
 
-Both histories also have verified standalone `.bundle` backups in `C:\Users\Nevo\Downloads\insuretech & embedded finance\_archive\regtech_consolidation_2026-09-28`. `before.json` there records the complete pre-integration file hashes, Git heads, branches, remotes and working status. The original Documents folder is scheduled for archival **after** import, build and history checks succeed; the retirement result is recorded in `retirement.json` when complete. The final retired tree destination is `C:\Users\Nevo\Downloads\insuretech & embedded finance\_archive\regtech_consolidation_2026-09-28\retired-documents`.
+Both histories also have verified standalone `.bundle` backups in `C:\Users\Nevo\Downloads\insuretech & embedded finance\_archive\regtech_consolidation_2026-09-28`. `before.json` there records the complete pre-integration file hashes, Git heads, branches, remotes and working status. After the merge and checks passed, Windows refused to move the original directory because another process has it open. The Documents copy is **marked retired in place** with a new `README.md`; a sibling `Regulatory Tech for Banks and neobanks - CONSOLIDATED.md` points to Downloads. All original files, history and pre-existing dirty entries remain unchanged. The retirement README is the only new untracked file in that old repository.
+
+[retirement.json](retirement.json) records this limitation. Physical relocation to `C:\Users\Nevo\Downloads\insuretech & embedded finance\_archive\regtech_consolidation_2026-09-28\retired-documents` remains pending until the directory is released. The verified complete copy at `C:\Users\Nevo\Downloads\insuretech & embedded finance\_archive\regtech_consolidation_2026-09-28\documents` is already available; no recovery depends on moving the locked directory.
 
 The September 26 `MIGRATION*` files and `SOURCE_HISTORY.txt` describe the earlier extraction and remain unchanged historical records. This consolidation record supplements them. No remote is configured, and no changes are pushed by this consolidation. Guest repositories are outside this task's write boundary.
 
@@ -47,3 +49,13 @@ The September 26 `MIGRATION*` files and `SOURCE_HISTORY.txt` describe the earlie
 The original drafts were incomplete as rendered archives before the merge: `Drafts/regtech.md` references 104 distinct missing `media/` images, and the older ERP draft references 2. Those missing files were not present in either the original working tree or its archival copy. The drafts remain research source rather than validated publication output. No actual PDF or DOCX documents existed at the original path; its only `.docx` files were Word locks.
 
 Validation covers file preservation, Git ancestry, arithmetic checks and HTML publication paths. It does not revalidate the manuscripts' regulatory assertions, establish production STP/ALM capabilities, or finish the 18-item Treasury development backlog.
+
+## Completed checks
+
+- Both original Git tips and the working-state checkpoint are ancestors of merge commit `50992cf08b9191c014436f6978275e9def541e52`; `git fsck --full` passes.
+- All 33 original non-Git files are accounted for. All 29 active destinations match the original working bytes; 43 pre-existing canonical files other than the intentionally updated README and ignore rules are unchanged.
+- Treasury arithmetic assertions pass; the existing eight-document HTML renderer produces unchanged outputs.
+- The new publication wrapper was run from outside this repository. Ten standalone HTML files passed with zero Pandoc warnings, 22 embedded PNG images and all 51 source mathematics nodes represented in MathML. Independent QA verified source, asset and output hashes and found no external rendering-resource dependencies.
+- [publication-build.json](publication-build.json) retains the checked render report. [validation.json](validation.json) records preservation and history checks.
+
+Publication validation used the preserved diagram cache. The optional `--refresh-diagrams` path was not executed, and cached-image inclusion does not prove semantic agreement with edited diagram source. No PDF/Word pagination, visual browser layout or financial claims were revalidated. The build stages all renders before copying outputs; final copying is not a filesystem transaction against disk or permission failures.
