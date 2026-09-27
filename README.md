@@ -1,6 +1,6 @@
 # RegTech–KESONIA Treasury
 
-Authoritative standalone working repository, extracted on 26 September 2026. Initial scope: the four-part RegTech–KESONIA series, benchmark compounding, curve and FTP teaching cases, and governed Treasury workflows. The remaining-work register is a development backlog, not a claim of completed banking models or integrations.
+Authoritative standalone working repository, extracted on 26 September 2026 and consolidated with the original Documents publication project on 28 September 2026, retaining both Git histories. Initial scope: the four-part RegTech–KESONIA series, benchmark compounding, curve and FTP teaching cases, and governed Treasury workflows. The remaining-work register is a development backlog, not a claim of completed banking models or integrations.
 
 ## Start here
 
@@ -10,7 +10,11 @@ Authoritative standalone working repository, extracted on 26 September 2026. Ini
 - [Part 4: platform and roadmap](docs/research/kesonia/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md)
 - [Review pack and worked cases](output/kesonia_treasury_deep_review_2026-09-25/00_READ_ME.md)
 - [18-item remaining-work register](docs/research/kesonia/TREASURY_REMAINING_WORK_REGISTER_2026-09-25.md)
-- [Migration provenance](MIGRATION.md)
+- [LinkedIn editions, figures and publication build guide](publications/README.md)
+- [Annotated bibliography](docs/research/kesonia/KESONIA_ERP_Reference_List.md)
+- [Historical drafts and broader neobank outline](source_library/regtech-origin/README.md)
+- [September 28 consolidation and preservation record](docs/governance/consolidation-2026-09-28/README.md)
+- [September 26 extraction provenance](MIGRATION.md)
 
 ## Evidence and local checks
 

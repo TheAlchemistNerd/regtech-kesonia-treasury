@@ -1,0 +1,128 @@
+{
+  "started_at_utc": "2026-09-27T22:36:25.704515+00:00",
+  "status": "passed",
+  "mode": "cached",
+  "scope": "HTML rendering and embedded-image checks; no financial or PDF validation",
+  "source_count": 10,
+  "sources": [
+    {
+      "source": "docs/research/kesonia/Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "sha256": "1a918d2e74993209c958198106af31b4b1a5fc4079c275009bd52140f5536ac4",
+      "output": "core/Part1_KESONIA_Reform_and_Enterprise_Architecture.html",
+      "status": "passed",
+      "inline_image_count": 2,
+      "warnings": [],
+      "mermaid_diagram_count": 2,
+      "output_sha256": "4d7490eb6aabdba58b5ed0c56bbf7e92e0f7d638ce1738627af03d813108aaad"
+    },
+    {
+      "source": "docs/research/kesonia/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "sha256": "b1af86504e332333e08fba8cfc75ce2ac37c99197390a7f743ef0aeb2298a32d",
+      "output": "core/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.html",
+      "status": "passed",
+      "inline_image_count": 3,
+      "warnings": [],
+      "mermaid_diagram_count": 3,
+      "output_sha256": "6421b84eebc656fc6c9c4ee14309f195b0d92311104e6dfb0a569bc472bf03f4"
+    },
+    {
+      "source": "docs/research/kesonia/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "sha256": "efa7a219e681475efbf7c7eabe47cc77b12372362d0efb82491bcd38fab0d999",
+      "output": "core/Part3_AI_Pricing_Engine_and_IFRS9_Integration.html",
+      "status": "passed",
+      "inline_image_count": 2,
+      "warnings": [],
+      "mermaid_diagram_count": 2,
+      "output_sha256": "97580fd83075c1a5475696900dcd0b70239f78e46e7af2404c5d9fda689d737c"
+    },
+    {
+      "source": "docs/research/kesonia/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "sha256": "e2eb8de37e650549d0642970af73335a1ed21a80b82947c29bd9f8fbf6bdab36",
+      "output": "core/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.html",
+      "status": "passed",
+      "inline_image_count": 4,
+      "warnings": [],
+      "mermaid_diagram_count": 4,
+      "output_sha256": "8c5c7a0c5370211ed0b58bc50fa54d6db3cda50b09391320446640d60e488a5d"
+    },
+    {
+      "source": "publications/linkedin/Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "sha256": "f01ea950d29f385806ea533c9e52c842aa769eef0b8eda1e8a903fc175369754",
+      "output": "linkedin/Part1_KESONIA_Reform_and_Enterprise_Architecture.html",
+      "status": "passed",
+      "inline_image_count": 2,
+      "warnings": [],
+      "mermaid_diagram_count": 2,
+      "output_sha256": "42edb80019b46c76b1c8c2d1574d193a30d7d2fab8924a8ed6eeea62b65f4abf"
+    },
+    {
+      "source": "publications/linkedin/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "sha256": "5e3d91272ea04d5313233fcc42bdddb0e46118bbaccced0e01b16b891fd33886",
+      "output": "linkedin/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.html",
+      "status": "passed",
+      "inline_image_count": 3,
+      "warnings": [],
+      "mermaid_diagram_count": 3,
+      "output_sha256": "7fab8ddcaba799722209dd784183b9c0246f79de72427d560b995f93e9eac0ad"
+    },
+    {
+      "source": "publications/linkedin/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "sha256": "4f4444e0bc3503c4a22ac1339376345e5e93843e34aa43ca79c9771649164759",
+      "output": "linkedin/Part3_AI_Pricing_Engine_and_IFRS9_Integration.html",
+      "status": "passed",
+      "inline_image_count": 2,
+      "warnings": [],
+      "mermaid_diagram_count": 2,
+      "output_sha256": "5dbd3b80f5f4978799ab0e9298fa81b87977b468513937d82b17595f8c4fab3a"
+    },
+    {
+      "source": "publications/linkedin/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "sha256": "16850b1945cdcdd84e4fcd9006c9b245df2135f84ce569e40f791ea5ad170535",
+      "output": "linkedin/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.html",
+      "status": "passed",
+      "inline_image_count": 4,
+      "warnings": [],
+      "mermaid_diagram_count": 4,
+      "output_sha256": "b69644ed7ce60c87dede833c6ffa079a41833e909f33a35c351e5f3d464336ee"
+    },
+    {
+      "source": "publications/linkedin/linkedin_posts.md",
+      "sha256": "9feb473becd67e746d41edf762a341e25800978b1d77fdcd97b3b6510bacbdca",
+      "output": "linkedin/linkedin_posts.html",
+      "status": "passed",
+      "inline_image_count": 0,
+      "warnings": [],
+      "mermaid_diagram_count": 0,
+      "output_sha256": "6f3450c5195ab525175a1aeec090810b49149a0193e0c8d97f6913d1f9d18793"
+    },
+    {
+      "source": "docs/research/kesonia/KESONIA_ERP_Reference_List.md",
+      "sha256": "0742cb8a2d24734da04c46c806a8822b9b9ada7dbab99b885fb58c3b975f9e16",
+      "output": "references/KESONIA_ERP_Reference_List.html",
+      "status": "passed",
+      "inline_image_count": 0,
+      "warnings": [],
+      "mermaid_diagram_count": 0,
+      "output_sha256": "1244f24eac57fd90052b2fd61a9ce48c6488e8c552cbe145aa501850937cb05a"
+    }
+  ],
+  "published": true,
+  "pandoc_version": "pandoc.EXE 3.1.11.1",
+  "inherited_asset_hashes": {
+    "mermaid.lua": "ddc303c03abf6ecc23d7ca492cc677e0fd6bf598ce1c9c4876b8eb84df26a76e",
+    "pagebreak.lua": "d64c8febbeef238824ca59e82473fc48cb97033a9b4375ba305a1f53ce14ed5e",
+    "internal/puppeteer-config.json": "478cc926c5bcf1a8750c7c365489dce18703f56f8c255f3106083a2bfc56858f",
+    "images/Figure_10_Seven_phase_KESONIA_ERP_implementation_r.png": "94731ef3d912d2ec0c95f09baf091d73b742de39884646507e065192e7ffb4a1",
+    "images/Figure_1_Data_flow_from_CBK_KESONIA_publication_th.png": "c88f433f7661feb3b6bd5d24ab00eb29dd45c79d0454f7c95c1e19781909b7a1",
+    "images/Figure_2_Five_layer_enterprise_architecture_for_au.png": "990c77b15dffec2f9f4b4f5b57df3ff83227c424be611f0d69a68dd7d804df04",
+    "images/Figure_3_Daily_KESONIA_accrual_pipeline_from_CBK_p.png": "a05e8c91bf1fcddeb7bc428ffc59e0e9e8e0155e86c5a33a7f17df307eee7f97",
+    "images/Figure_4_Six_layer_SQL_architecture_for_the_KESONI.png": "59c8c3af906347fe55d470a1c41b7f4f8dd127fc6712c084642efe65e0ca8605",
+    "images/Figure_5_AI_pricing_engine_governance_lifecycle_Th.png": "424a5eac0acc6ef199cc1ee49b89cdf9a1e43f2032833cb17fa962a8ef85f534",
+    "images/Figure_5_Entity_Relationship_Diagram_of_the_Core_T.png": "0a6e7c7d19c3ce5dbf5ebb9db0ef758f0431c90c864cdb033080ab40de61fe1c",
+    "images/Figure_6_Integration_of_IFRS_9_EIR_accounting_Fund.png": "40b5c392eb02b29c55e27633e464eb52a40e885dc6a1b24730a4c4b826e842a7",
+    "images/Figure_7_Complete_Automated_ERP_RegTech_Sweep_pipe.png": "74737b35575d0e840a20d59a7ff477671202793d5a9827300567888f3f9907d2",
+    "images/Figure_8_SAP_S_4HANA_FPSL_contract_lifecycle_and_U.png": "7c694a63c01d0c47a130608a98045ea5a82f396f35a2035ef9af384482f8ce90",
+    "images/Figure_9_Microsoft_Dynamics_365_Finance_and_Azure_.png": "26062e482e5e11b7fa9c7b79d7acc3857f8998cf9bd5290f8aa07dc5704e29c2"
+  },
+  "finished_at_utc": "2026-09-27T22:36:34.818844+00:00"
+}

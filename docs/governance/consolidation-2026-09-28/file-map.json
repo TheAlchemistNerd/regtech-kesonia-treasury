@@ -1,0 +1,276 @@
+{
+  "source": "C:\\Users\\Nevo\\Documents\\Regulatory Tech for Banks and neobanks",
+  "canonical": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury",
+  "original_head": "0ca6438b59630db233aede132298e3663d8b1bfd",
+  "previous_canonical_head": "dc4ef186b49b000724d998f3887805731badd039",
+  "working_snapshot_commit": "bdc19f7366c264d246a792a85426f1094ebc31fe",
+  "layout_commit": "af443a0b3bef3e0af3eae6fc8bafa19173318024",
+  "original_working_status": " M Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md\n M Part3_AI_Pricing_Engine_and_IFRS9_Integration.md\n D convert_to_unicode.py\n D images/mermaid_282cd0a2.png\n D images/mermaid_42399967.png\n D images/mermaid_42d33aa3.png\n D images/mermaid_4d033abd.png\n D images/mermaid_59ca095f.png\n D images/mermaid_5f436a83.png\n D images/mermaid_9611097b.png\n D images/mermaid_e945e12b.png\n D images/mermaid_ea78c729.png\n D images/mermaid_fa984c6c.png\n M linkedin/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md\n M linkedin/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md\n M mermaid.lua\n D update_references.py\n?? images/Figure_10_Seven_phase_KESONIA_ERP_implementation_r.png\n?? images/Figure_1_Data_flow_from_CBK_KESONIA_publication_th.png\n?? images/Figure_2_Five_layer_enterprise_architecture_for_au.png\n?? images/Figure_3_Daily_KESONIA_accrual_pipeline_from_CBK_p.png\n?? images/Figure_4_Six_layer_SQL_architecture_for_the_KESONI.png\n?? images/Figure_5_AI_pricing_engine_governance_lifecycle_Th.png\n?? images/Figure_5_Entity_Relationship_Diagram_of_the_Core_T.png\n?? images/Figure_6_Integration_of_IFRS_9_EIR_accounting_Fund.png\n?? images/Figure_7_Complete_Automated_ERP_RegTech_Sweep_pipe.png\n?? images/Figure_8_SAP_S_4HANA_FPSL_contract_lifecycle_and_U.png\n?? images/Figure_9_Microsoft_Dynamics_365_Finance_and_Azure_.png\n?? linkedin/temp_mermaid.mmd\n?? linkedin_posts.md\n",
+  "backup": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\_archive\\regtech_consolidation_2026-09-28",
+  "files": [
+    {
+      "original": ".gitignore",
+      "bytes": 13,
+      "sha256": "bfa7ca4411b8500bc88c71e3f42e4211bca4eb17568eacc3547a24dde211bfe9",
+      "disposition": "reconciled_ignore_rules",
+      "destination": ".gitignore",
+      "archive": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\_archive\\regtech_consolidation_2026-09-28\\documents\\.gitignore"
+    },
+    {
+      "original": "Drafts/Implementing Automated ERP RegTech Sweep under the CBK KESONIA Framework for Commercial Banks and Traditional Variable.md",
+      "bytes": 63792,
+      "sha256": "e38503a7356330def73469ebbfd8b94697d6bd4d097b7b759d7640d6d6e2bf7c",
+      "disposition": "imported",
+      "destination": "source_library/regtech-origin/Drafts/Implementing Automated ERP RegTech Sweep under the CBK KESONIA Framework for Commercial Banks and Traditional Variable.md",
+      "destination_sha256": "e38503a7356330def73469ebbfd8b94697d6bd4d097b7b759d7640d6d6e2bf7c"
+    },
+    {
+      "original": "Drafts/neobank & fintech outline.md",
+      "bytes": 3837,
+      "sha256": "7256c2f0900133eb83d0f6061af8e90c0e93f83306ac1c369957e4d35188e6e1",
+      "disposition": "imported",
+      "destination": "source_library/regtech-origin/Drafts/neobank & fintech outline.md",
+      "destination_sha256": "7256c2f0900133eb83d0f6061af8e90c0e93f83306ac1c369957e4d35188e6e1"
+    },
+    {
+      "original": "Drafts/pdf1_extracted.txt",
+      "bytes": 61475,
+      "sha256": "3f7e24c398e47e9e4b0adc129cb19c3b1fcb568f848175bda34d5bf089d0b188",
+      "disposition": "imported",
+      "destination": "source_library/regtech-origin/Drafts/pdf1_extracted.txt",
+      "destination_sha256": "3f7e24c398e47e9e4b0adc129cb19c3b1fcb568f848175bda34d5bf089d0b188"
+    },
+    {
+      "original": "Drafts/pdf2_extracted.txt",
+      "bytes": 11061,
+      "sha256": "135b3d230362e5b3fe3f0e0ec7492fce14881f5cb9d13449d91f8b2b94e57bfb",
+      "disposition": "imported",
+      "destination": "source_library/regtech-origin/Drafts/pdf2_extracted.txt",
+      "destination_sha256": "135b3d230362e5b3fe3f0e0ec7492fce14881f5cb9d13449d91f8b2b94e57bfb"
+    },
+    {
+      "original": "Drafts/regtech.md",
+      "bytes": 218831,
+      "sha256": "f20bac297d1bd66eb2116506b816b9782bb9aba8f007a23d0378f4484d27ce61",
+      "disposition": "imported",
+      "destination": "source_library/regtech-origin/Drafts/regtech.md",
+      "destination_sha256": "f20bac297d1bd66eb2116506b816b9782bb9aba8f007a23d0378f4484d27ce61"
+    },
+    {
+      "original": "images/Figure_10_Seven_phase_KESONIA_ERP_implementation_r.png",
+      "bytes": 27999,
+      "sha256": "94731ef3d912d2ec0c95f09baf091d73b742de39884646507e065192e7ffb4a1",
+      "disposition": "imported",
+      "destination": "publications/images/Figure_10_Seven_phase_KESONIA_ERP_implementation_r.png",
+      "destination_sha256": "94731ef3d912d2ec0c95f09baf091d73b742de39884646507e065192e7ffb4a1"
+    },
+    {
+      "original": "images/Figure_1_Data_flow_from_CBK_KESONIA_publication_th.png",
+      "bytes": 32829,
+      "sha256": "c88f433f7661feb3b6bd5d24ab00eb29dd45c79d0454f7c95c1e19781909b7a1",
+      "disposition": "imported",
+      "destination": "publications/images/Figure_1_Data_flow_from_CBK_KESONIA_publication_th.png",
+      "destination_sha256": "c88f433f7661feb3b6bd5d24ab00eb29dd45c79d0454f7c95c1e19781909b7a1"
+    },
+    {
+      "original": "images/Figure_2_Five_layer_enterprise_architecture_for_au.png",
+      "bytes": 38239,
+      "sha256": "990c77b15dffec2f9f4b4f5b57df3ff83227c424be611f0d69a68dd7d804df04",
+      "disposition": "imported",
+      "destination": "publications/images/Figure_2_Five_layer_enterprise_architecture_for_au.png",
+      "destination_sha256": "990c77b15dffec2f9f4b4f5b57df3ff83227c424be611f0d69a68dd7d804df04"
+    },
+    {
+      "original": "images/Figure_3_Daily_KESONIA_accrual_pipeline_from_CBK_p.png",
+      "bytes": 12635,
+      "sha256": "a05e8c91bf1fcddeb7bc428ffc59e0e9e8e0155e86c5a33a7f17df307eee7f97",
+      "disposition": "imported",
+      "destination": "publications/images/Figure_3_Daily_KESONIA_accrual_pipeline_from_CBK_p.png",
+      "destination_sha256": "a05e8c91bf1fcddeb7bc428ffc59e0e9e8e0155e86c5a33a7f17df307eee7f97"
+    },
+    {
+      "original": "images/Figure_4_Six_layer_SQL_architecture_for_the_KESONI.png",
+      "bytes": 93984,
+      "sha256": "59c8c3af906347fe55d470a1c41b7f4f8dd127fc6712c084642efe65e0ca8605",
+      "disposition": "imported",
+      "destination": "publications/images/Figure_4_Six_layer_SQL_architecture_for_the_KESONI.png",
+      "destination_sha256": "59c8c3af906347fe55d470a1c41b7f4f8dd127fc6712c084642efe65e0ca8605"
+    },
+    {
+      "original": "images/Figure_5_AI_pricing_engine_governance_lifecycle_Th.png",
+      "bytes": 15148,
+      "sha256": "424a5eac0acc6ef199cc1ee49b89cdf9a1e43f2032833cb17fa962a8ef85f534",
+      "disposition": "imported",
+      "destination": "publications/images/Figure_5_AI_pricing_engine_governance_lifecycle_Th.png",
+      "destination_sha256": "424a5eac0acc6ef199cc1ee49b89cdf9a1e43f2032833cb17fa962a8ef85f534"
+    },
+    {
+      "original": "images/Figure_5_Entity_Relationship_Diagram_of_the_Core_T.png",
+      "bytes": 96194,
+      "sha256": "0a6e7c7d19c3ce5dbf5ebb9db0ef758f0431c90c864cdb033080ab40de61fe1c",
+      "disposition": "imported",
+      "destination": "publications/images/Figure_5_Entity_Relationship_Diagram_of_the_Core_T.png",
+      "destination_sha256": "0a6e7c7d19c3ce5dbf5ebb9db0ef758f0431c90c864cdb033080ab40de61fe1c"
+    },
+    {
+      "original": "images/Figure_6_Integration_of_IFRS_9_EIR_accounting_Fund.png",
+      "bytes": 30505,
+      "sha256": "40b5c392eb02b29c55e27633e464eb52a40e885dc6a1b24730a4c4b826e842a7",
+      "disposition": "imported",
+      "destination": "publications/images/Figure_6_Integration_of_IFRS_9_EIR_accounting_Fund.png",
+      "destination_sha256": "40b5c392eb02b29c55e27633e464eb52a40e885dc6a1b24730a4c4b826e842a7"
+    },
+    {
+      "original": "images/Figure_7_Complete_Automated_ERP_RegTech_Sweep_pipe.png",
+      "bytes": 45475,
+      "sha256": "74737b35575d0e840a20d59a7ff477671202793d5a9827300567888f3f9907d2",
+      "disposition": "imported",
+      "destination": "publications/images/Figure_7_Complete_Automated_ERP_RegTech_Sweep_pipe.png",
+      "destination_sha256": "74737b35575d0e840a20d59a7ff477671202793d5a9827300567888f3f9907d2"
+    },
+    {
+      "original": "images/Figure_8_SAP_S_4HANA_FPSL_contract_lifecycle_and_U.png",
+      "bytes": 15480,
+      "sha256": "7c694a63c01d0c47a130608a98045ea5a82f396f35a2035ef9af384482f8ce90",
+      "disposition": "imported",
+      "destination": "publications/images/Figure_8_SAP_S_4HANA_FPSL_contract_lifecycle_and_U.png",
+      "destination_sha256": "7c694a63c01d0c47a130608a98045ea5a82f396f35a2035ef9af384482f8ce90"
+    },
+    {
+      "original": "images/Figure_9_Microsoft_Dynamics_365_Finance_and_Azure_.png",
+      "bytes": 42916,
+      "sha256": "26062e482e5e11b7fa9c7b79d7acc3857f8998cf9bd5290f8aa07dc5704e29c2",
+      "disposition": "imported",
+      "destination": "publications/images/Figure_9_Microsoft_Dynamics_365_Finance_and_Azure_.png",
+      "destination_sha256": "26062e482e5e11b7fa9c7b79d7acc3857f8998cf9bd5290f8aa07dc5704e29c2"
+    },
+    {
+      "original": "internal/puppeteer-config.json",
+      "bytes": 59,
+      "sha256": "478cc926c5bcf1a8750c7c365489dce18703f56f8c255f3106083a2bfc56858f",
+      "disposition": "imported",
+      "destination": "publications/internal/puppeteer-config.json",
+      "destination_sha256": "478cc926c5bcf1a8750c7c365489dce18703f56f8c255f3106083a2bfc56858f"
+    },
+    {
+      "original": "KESONIA_ERP_Reference_List.md",
+      "bytes": 23961,
+      "sha256": "0742cb8a2d24734da04c46c806a8822b9b9ada7dbab99b885fb58c3b975f9e16",
+      "disposition": "imported",
+      "destination": "docs/research/kesonia/KESONIA_ERP_Reference_List.md",
+      "destination_sha256": "0742cb8a2d24734da04c46c806a8822b9b9ada7dbab99b885fb58c3b975f9e16"
+    },
+    {
+      "original": "linkedin/Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "bytes": 26896,
+      "sha256": "f01ea950d29f385806ea533c9e52c842aa769eef0b8eda1e8a903fc175369754",
+      "disposition": "imported",
+      "destination": "publications/linkedin/Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "destination_sha256": "f01ea950d29f385806ea533c9e52c842aa769eef0b8eda1e8a903fc175369754"
+    },
+    {
+      "original": "linkedin/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "bytes": 23789,
+      "sha256": "5e3d91272ea04d5313233fcc42bdddb0e46118bbaccced0e01b16b891fd33886",
+      "disposition": "imported",
+      "destination": "publications/linkedin/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "destination_sha256": "5e3d91272ea04d5313233fcc42bdddb0e46118bbaccced0e01b16b891fd33886"
+    },
+    {
+      "original": "linkedin/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "bytes": 26079,
+      "sha256": "4f4444e0bc3503c4a22ac1339376345e5e93843e34aa43ca79c9771649164759",
+      "disposition": "imported",
+      "destination": "publications/linkedin/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "destination_sha256": "4f4444e0bc3503c4a22ac1339376345e5e93843e34aa43ca79c9771649164759"
+    },
+    {
+      "original": "linkedin/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "bytes": 34465,
+      "sha256": "16850b1945cdcdd84e4fcd9006c9b245df2135f84ce569e40f791ea5ad170535",
+      "disposition": "imported",
+      "destination": "publications/linkedin/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "destination_sha256": "16850b1945cdcdd84e4fcd9006c9b245df2135f84ce569e40f791ea5ad170535"
+    },
+    {
+      "original": "linkedin/temp_mermaid.mmd",
+      "bytes": 428,
+      "sha256": "fced892c73c66d68fdbb01bb68464549f19996231e05ceddce888520d3b70227",
+      "disposition": "archived_intermediate",
+      "destination": null,
+      "archive": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\_archive\\regtech_consolidation_2026-09-28\\documents\\linkedin\\temp_mermaid.mmd"
+    },
+    {
+      "original": "linkedin/~$rt1_KESONIA_Reform_and_Enterprise_Architecture.docx",
+      "bytes": 162,
+      "sha256": "bdf75d1ad01c1580a202036960c24902ec97e2ba23f0e501410e18c2b053642d",
+      "disposition": "archived_intermediate",
+      "destination": null,
+      "archive": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\_archive\\regtech_consolidation_2026-09-28\\documents\\linkedin\\~$rt1_KESONIA_Reform_and_Enterprise_Architecture.docx"
+    },
+    {
+      "original": "linkedin_posts.md",
+      "bytes": 6072,
+      "sha256": "9feb473becd67e746d41edf762a341e25800978b1d77fdcd97b3b6510bacbdca",
+      "disposition": "imported",
+      "destination": "publications/linkedin/linkedin_posts.md",
+      "destination_sha256": "9feb473becd67e746d41edf762a341e25800978b1d77fdcd97b3b6510bacbdca"
+    },
+    {
+      "original": "mermaid.lua",
+      "bytes": 1705,
+      "sha256": "ddc303c03abf6ecc23d7ca492cc677e0fd6bf598ce1c9c4876b8eb84df26a76e",
+      "disposition": "imported",
+      "destination": "publications/mermaid.lua",
+      "destination_sha256": "ddc303c03abf6ecc23d7ca492cc677e0fd6bf598ce1c9c4876b8eb84df26a76e"
+    },
+    {
+      "original": "pagebreak.lua",
+      "bytes": 210,
+      "sha256": "d64c8febbeef238824ca59e82473fc48cb97033a9b4375ba305a1f53ce14ed5e",
+      "disposition": "imported",
+      "destination": "publications/pagebreak.lua",
+      "destination_sha256": "d64c8febbeef238824ca59e82473fc48cb97033a9b4375ba305a1f53ce14ed5e"
+    },
+    {
+      "original": "Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "bytes": 26925,
+      "sha256": "1a918d2e74993209c958198106af31b4b1a5fc4079c275009bd52140f5536ac4",
+      "disposition": "identical_core_reused",
+      "destination": "docs/research/kesonia/Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "destination_sha256": "1a918d2e74993209c958198106af31b4b1a5fc4079c275009bd52140f5536ac4"
+    },
+    {
+      "original": "Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "bytes": 23900,
+      "sha256": "b1af86504e332333e08fba8cfc75ce2ac37c99197390a7f743ef0aeb2298a32d",
+      "disposition": "identical_core_reused",
+      "destination": "docs/research/kesonia/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "destination_sha256": "b1af86504e332333e08fba8cfc75ce2ac37c99197390a7f743ef0aeb2298a32d"
+    },
+    {
+      "original": "Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "bytes": 26135,
+      "sha256": "efa7a219e681475efbf7c7eabe47cc77b12372362d0efb82491bcd38fab0d999",
+      "disposition": "identical_core_reused",
+      "destination": "docs/research/kesonia/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "destination_sha256": "efa7a219e681475efbf7c7eabe47cc77b12372362d0efb82491bcd38fab0d999"
+    },
+    {
+      "original": "Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "bytes": 34473,
+      "sha256": "e2eb8de37e650549d0642970af73335a1ed21a80b82947c29bd9f8fbf6bdab36",
+      "disposition": "identical_core_reused",
+      "destination": "docs/research/kesonia/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "destination_sha256": "e2eb8de37e650549d0642970af73335a1ed21a80b82947c29bd9f8fbf6bdab36"
+    },
+    {
+      "original": "~$nkedin_posts.docx",
+      "bytes": 162,
+      "sha256": "c3cdf815e2bbc5a223bd6a28589ee2149074457e0f11e13812dfc6d37c3981be",
+      "disposition": "archived_intermediate",
+      "destination": null,
+      "archive": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\_archive\\regtech_consolidation_2026-09-28\\documents\\~$nkedin_posts.docx"
+    }
+  ]
+}

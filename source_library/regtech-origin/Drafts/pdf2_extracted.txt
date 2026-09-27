@@ -1,0 +1,451 @@
+Implementing Automated ERP RegTech Sweep under the CBK KESONIA Framework
+for Commercial Banks and Traditional Variable-Interest Lending
+The transition to KESONIA is much more than a benchmark rate reform—it represents a
+fundamental shift in how commercial banks and traditional lenders engineer pricing,
+accounting, risk management, and regulatory compliance.
+As institutions move from internal base rates and the Risk-Based Credit Pricing Model
+(RBCPM) towards daily compounded-in-arrears reference rates, the challenge is no
+longer simply calculating interest. The real challenge is building an enterprise architecture
+capable of transforming daily market data into transparent, auditable, and regulator-ready
+financial information.
+My latest practitioner-focused article explores this transformation through the concept of an
+Automated ERP RegTech Sweep—an enterprise workflow that integrates market data
+ingestion, SQL-based interest computation, AI-assisted pricing, ERP accounting, automated
+validation, and regulatory reporting into a single governance framework.
+The article is written specifically for:
+• Commercial banks
+• Mortgage lenders
+• Development Finance Institutions (DFIs)
+• SACCO banking subsidiaries
+• Traditional variable-interest lenders
+• Chief Risk Officers (CROs)
+• Chief Financial Officers (CFOs)
+• Chief Information Officers (CIOs)
+• ERP Solution Architects
+• Enterprise Data Architects
+• Regulatory Compliance Officers
+• Banking Technology Consultants
+Rather than approaching KESONIA solely from a treasury or quantitative finance
+perspective, the article examines how enterprise systems become the system of regulatory
+truth, bringing together core banking platforms, ERP financial modules, AI risk engines,
+SQL processing pipelines, and automated supervisory reporting.
+Some of the key areas covered include:
+✔ Understanding why KESONIA follows the same backward-looking compounded-inarrears methodology as SOFR, SONIA, €STR, and SARON.
+✔ Implementing scalable SQL architectures for daily reference-rate ingestion,
+compounding, reconciliation, and auditability.
+✔ Applying an AI-driven pricing framework where:
+R = CCR + K(PD, LGD, EAD)
+
+to separate transparent market pricing from institution-specific credit risk.
+✔ Exploring why traditional multivariate normal correlation models underestimate systemic
+banking stress and how the Clayton Copula better captures lower-tail dependence during
+liquidity crises, exchange-rate shocks, and interest-rate spikes.
+✔ Introducing the Automated ERP RegTech Sweep as a governance framework for
+automated extraction, validation, reconciliation, encryption, digital signatures, workflow
+approvals, immutable audit logging, and regulatory submission.
+The article also provides detailed implementation guidance for three major enterprise
+platforms:
+Oracle Financial Services Analytical Applications (OFSAA)
+Rather than treating OFSAA simply as a reporting solution, the discussion explores its
+broader role in:
+• Funds Transfer Pricing (FTP)
+• Asset-Liability Management (ALM)
+• Liquidity Risk Management
+• IFRS 9 Expected Credit Loss (ECL)
+• Basel III Reporting
+• Interest Rate Risk in the Banking Book (IRRBB)
+• Stress Testing
+• Enterprise Regulatory Reporting
+SAP S/4HANA with Financial Products Subledger (FPSL)
+A key focus is explaining why FPSL—not S/4HANA alone—is the banking component
+responsible for:
+• Contract-level accounting
+• Effective Interest Rate (EIR) calculations
+• Universal Journal integration
+• Multi-GAAP reporting
+• Treasury integration
+• IFRS 9 accounting
+• Automated financial postings
+Microsoft Dynamics 365 Finance
+The article positions Dynamics 365 within the broader Microsoft ecosystem by examining its
+integration with:
+• Azure SQL
+• Azure Synapse Analytics
+• Azure Data Factory
+• Azure Machine Learning
+• Power BI
+
+• Power Automate
+• Microsoft Copilot
+to build modern cloud-native banking finance architectures.
+Another important contribution is the introduction of a phased implementation roadmap
+covering:
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+
+KESONIA ingestion
+Daily compounding engine
+AI-based pricing
+ERP integration
+Automated ERP RegTech Sweep
+CBK regulatory reporting
+Parallel testing and production deployment
+
+Throughout the article, the emphasis remains on practical implementation rather than
+theoretical complexity. Mathematical treatment is intentionally limited to the three models
+that matter most in production banking systems:
+•
+•
+•
+
+Daily compounded-in-arrears KESONIA accrual
+AI-based customer risk premium KKK
+Clayton Copula for portfolio tail-risk modelling
+
+The goal is to provide banking executives, ERP architects, and compliance professionals with
+a technically rigorous yet accessible implementation guide that bridges regulatory reform
+with enterprise technology.
+As financial supervision continues to evolve toward automation, real-time reporting, and AIassisted oversight, institutions that integrate robust data governance, ERP platforms, risk
+analytics, and RegTech workflows will be better positioned to achieve regulatory
+compliance, operational resilience, pricing transparency, and future interoperability with ISO
+20022-based supervisory technologies.
+I welcome feedback from professionals working in banking technology, enterprise
+architecture, ERP implementation, treasury, risk management, regulatory reporting,
+AI in finance, and digital transformation. I look forward to engaging in discussions on
+how institutions can operationalize KESONIA while strengthening governance and
+modernizing their enterprise platforms.
+#KESONIA #CBK #CommercialBanking #RegTech #ERP #OracleOFSAA #SAPS4HANA
+#FPSL #MicrosoftDynamics365 #RiskManagement #IFRS9 #BaselIII #SQL
+#EnterpriseArchitecture #ArtificialIntelligence #BankingTechnology #DigitalTransformation
+#FinancialServices #Compliance #Treasury #ALM #DataEngineering #ISO20022
+
+Implementing Automated ERP RegTech
+Sweep under the CBK KESONIA
+Framework for Commercial Banks and
+Traditional Variable-Interest Lending
+Target audience
+•
+•
+•
+•
+•
+
+Commercial banks
+Mortgage lenders
+SACCO banking subsidiaries
+Development finance institutions
+Traditional variable-interest lenders
+
+I. Introduction: The CBK KESONIA Reform
+•
+•
+•
+•
+•
+•
+
+Evolution from the Risk-Based Credit Pricing Model (RBCPM)
+Why CBK adopted KESONIA
+Regulatory objectives
+Consumer protection
+Transparency
+Elimination of opaque internal base rates
+
+Introduce the standardized pricing equation
+Rt=CCRt+KR_t=CCR_t+KRt=CCRt+K
+where
+•
+•
+
+CCRtCCR_tCCRt = compounded KESONIA
+KKK = customer-specific risk premium
+
+Explain why ERP systems become the system of regulatory truth.
+
+II. Enterprise Architecture under the KESONIA
+Framework
+Discuss
+Core Banking
+
+↓
+ERP Financial Layer
+↓
+Risk Engine
+↓
+RegTech Sweep
+↓
+CBK Reporting
+Explain the role of
+
+Oracle OFSAA
+•
+•
+•
+•
+•
+•
+•
+
+Regulatory reporting
+Funds Transfer Pricing
+Liquidity Risk
+IFRS 9
+ALM
+Basel III
+Stress testing
+
+SAP S/4HANA + FPSL
+Explain
+•
+•
+•
+•
+•
+•
+•
+
+Contract accounting
+Effective Interest Rate
+Multi-GAAP accounting
+IFRS 9
+Ledger architecture
+Universal Journal
+Financial Products Subledger
+
+Microsoft Dynamics 365 Finance
+Discuss
+•
+•
+•
+•
+•
+
+Finance module
+Power Platform
+Azure Synapse
+Copilot
+AI integration
+
+•
+•
+•
+
+Workflow automation
+Data Lake
+SQL architecture
+
+III. Daily KESONIA Mathematical Engine
+Introduce why
+LIBOR
+SOFR
+SONIA
+ESTR
+SARON
+and KESONIA all use backward-looking overnight compounding.
+Then derive
+CCR=[∏i=1db(1+KESONIAini365)−1]365dCCR= \left[ \prod_{i=1}^{d_b} \left(
+1+\frac{KESONIA_i n_i}{365} \right) -1 \right] \frac{365}{d}CCR=[i=1∏db
+(1+365KESONIAini)−1]d365
+Explain
+Business days
+Calendar days
+Holiday adjustment
+Weekend weighting
+Lookback period
+Observation lag
+Payment lag
+
+IV. SQL Implementation
+Daily feed architecture
+
+Staging tables
+Audit tables
+Master loan table
+Reference rate table
+Validation layer
+Then present
+•
+•
+•
+•
+
+SQL ingestion
+SQL compounding
+SQL posting
+SQL reconciliation
+
+Include
+5-day lookback implementation
+Window functions
+Common Table Expressions
+Daily scheduler
+Exception handling
+Data validation
+
+V. AI Pricing Engine
+Explain
+Probability of Default
+Loss Given Default
+Exposure at Default
+Behavioural scoring
+Machine learning
+Dynamic repricing
+
+Monthly repricing
+Annual review
+Then define
+R=CCR+K(PD,LGD,EAD)R=CCR+K(PD,LGD,EAD)R=CCR+K(PD,LGD,EAD)
+without making it overly mathematical.
+
+VI. Tail-Risk Modelling
+Explain why multivariate normal correlation fails during
+•
+•
+•
+
+liquidity crises
+exchange-rate shocks
+interest-rate spikes
+
+Introduce
+Clayton Copula
+Cθ(u1,…,ud)=(∑ui−θ−d+1)−1/θC_\theta (u_1,\ldots,u_d) = \left( \sum u_i^{-\theta} -d+1
+\right)^{-1/\theta}Cθ(u1,…,ud)=(∑ui−θ−d+1)−1/θ
+Interpret
+small θ
+medium θ
+large θ
+Show how increasing θ increases lower-tail dependence during banking stress.
+
+VII. Automated ERP RegTech Sweep
+This should become the centrepiece of the article.
+Architecture
+CBK KESONIA Feed
+│
+▼
+ERP Data Lake
+│
+
+▼
+Risk Engine
+│
+▼
+Daily Compounding
+│
+▼
+Loan Ledger
+│
+▼
+Automated Validation
+│
+▼
+RegTech Sweep
+│
+▼
+CBK TCC Submission
+
+Discuss
+Data validation
+Audit trail
+Encryption
+Digital signatures
+Exception queues
+Workflow approvals
+Immutable logs
+Regulatory dashboards
+
+VIII. Oracle OFSAA Deep Dive
+Discuss
+Funds Transfer Pricing
+Risk Management
+Liquidity
+ALM
+IFRS 9
+
+Expected Credit Loss
+Stress testing
+Interest Rate Risk in the Banking Book
+Basel reporting
+Regulatory reporting
+SQL integration
+Performance
+Advantages
+Implementation challenges
+
+IX. SAP S/4HANA + FPSL Deep Dive
+Explain
+Universal Journal
+Contract Accounting
+Financial Products Subledger
+Treasury
+Cash Management
+Multi-GAAP
+Effective Interest Rate
+Financial postings
+Ledger integration
+Advantages
+Implementation complexity
+
+X. Microsoft Dynamics 365 Finance Deep Dive
+
+Discuss
+Finance
+Power BI
+Azure Machine Learning
+Copilot
+Power Automate
+SQL Server
+Azure Synapse
+Data Factory
+API integration
+Strengths
+Limitations
+Best fit
+
+XI. Practical Implementation Roadmap
+Phase 1
+KESONIA ingestion
+↓
+Phase 2
+Daily accrual engine
+↓
+Phase 3
+AI pricing
+↓
+Phase 4
+
+ERP integration
+↓
+Phase 5
+RegTech sweep
+↓
+Phase 6
+CBK reporting
+↓
+Phase 7
+Parallel testing
+↓
+Production
+
+XII. Conclusion
+Discuss
+•
+•
+•
+•
+•
+•
+
+Regulatory compliance
+Operational resilience
+Reduced manual intervention
+Better pricing transparency
+AI-assisted supervision
+Future integration with ISO 20022 and real-time supervisory technology
+
+

@@ -9,3 +9,9 @@ scratchpad/
 *.log
 *.toc
 *.out
+
+# Publication exports and renderer intermediates
+*.pdf
+*.docx
+/publications/build/
+/publications/temp_mermaid.mmd
