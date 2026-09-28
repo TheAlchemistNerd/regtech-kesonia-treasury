@@ -1,43 +1,37 @@
 # KESONIA publication rendering
 
-This directory preserves the inherited publishing assets and LinkedIn editions. The four canonical technical articles and reference list live in `../docs/research/kesonia/`. Edit the intended source edition; a LinkedIn file is an editorial edition, not the canonical technical article.
+The four canonical articles live in `docs/research/kesonia/`. LinkedIn reading editions preserve their technical content and formulas, with source-relative links adjusted for their location. Launch-post copy is separate and has not been posted externally.
 
-## Prerequisites
+## Build
 
-- Python 3.10 or later (standard library only).
-- Pandoc with `--embed-resources` support, available on `PATH`.
-- For `--refresh-diagrams`, Mermaid CLI (`mmdc`) and its compatible browser installation must already be available. The wrapper installs nothing.
+Python 3.10+, Pandoc with embedded-resource support, and Mermaid CLI/browser for diagram generation are required. The wrapper installs nothing. Run from the repository root:
 
-## Build from any working directory
-
-```powershell
-python 'C:/Users/Nevo/Downloads/regtech-kesonia-treasury/publications/build_publications.py'
-```
-
-Or, from the repository root:
-
-```powershell
-python publications/build_publications.py
+```text
 python publications/build_publications.py --refresh-diagrams
+python publications/build_publications.py
 ```
 
-The wrapper resolves paths from its own file, so the first command works from any directory. It sequentially renders ten standalone HTML files into ignored `publications/build/`:
+Paths are resolved from the script, so an absolute script path also works from another working directory. The output is ignored `publications/build/`: four `core/` editions, five `linkedin/` documents, one historical bibliography in `references/`, and every Markdown file in `docs/methods/` under `methods/`.
 
-- `core/`: four technical articles.
-- `linkedin/`: four LinkedIn editions and `linkedin_posts.html`.
-- `references/`: the bibliography.
-- `build_report.json`: run status, source/output SHA-256 hashes, source-relative paths, output paths, embedded-image counts and Pandoc diagnostics for each attempted source.
+## Checks
 
-The HTML uses embedded images and MathML. No external image files or JavaScript mathematics service are needed for reading it. MathML display depends on the reader's browser support. External hyperlinks still open their destinations normally.
+HTML embeds images and renders mathematics as MathML. The builder rebases hyperlinks from the original Markdown location and maps known source documents to their corresponding HTML. Local file targets are checked; core/method HTML fragments are strict. Historical fragment issues are reported. Windows editor `file.md:line` suffixes are retained as report metadata and removed from browser filenames.
 
-## Cached and refreshed diagrams
+Mermaid PNG names use the full diagram-source SHA1. Old caption-based images remain preserved but are not trusted as caches for changed diagrams. Refresh ignores pre-existing caches. Newly generated caches are persisted only after all documents render and local link checks pass; later cached builds can reuse them. Each document has an isolated working directory.
 
-The default build copies the inherited `images/` cache into an isolated workspace and invokes the original `mermaid.lua`. This supports building with the existing PNGs when Mermaid CLI is unavailable. If a needed cache file is missing, the inherited filter attempts `mmdc`; an unresolved or nonembedded image causes the wrapper to fail. Cached PNGs are publication assets; reusing them does not prove they match subsequently edited diagram code.
+`build_report.json` records source SHA256, output hashes, diagram-source hashes, image counts, local-link checks and warnings. All renders and link checks pass before HTML is copied into its final locations. This preserves earlier HTML on a parse/render/link failure; it is not a transaction against a disk failure during final copying. Avoid simultaneous builds into the same destination.
 
-`--refresh-diagrams` starts with an empty diagram cache and requires `mmdc`, rendering each document's diagrams afresh. This is appropriate after Mermaid source edits. The rendered images are embedded into the resulting HTML; this mode does **not** overwrite the inherited PNGs. Every document receives a separate working directory, including the required `internal/puppeteer-config.json`, which prevents the inherited filter's fixed temporary filename from being shared. The inherited Lua filters, configuration and source assets remain unchanged.
+The build validates rendering and local navigation, not external URL availability, financial assertions, regulatory applicability, or PDF/Word pagination. No PDFs or Word files are created. Browser support determines MathML display. Guest project files are only linked, never copied or edited by the build.
 
-## Checks and limits
+## Browser and timeout configuration
 
-The build fails for missing required sources/assets, a failed Pandoc render, unrendered Mermaid blocks, missing images, nonembedded images or fewer embedded images than diagram blocks. All ten renders must pass before outputs are copied to `build/`. A failed rendering run writes a failed report and leaves previously published HTML unchanged. Inspect `build_report.json`; a zero exit code establishes these rendering checks, not that every warning is harmless. Avoid simultaneous builds into the same final `build/` directory.
+Each tool call has a bounded timeout (default 600 seconds), configurable with `--command-timeout-seconds`. A timed-out renderer and its descendants are terminated; unrelated browser processes are not targeted.
 
-The wrapper verifies HTML production and diagram inclusion. It does not validate financial claims, regulatory applicability, numerical models, source citation accuracy, or PDF/Word pagination and layout. It neither edits source documents nor creates PDF or Word publications.
+The bundled headless browser stalled in the September 28 verification. Using an already installed Chrome executable completed the fresh render. On this Windows host the verified invocation was:
+
+```powershell
+$env:PUPPETEER_EXECUTABLE_PATH = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+python publications/build_publications.py --refresh-diagrams --command-timeout-seconds 120
+```
+
+Choose the executable path present on your own machine. Ordinary cached builds use the checked source-hash PNGs and do not need a browser unless a diagram changes or its cache is missing.

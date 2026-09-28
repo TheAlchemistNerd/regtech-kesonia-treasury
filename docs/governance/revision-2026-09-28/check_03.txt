@@ -1,0 +1,55 @@
+{
+  "status": "All assertions passed; illustrative arithmetic only",
+  "historical_benchmark": {
+    "factor": "0.00077768219178082191780821917808219",
+    "index_factor": "0.0007776821424487214850541661783",
+    "benchmark_interest": "777.68219178082191780821917808219",
+    "index_interest": "777.68214244872148505416617830000",
+    "difference_KES": "-0.00004933210043275405299978219",
+    "hypothetical_spread_interest": "246.57534246575342465753424657534",
+    "hypothetical_total_interest": "1024.2575342465753424657534246575"
+  },
+  "curve": {
+    "discount_factors": [
+      "0.97087378640776699029126213592233",
+      "0.93351070036640294989381315783332",
+      "0.88899635867091488393263541192535"
+    ],
+    "forward_1_to_2": "0.0400242718446601941747572815534",
+    "forward_2_to_3": "0.0500725804569534878293542439730",
+    "par_coupon_3y": "0.039738097835849623212162850675709"
+  },
+  "deposit_ladder": {
+    "initial_yield": "0.03975",
+    "month_one_yield": "0.041500000000000000000000000000000",
+    "annualised_nii_change_by_beta": {
+      "0.25": "-3250000.0000000000000000000000000",
+      "0.75": "-13250000.000000000000000000000000"
+    }
+  },
+  "pricing_KES_thousands": {
+    "margin_decimal": "0.05",
+    "interest": "140.00",
+    "income_with_fees": "145.00",
+    "return_before_capital_hurdle": "10.00",
+    "economic_surplus_after_hurdle": "0.00"
+  },
+  "bank_KES_millions": {
+    "initial_nii": "60.500",
+    "nii_change_by_beta": {
+      "0.25": "-0.5000",
+      "0.75": "-9.5000"
+    },
+    "eve_change_by_deposit_duration": {
+      "2": "-13.0000",
+      "0.5": "-40.0000"
+    },
+    "cash_after_stress": "-35",
+    "additional_funding_to_zero": "35"
+  },
+  "cva_currency_units": {
+    "base": "72150.000000",
+    "stress": "960000.00000",
+    "change": "887850.000000"
+  }
+}

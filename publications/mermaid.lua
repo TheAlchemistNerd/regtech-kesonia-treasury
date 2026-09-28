@@ -1,49 +1,31 @@
--- mermaid.lua
--- A pandoc lua filter that converts mermaid code blocks into images using mmdc.
--- Required: mmdc (Mermaid CLI) must be installed and available in PATH.
--- Usage: pandoc input.md -o output.pdf --lua-filter=mermaid.lua
-
-local system = require 'pandoc.system'
-
-local function file_exists(name)
-  local f = io.open(name, "r")
-  if f ~= nil then io.close(f); return true else return false end
+-- Source-addressed Mermaid cache. Each publishing job has its own working dir.
+-- Caption changes cannot reuse a diagram for changed Mermaid source text.
+local function valid_png(path)
+  local file = io.open(path, "rb")
+  if not file then return false end
+  local signature = file:read(8)
+  file:close()
+  return signature == "\137PNG\13\10\26\10"
 end
 
-
-
-function Blocks(blocks)
-  for i = 1, #blocks do
-    local block = blocks[i]
-    if block.t == "CodeBlock" and block.classes[1] == "mermaid" then
-      local content = block.text
-      local mmd_filename = "temp_mermaid.mmd"
-      local f = io.open(mmd_filename, "w")
-      f:write(content)
-      f:close()
-
-      local img_filename = "images/mermaid_" .. pandoc.utils.sha1(content):sub(1,8) .. ".png"
-      
-      local next_block = blocks[i+1]
-      if next_block and next_block.t == "Para" then
-        local text = pandoc.utils.stringify(next_block)
-        if text:match("^Figure %d+") or text:match("^%*Figure %d+") or text:match("Figure %d+") then
-          local sanitized = text:gsub("[^%w]", "_"):gsub("_+", "_"):sub(1, 50)
-          img_filename = "images/" .. sanitized .. ".png"
-        end
-      end
-
-      if not file_exists(img_filename) then
-        local cmd = string.format('mmdc -i "%s" -o "%s" -t default -b transparent -p internal/puppeteer-config.json', mmd_filename, img_filename)
-        local result = os.execute(cmd)
-        if not result then
-          io.stderr:write("Failed to execute mmdc. Is it installed?\n")
-        end
-      end
-
-      os.remove(mmd_filename)
-      blocks[i] = pandoc.Para({pandoc.Image({}, img_filename)})
+function CodeBlock(block)
+  if not block.classes:includes("mermaid") then return nil end
+  local digest = pandoc.utils.sha1(block.text)
+  local source = "temp_mermaid_" .. digest .. ".mmd"
+  local output = "images/mermaid_" .. digest .. ".png"
+  if not valid_png(output) then
+    local file = assert(io.open(source, "wb"))
+    file:write(block.text)
+    file:close()
+    local command = string.format(
+      'mmdc -i "%s" -o "%s" -t default -b transparent -p "internal/puppeteer-config.json"',
+      source, output
+    )
+    local success = os.execute(command)
+    os.remove(source)
+    if not success or not valid_png(output) then
+      error("Mermaid rendering failed for source hash " .. digest .. "; verify mmdc/browser installation and diagram syntax.")
     end
   end
-  return blocks
+  return pandoc.Para({pandoc.Image({}, output)})
 end

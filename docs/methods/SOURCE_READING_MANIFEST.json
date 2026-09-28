@@ -1,0 +1,358 @@
+{
+  "review_date": "2026-09-28",
+  "scope": "Targeted substantive source passages described in CROSS_PROJECT_BOUNDARIES.md; a file hash is not a claim that every line was read.",
+  "full_later_reviews": [
+    "02_MWENDO_AND_UNDERWRITE_DEVELOPMENT_NOTES.md",
+    "03_SOKOINTEL_CREDIT_AND_SPV_SPECIFICATION_ADDENDUM.md",
+    "04_WORKED_PRICING_AND_CASHFLOW_CASES.md",
+    "06_BUSINESS_CREDIT_AND_OWNER_EARNINGS_FOLLOWUP_2026-09-25.md",
+    "COLLECTABILITY_FEEDBACK_AND_CONTINUOUS_REVERIFICATION_2026-09-25.md"
+  ],
+  "source_inventory": [
+    {
+      "path": "C:/Users/Nevo/Downloads/bayesian-telematics-relativities/whitepapers/telematics-relativities/ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "exists": true,
+      "cited_line_anchors": [
+        7
+      ],
+      "sha256": "0b6910245bdd019d919a803f3d6859e7c0c1e6117adf01360b793cc32d5e2a9f",
+      "bytes": 4628,
+      "lines": 52
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/bayesian-telematics-relativities/whitepapers/telematics-relativities/paper.md",
+      "exists": true,
+      "cited_line_anchors": [
+        159
+      ],
+      "sha256": "ef155755da4b1907c34c8a127d4c394cd84a551bdbdb7a014b3c2191947a16a4",
+      "bytes": 83730,
+      "lines": 1224
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/behavioural credit scoring - underwrite to collect rct/series/parts/Part_1_MSME_Credit_Lifecycle_and_Collection_Cascades.md",
+      "exists": true,
+      "cited_line_anchors": [
+        30
+      ],
+      "sha256": "305222ed5b2a199a4bd7f37b4dd7897ef454de174a1900681588754e27c0976a",
+      "bytes": 47166,
+      "lines": 490
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/behavioural credit scoring - underwrite to collect rct/series/parts/Part_5_KESONIA_Pricing_Expected_Credit_Loss_Capital_and_Funding.md",
+      "exists": true,
+      "cited_line_anchors": [
+        14
+      ],
+      "sha256": "d5278e16d6a593e8863a8c4df564c07337a0e9bb3eb7a81adb2e89cb38cf2afa",
+      "bytes": 137431,
+      "lines": 1139
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/behavioural credit scoring - underwrite to collect rct/series/research/COLLECTABILITY_FEEDBACK_AND_CONTINUOUS_REVERIFICATION_2026-09-25.md",
+      "exists": true,
+      "cited_line_anchors": [
+        29
+      ],
+      "sha256": "e76d41d1c387624857d64ff2b57b6bb8e5aad54e002108af6c9644e4c40a60af",
+      "bytes": 13162,
+      "lines": 93
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/business and technical website blog/product_architecture/ADDITIONAL_CREDIT_PRICING_AND_SPV_REQUIREMENTS_2026-09-25.md",
+      "exists": true,
+      "cited_line_anchors": [
+        43
+      ],
+      "sha256": "ebc12572c254edfed0e6b62a63dee85a0f2dc969afc0c94263c63a0c7c108b76",
+      "bytes": 20994,
+      "lines": 150
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/business and technical website blog/product_architecture/SokoIntel Financial Analytics Workbench_ Comprehensive Software Requirements and Design Specification.md",
+      "exists": true,
+      "cited_line_anchors": [
+        98
+      ],
+      "sha256": "e6b8bcd045b59c52acde46e21e8281ad4009597bc7cbdcbba56d8cbc9291b186",
+      "bytes": 181419,
+      "lines": 1470
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/financial material/African Markets and Business Credit/LinkedIn Articles/Part 2 - Business Credit and Fintech.md",
+      "exists": true,
+      "cited_line_anchors": [
+        19
+      ],
+      "sha256": "4df5c8029251d81f70ac1094bc9b1e65b1fc34ce3e8a4ba9717e4b0150c0ff85",
+      "bytes": 43213,
+      "lines": 185
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/financial material/Owner's Earning/Project 1 - MSMEs and Small Businesses/Part 01 - The Cash an Owner Can Actually Claim.md",
+      "exists": true,
+      "cited_line_anchors": [
+        11
+      ],
+      "sha256": "4c2bdfcdca8673b7a73c5c0b0dd58c0414d5ca75d61e1422eceb594ebff44acd",
+      "bytes": 27404,
+      "lines": 197
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/financial material/Owner's Earning/Project 1 - MSMEs and Small Businesses/Part 04 - Owner Pay Reserves Growth and Debt.md",
+      "exists": true,
+      "cited_line_anchors": [
+        25
+      ],
+      "sha256": "8feaa38cf29c01bef966f55b92af5b36896dd65c1d3174cd0ca58341ccd46139",
+      "bytes": 26365,
+      "lines": 184
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/financial material/Owner's Earning/Project 1 - MSMEs and Small Businesses/Part 05 - Buying Selling and Succession.md",
+      "exists": true,
+      "cited_line_anchors": [
+        11
+      ],
+      "sha256": "8d4aee10c41ff4a0aed466286b9f286793e3264226f3765a24009e3205ab7ca1",
+      "bytes": 29276,
+      "lines": 196
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/financial material/Owner's Earning/Project 2 - Listed Companies and Valuation/Part 06 - Reconstructing Owner Earnings from Public Filings.md",
+      "exists": true,
+      "cited_line_anchors": [
+        9
+      ],
+      "sha256": "6e8f6ef5e4b51366da588af1fc277e17868cae05bf379eed1d3625039b64f8b5",
+      "bytes": 28849,
+      "lines": 196
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/financial material/Owner's Earning/Project 2 - Listed Companies and Valuation/Part 09 - Banks and Insurers Distributable Capital.md",
+      "exists": true,
+      "cited_line_anchors": [
+        5
+      ],
+      "sha256": "e2d2d5f6f322511355f8c1f05039eafc43495e5033afb4614b0a6a704c6ae638",
+      "bytes": 29935,
+      "lines": 206
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/insuretech & embedded finance/docs/controlled-specifications/CREDIT_RISK_MODEL_AND_LOSS_ARCHITECTURE_SPECIFICATION.md",
+      "exists": true,
+      "cited_line_anchors": [],
+      "sha256": "28012027525387607926f40c394c37447cf5b633804cb4da80c041caca750c3c",
+      "bytes": 14632,
+      "lines": 268
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/insuretech & embedded finance/docs/controlled-specifications/Mwendo_Pamoja_SPV_Financial_Term_Sheet.md",
+      "exists": true,
+      "cited_line_anchors": [
+        3
+      ],
+      "sha256": "b9ae0db08b1f80bc407d77fad54fac6a807b035ce0342fb958e7239fdfde2bd9",
+      "bytes": 14346,
+      "lines": 215
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/insuretech & embedded finance/docs/controlled-specifications/Part_2b_Bayesian_Underwriting_and_Asymmetric_Copulas.md",
+      "exists": true,
+      "cited_line_anchors": [
+        321
+      ],
+      "sha256": "fffe66d4a33da5c0da908f44e02498ddf05c05482f44da1a274c285dc334d8a9",
+      "bytes": 25805,
+      "lines": 442
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/insuretech & embedded finance/docs/controlled-specifications/Part_5_KESONIA_Pricing_and_Capital_Orchestration.md",
+      "exists": true,
+      "cited_line_anchors": [
+        8
+      ],
+      "sha256": "17857553d316b4609c43619c699ec17d0e1f64b4132a13fa23ed43cf0954254a",
+      "bytes": 25698,
+      "lines": 556
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/insuretech & embedded finance/output/coverage_retirement_audit_2026-09-22/01_POST_COVERAGE_MATRIX.md",
+      "exists": true,
+      "cited_line_anchors": [
+        9
+      ],
+      "sha256": "a027c01f299144403e5655031f95490d9f97076f80d968dce3dc405dbebd6ee4",
+      "bytes": 10146,
+      "lines": 71
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/insuretech & embedded finance/output/coverage_retirement_audit_2026-09-22/03_RESEARCH_PROTOCOL_ADDENDUM.md",
+      "exists": true,
+      "cited_line_anchors": [
+        62
+      ],
+      "sha256": "401ecf6959ad9d99a3fa1d8a1d167930aa44e66f517f71c3c5e43ccb649b2fe0",
+      "bytes": 19683,
+      "lines": 151
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/insuretech & embedded finance/output/coverage_retirement_audit_2026-09-22/06_ADDITIONAL_MATERIAL_REVIEW_2026-09-23.md",
+      "exists": true,
+      "cited_line_anchors": [
+        39
+      ],
+      "sha256": "3dbbebf0377c5c697e7fadcef0da657c383cbc306477b5933e6e8edb31ffddd4",
+      "bytes": 28202,
+      "lines": 219
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/insuretech & embedded finance/output/pricing_mwendo_underwrite_sokointel_review_2026-09-25/02_MWENDO_AND_UNDERWRITE_DEVELOPMENT_NOTES.md",
+      "exists": true,
+      "cited_line_anchors": [
+        19
+      ],
+      "sha256": "8bb4ea0104b343e8eec4faa9114f1db0ad94eba7cf88235eb7372f2f683406eb",
+      "bytes": 18513,
+      "lines": 133
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/insuretech & embedded finance/output/pricing_mwendo_underwrite_sokointel_review_2026-09-25/03_SOKOINTEL_CREDIT_AND_SPV_SPECIFICATION_ADDENDUM.md",
+      "exists": true,
+      "cited_line_anchors": [
+        41
+      ],
+      "sha256": "cadfe65b6bf90178bbdd87383f4cea99e3974f2da9c49c1c94aeb4223c86fb80",
+      "bytes": 20168,
+      "lines": 143
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/insuretech & embedded finance/output/pricing_mwendo_underwrite_sokointel_review_2026-09-25/04_WORKED_PRICING_AND_CASHFLOW_CASES.md",
+      "exists": true,
+      "cited_line_anchors": [
+        7
+      ],
+      "sha256": "a17bcacb786f839ab1df8ad65929aa37780328b1cfc9e99b391bd6c2cf1147c4",
+      "bytes": 9288,
+      "lines": 127
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/insuretech & embedded finance/output/pricing_treasury_cross_project_review_2026-09-23/06_BUSINESS_CREDIT_AND_OWNER_EARNINGS_FOLLOWUP_2026-09-25.md",
+      "exists": true,
+      "cited_line_anchors": [
+        5
+      ],
+      "sha256": "b69cf121804beb82d47cb74ee312266c8ecf66d5898606664f0031a830f50240",
+      "bytes": 13637,
+      "lines": 108
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/insuretech & embedded finance/whitepapers/mwendo-pamoja/parts/Part_5_KESONIA_Pricing_and_Capital_Orchestration.md",
+      "exists": true,
+      "cited_line_anchors": [
+        59
+      ],
+      "sha256": "8cd850f5f80bd9ab5f32d9d988c4485cd778459511fbe08331a49f1d4d3c63ab",
+      "bytes": 49476,
+      "lines": 753
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/regtech-kesonia-treasury/docs/research/kesonia/ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "exists": true,
+      "cited_line_anchors": [
+        7
+      ],
+      "sha256": "750aa87e920cce3f3bed6d5dc2601b4fe298bfca12933cc3ebc3d2c5e5f3cf3c",
+      "bytes": 5551,
+      "lines": 56
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/regtech-kesonia-treasury/docs/research/kesonia/KESONIA_COMPOUNDING_TERM_STRUCTURE_AND_FUNDING_CURVE_NOTE.md",
+      "exists": true,
+      "cited_line_anchors": [
+        1
+      ],
+      "sha256": "1318a5e0a483a8c2c10e4e0b3dd3878bad9df9421cb7e482d5d70f8641bae587",
+      "bytes": 914,
+      "lines": 9
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/regtech-kesonia-treasury/docs/research/kesonia/RegTech_Gap_Analysis_Report.md",
+      "exists": true,
+      "cited_line_anchors": [
+        37
+      ],
+      "sha256": "6c98e18a7ea7c46add237b3e8e420b93586ef5879f42c6f9ff408f108043c1d4",
+      "bytes": 14844,
+      "lines": 133
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/regtech-kesonia-treasury/docs/research/kesonia/RegTech_KESONIA_Enhancement_Report.md",
+      "exists": true,
+      "cited_line_anchors": [
+        7
+      ],
+      "sha256": "e0d86e310b2b74d7e957cee4f482e5382b4ea2b95febf48ac83c0604bf4660d2",
+      "bytes": 6090,
+      "lines": 76
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/regtech-kesonia-treasury/docs/research/kesonia/STP_AND_ALM_FTP_SOFTWARE_REVIEW_2026-09-25.md",
+      "exists": true,
+      "cited_line_anchors": [
+        9
+      ],
+      "sha256": "9d0e8f2b586d2c71e0b96bc3ef0df210e445b3ed9b1b8de2f7327ec38dfcfeb5",
+      "bytes": 13114,
+      "lines": 93
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/regtech-kesonia-treasury/docs/research/kesonia/TREASURY_REMAINING_WORK_REGISTER_2026-09-25.md",
+      "exists": true,
+      "cited_line_anchors": [
+        1
+      ],
+      "sha256": "d68a8888fda25269255abe435c1833c1f4ccc83d7dc19abd645929302ad9a6d4",
+      "bytes": 15420,
+      "lines": 74
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/regtech-kesonia-treasury/docs/research/kesonia/cbk_kesonia_k_framework.md",
+      "exists": true,
+      "cited_line_anchors": [
+        11
+      ],
+      "sha256": "9c300c59adc6a564c471315b4035e8dae13dc7a64886b127289f3b019fd288df",
+      "bytes": 2320,
+      "lines": 20
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/regtech-kesonia-treasury/output/kesonia_treasury_deep_review_2026-09-25/02_CALCULATION_AND_CASEBOOK.md",
+      "exists": true,
+      "cited_line_anchors": [
+        73
+      ],
+      "sha256": "179140898930396e952e7d4523c6773c4a31a0855d03b7f24da99426be9eb136",
+      "bytes": 16506,
+      "lines": 214
+    },
+    {
+      "path": "C:/Users/Nevo/Downloads/regtech-kesonia-treasury/output/pricing_treasury_cross_project_review_2026-09-23/02_WORKING_FORMULATIONS_AND_EXAMPLES.md",
+      "exists": true,
+      "cited_line_anchors": [
+        5
+      ],
+      "sha256": "02fbe55287181ee18d62c43c1deaf6aff4ebb0584290f883bd84c3670aa4edea",
+      "bytes": 17082,
+      "lines": 210
+    }
+  ],
+  "illustrative_accrual_check": {
+    "benchmark_accrual_factor": "0.0008221430117449880082361439217309",
+    "benchmark_interest": "822.14301174498800823614392173090000",
+    "margin_interest": "328.76712328767123287671232876712329",
+    "total_interest": "1150.9101350326592411128562504980233",
+    "annualised_benchmark_rate": "0.1000273997623068743353975104772595"
+  }
+}

@@ -1,557 +1,187 @@
-# Part 2: The Daily Compounding Engine , - Mathematics and SQL Implementation
+# Part 2: Computing KESONIA Interest, Curves and Contract Cash
 
-**Series:** Operationalizing KESONIA within Enterprise ERP Systems for Commercial Banks and Traditional Lenders
+**Series:** Operationalising KESONIA: benchmark calculations, credit economics, treasury and governed operations
+**Author:** Nevil Maloba
+**Revision:** 28 September 2026
+
+> LinkedIn reading edition, synchronised with the 28 September technical revision. Formulas are retained for the downloadable HTML; launch-post copy is separate.
 
 ## Abstract
 
-The compounded-in-arrears methodology that defines KESONIA, -and its
-global RFR counterparts, -requires enterprise systems to compute
-interest through a deterministic daily sequence rather than a static
-rate formula. This article derives the Cumulative Compounded Rate (CCR)
-formula from first principles, addresses the critical distinctions
-between business-day and calendar-day conventions, explains observation
-lag and lookback mechanics, and presents a production-grade SQL
-implementation of the daily compounding engine. Code examples use Common
-Table Expressions, window functions, and automated posting routines
-applicable across Oracle Database, Microsoft SQL Server, PostgreSQL, and
-SAP HANA environments.
+A benchmark formula is reproducible only when its dates, information cutoff, rate units, weights and balances are defined. This article derives the compounded factor and its annualised rate, specifies a complete observation map, and connects calculation results to controlled postings. It also develops the distinction between historical compounding and a future term structure through bootstrapping and instrument repricing. The Python research laboratory is the executable reference for the teaching fixtures. SQL is presented as a calculation contract to implement and independently test in a selected database, without claiming that one mixed-dialect snippet is ready for every institution.
 
-## I. Why Backward-Looking Compounding?
+## 1. A factor, a rate and a cash amount
 
-The design choice to compound overnight observations in arrears rather
-than use a forward-looking term rate is rooted in market integrity.
-Overnight reference rates are derived from observable,
-transaction-confirmed funding activity in the interbank market. Every
-KESONIA observation represents actual lending at a specific cost,
-verified by the CBK from submitted transaction data. No estimation,
-interpolation, or panel judgment enters the published figure [1].
+Let $r_i$ be an annual decimal fixing, $n_i$ the calendar-day weight assigned to it, and $b=365$ the ACT/365 denominator. For an approved sequence of intervals,
 
-This contrasts with the architecture of LIBOR, which asked panel banks
-to submit estimates of borrowing rates they would hypothetically face,
-whether or not actual transactions had occurred. The resulting
-manipulation, -documented in multiple enforcement actions across the
-United States, United Kingdom, and European Union, -demonstrated that
-submission-based benchmarks invite strategic distortion when no
-underlying transactions constrain the submissions [2].
+$$A_0=1,\qquad A_j=\prod_{i=1}^{j}\left(1+r_i\frac{n_i}{b}\right),\qquad F=A_N-1.$$
 
-Backward-looking compounding eliminates this vulnerability. Interest is
-determined only after the observation period closes and all overnight
-rates have been published. The obligation is computed from realized
-market conditions rather than forward projections. This approach is
-shared by SOFR (United States), SONIA (United Kingdom), €STR (Eurozone),
-and SARON (Switzerland), -all of which moved to compounded-in-arrears
-conventions following the FSB's 2014 benchmark reform recommendations
-[3].
+$A_N$ is an accumulation factor and $F$ a dimensionless period return. When the weights cover an accrual period of $d=\sum_i n_i$ days, its annualised equivalent is
 
-The operational cost is real: the final interest amount for a given
-period is not known until the period ends. Institutions cannot
-pre-compute statements. Instead, they must maintain synchronized daily
-computation pipelines that translate a sequence of published overnight
-rates into a period interest charge through precise mathematical
-compounding.
+$$R_{KES}=F\frac{b}{d}.$$
 
-## II. The CCR Formula: Derivation and Interpretation
+For constant principal $P$ and a separately simple-accrued annual margin $k$,
 
-The Cumulative Compounded Rate (CCR) over an accrual period is:
+$$I=P F+Pk\frac{d}{b}.$$
 
-CCR = [ ∏ (1 + (KESONIAᵢ × nᵢ) / 365) - 1 ] × (365 / d)
+This derives the amount from the contract convention. Compounding $r_i+k$ inside every factor would define a different margin treatment. Neither formula, on its own, calculates customer APR including fees.
 
-where:
+The term $r_i n_i/b$ applies one fixing over its specified calendar span. A three-day weight is not three successive one-day reinvestments: $1+3r/b$ differs from $(1+r/b)^3$. The required convention determines which expression is appropriate. Similarly, rearranging factors does not change their product; the compounding effect is not evidence that adjacent high-rate days have a unique extra effect independent of the rates and weights.
 
-Symbol | Definition
---- | ---
-KESONIAᵢ | Overnight rate published on business day $i$
-nᵢ | Calendar days for which rate $i$ applies
-d_b | Number of business-day observations in the accrual period
-d | Total calendar days in the interest period
+The CBK's August 2025 framework adopts compounded-in-arrears for its in-scope loans, specifies ACT/365 in the index construction and describes the lookback. It also distinguishes the index's internal and published precision. These source conventions anchor the engine; the product's remaining calculation details must be explicit. [CBK framework, Appendix I](https://www.centralbank.go.ke/wp-content/uploads/2025/08/Revised-Risk-based-Credit-Pricing-Model.pdf).
 
-The multiplicative structure of the product operator (∏) reflects
-daily reinvestment of accrued interest: each observation compounds on
-the accumulated interest of all preceding days [4]. The final
-annualization by 365/d converts the compounded factor into an
-equivalent annual percentage rate, enabling comparison across periods of
-different lengths and direct disclosure in Total Cost of Credit
-documentation.
+## 2. Build the interval ledger before calculating
 
-Unlike simple averaging, -which treats each overnight rate
-independently, -the product structure means that consecutive high-rate
-days have a superlinear effect on the cumulative charge. This accurately
-captures the time value of money in an environment where rates fluctuate
-daily in response to liquidity conditions.
+Represent periods as half-open intervals $[s,e)$: include the start and exclude the end. If a Friday observation covers Friday through Sunday, the unlagged span is $[Friday,Monday)$ and has three days. If the interest period ends on Sunday, clip at Sunday; that partial span has two days. A Tuesday fixing followed by a Wednesday holiday and Thursday reopening spans two days, not three.
 
-## III. Business Days versus Calendar Days
+The ledger must contain enough history to find a valid predecessor observation for an accrual period beginning on a non-business day. It must contain an explicit end boundary to close the final span. Defaulting the final weight to one day loses weekend or holiday accruals.
 
-The CBK publishes KESONIA exclusively on business days. Loans, however,
-accrue interest continuously, -including weekends, public holidays, and
-any emergency market closures. The CCR formula accommodates this through
-the weighting coefficient nᵢ, which represents the number of
-**calendar days** for which each published rate remains operative.
+| Field | Meaning |
+|---|---|
+| Contract/period/version | The exact interest period and terms being calculated |
+| Accrual start/end | Boundaries of the interest-bearing span |
+| Observation value date | Economic date of the selected fixing |
+| Publication/receipt times | When the fixing became available and entered the system |
+| Fixing version | Original or corrected observation actually used |
+| Day weight and calendar version | Why that fixing receives that weight |
+| Principal and balance-event version | Balance relevant to the selected product rule |
+| Mapping convention | Lookback/shift/payment lag, floor and margin conventions |
+| Calculation cutoff/status | Actual, provisional, scenario or historical replay |
 
-**Example: Friday, Monday sequence**
+Check that intervals neither overlap nor leave gaps. Under a non-shifted accrual-weight convention, their day weights must sum to the period length. A shifted observation convention needs its own separately reconciled observation and accrual lengths.
 
-Publication Day | KESONIA | Calendar Days Applied | nᵢ
---- | --- | --- | ---
-Friday | 9.20% | Friday, Saturday, Sunday | 3
-Monday | 9.15% | Monday | 1
-Tuesday | 9.18% | Tuesday | 1
+## 3. Lookback, observation shift and payment lag
 
-Friday's rate is weighted three times because no new observation is
-published on Saturday or Sunday. The two weekend days are therefore
-bridged by the most recently published rate, consistent with conventions
-established for SOFR and SONIA [5].
+The framework's five-day lookback provides operational time to determine the interest amount before payment. The cited wording should not be expanded silently into a universal five-business-day rule. Specify the approved interpretation and retain its supporting authority. The laboratory's expressly labelled business-day fixture teaches date mapping; it does not settle that implementation decision for a live contract.
 
-**Example: Public holiday on Wednesday**
+Three transformations must remain distinct:
 
-If Independence Day falls on Wednesday, Tuesday's publication remains
-operative for Tuesday, Wednesday, and the Wednesday holiday. Thursday's
-rate resumes normal single-day weighting when the market reopens. No
-synthetic rate is introduced; nᵢ is simply extended, preserving
-mathematical consistency without estimation.
+1. **Rate lookback without observation shift:** map each accrual interval to an earlier fixing while retaining the accrual interval's weight.
+2. **Observation shift:** move the observation interval and use weights associated with that shifted interval, following its own annualisation/cash convention.
+3. **Payment lag:** leave interest observation/accrual terms unchanged but move the payment date.
 
-This design choice eliminates interpolation uncertainty, -a significant
-advantage when regulatory reproducibility is required. Every CCR
-calculation is a deterministic function of the official KESONIA
-publication sequence and the institution's holiday calendar [6].
+Applying a lookback means mapping every interval across the whole period. Selecting only the last five observations discards most of the interest period. Holiday patterns can also give the shifted observation and accrual calendars different weights. Their economic difference can be measured; it should not be declared negligible before the calculation.
 
-## IV. Observation Lag, Lookback Period, and Payment Lag
+Availability is a separate test. A fixing dated Monday but published Tuesday cannot enter a Monday calculation merely because its value date is Monday. Preserve the CBK publication convention, actual receipt and authorised cutoff. Forecasts may use assumed future observations, but must remain visibly separate from final contractual accrual.
 
-A practical problem arises from the arrears nature of the calculation:
-the final overnight observation in an accrual period is published on the
-last business day before the payment date. Generating customer
-statements, routing payments, and completing reconciliation on the same
-day is operationally infeasible for large portfolios.
+## 4. Historical index verification
 
-The solution, -standard across SOFR, SONIA, and €STR loan markets, -is a
-**lookback convention** [7]. Under a five-business-day lookback, the
-daily rates applied to a given interest period are sourced from
-observations published five business days earlier. The observation
-window is shifted backward, meaning that by the time the final
-observation closes, five business days remain before payment is due.
+The saved September 25 casebook records the CBK fixing for 5 September 2025 as 9.4618%, with index values 100.10451025 on 5 September and 100.18235974 on 8 September. These are historical values, not a current-rate quote. The three-day observation-span return is
 
-This convention: - Allows statement generation, reconciliation, and
-customer notification to complete before the payment date. - Does not
-materially alter the economic value of the interest charge (the five-day
-shift has minimal effect on a multi-month period). - Is configurable:
-institutions operating under different supervisory conventions can
-adjust the lookback window without redesigning the compounding engine.
+$$F_{fixing}=0.094618\frac{3}{365}=0.00077768219178.$$
 
-An **observation lag** variant (not shifting the entire window but
-delaying each rate application by a fixed number of days) provides
-equivalent operational convenience with slightly different period-end
-mechanics. Both conventions must be clearly documented in loan contracts
-and consistently implemented in the ERP [8].
+The rounded published index gives
 
-**Figure 3** illustrates the KESONIA daily accrual data flow.
+$$F_{index}=\frac{100.18235974}{100.10451025}-1
+=0.00077768214245.$$
 
-```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "themeVariables": {"fontSize": "40px", "fontFamily": "arial"}} }%%
-flowchart LR
-    A[CBK Publishes Daily KESONIA] --> B[Reference Rate Repository]
-    B --> C[Business Calendar]
-    C --> D[Holiday & Weekend Weighting]
-    D --> E[Daily Compounding Engine]
-    E --> F[CCR Calculation]
-    F --> G[Customer Risk Premium K]
-    G --> H[Final Lending Rate]
-    H --> I[Loan Ledger]
+On a hypothetical KES 1 million, these produce KES 777.68219178 and KES 777.68214245. The difference is about KES 0.00004933; both round to KES 777.68. A hypothetical simple 3% margin over the same three days adds KES 246.57534247, giving total illustrative interest KES 1,024.26.
+
+This is an observation-span check. A customer invoice still needs its lookback/accrual mapping. An index ratio is a valid independent comparison only when dates, weights and conventions correspond. Since the published index is rounded, exact bitwise equality with an unrounded direct product is not the acceptance rule. Use the disclosed precision to set an amount tolerance and report both the unrounded difference and final cash rounding. [CBK fixing series](https://www.centralbank.go.ke/kesonia/); [CBK index](https://www.centralbank.go.ke/kesonia-compounded-index/).
+
+## 5. Balance events and the meaning of daily accrual
+
+For constant principal, interval increments reconcile exactly:
+
+$$\Delta I_j=P(A_j-A_{j-1})+Pk\frac{n_j}{365},\qquad
+\sum_j\Delta I_j=I.$$
+
+The final annualised period rate is not necessarily the rate known on each earlier day. Reapplying it to a changing daily principal does not generally reproduce the contractual interest.
+
+A repayment, draw or reversal must split the balance timeline at its effective date. Then apply the product's documented balance rule. For example, a hypothetical capitalising cash account can evolve as
+
+$$V_{j+1}=V_j\left(1+r_j\frac{n_j}{365}\right)+c_{j+1},$$
+
+where $c$ is a signed cash addition at the interval end. Its benchmark interest is terminal value minus starting value and net contributions. This is a clearly defined teaching convention, not permission to capitalise overdue customer interest. A non-capitalising loan or a product using non-cumulative compounded rates requires its own event specification.
+
+The dated FTP examples in Part 3 use stated balance/reset assumptions. A schedule must disclose these assumptions before its interest can be compared to an actual loan. The important control is a reproducible opening balance, each principal event, accrued interest, cash settlement and closing balance; the benchmark formula cannot resolve an unspecified contract.
+
+## 6. An implementable calculation contract
+
+Separate data preparation from aggregation. The interval service interprets the contract and constructs validated rows. The calculation service consumes those rows. The posting service receives an approved amount and event identity.
+
+```text
+load contract and period version
+build complete accrual intervals and principal-event schedule
+map each interval to its approved observation and calendar
+select fixing versions available at the calculation cutoff
+validate uniqueness, coverage, units and valid factors
+compute period return and the product-specific cash schedule
+compare with an independent reference calculation
+record immutable run inputs and result version
+approve the identified version, then post idempotently
+reconcile amount, period, entity and ledger event
 ```
 
-*Figure 3: Daily KESONIA accrual pipeline from CBK publication through
-compounding to loan ledger posting. The lookback offset decouples the
-observation window from the payment date.*
+For a constant-principal period, one SQL implementation can aggregate **validated** rows by `(contract_id, period_id, calculation_version)`:
 
-## V. SQL Architecture: Six Computational Layers
-
-The mathematical formulation must be translated into executable database
-logic that processes millions of loan contracts daily without human
-intervention. A production-grade implementation separates computational
-responsibilities into six logical layers [9]:
-
-1.  **Data Ingestion**: Retrieval, timestamp validation, and immutable
-    storage of raw CBK publications.
-2.  **Data Staging**: Merging raw observations with validated historical
-    rate repositories.
-3.  **Validation**: Duplicate detection, anomalous rate screening,
-    business-calendar consistency checks.
-4.  **Interest Computation**: SQL-based compounding using Common Table
-    Expressions and window functions.
-5.  **Ledger Posting**: Updating loan interest accrual tables and ERP
-    financial modules.
-6.  **Regulatory Reconciliation**: Comparing computed balances against
-    contractual expectations, routing exceptions.
-
-This separation ensures that each computational step is independently
-auditable. A regulatory examiner can isolate the ingestion layer, the
-computation layer, and the posting layer independently and verify their
-internal consistency [10].
-
-**Figure 4** shows the SQL six-layer architecture.
-
-```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "themeVariables": {"fontSize": "28px", "fontFamily": "arial"}} }%%
-flowchart TD
-    subgraph Ingestion [Data Ingestion]
-        D1[(kesonia_raw_feed)] --> D2[(kesonia_reference)]
-        D3[(holiday_calendar)] --> D2
-    end
-    subgraph Processing [SQL Compounding Engine]
-        D2 --> P1[DailyWeights CTE]
-        P1 --> P2[CompoundedRates CTE]
-        P2 --> P3[CCR Calculation]
-    end
-    subgraph Ledger [Ledger Posting]
-        P3 --> L1[(loan_master)]
-        L1 --> L2[(loan_interest_accrual)]
-        L2 --> L3[(audit_log)]
-    end
+```sql
+-- Algorithmic SQL shape; adapt and test numerical functions per dialect.
+SELECT contract_id, period_id, calculation_version,
+       EXP(SUM(LN(1.0 + annual_decimal_rate * day_weight / 365.0))) - 1.0
+         AS period_return,
+       SUM(day_weight) AS mapped_days
+FROM validated_observation_intervals
+GROUP BY contract_id, period_id, calculation_version;
 ```
 
-*Figure 4: Six-layer SQL architecture for the KESONIA daily compounding
-engine. Each layer is independently auditable and fails safely into the
-exception queue.*
+This query does not discover calendars, infer missing rates, authorise changes or post journals. Validate every factor as positive before taking its logarithm. Negative rates are not intrinsically invalid; the factor and any contractual floor govern admissibility. A floor on each daily fixing differs from a floor on the period rate.
 
-### Core Table Schema
+The [benchmark reference module](../../research_lab/benchmark.py) and [worked examples](../../docs/methods/WORKED_EXAMPLES.md) provide the executable teaching interface. A database implementation should reconcile to independent high-precision fixtures, including `log1p`/`expm1` or an appropriately precise product method. SQL decimal types, floating-point aggregates and available functions differ by engine, so numerical precision and performance must be measured for the selected dialect.
 
-```mermaid
----
-title: KESONIA Compounding Engine Database Schema
----
-%%{init: {"themeVariables": {"fontSize": "36px", "fontFamily": "arial"}} }%%
-erDiagram
-    kesonia_raw_feed {
-        BIGINT feed_id PK "GENERATED ALWAYS AS IDENTITY"
-        DATE publication_date
-        DECIMAL kesonia_rate
-        TIMESTAMP received_ts
-        VARCHAR source_hash "SHA-256"
-    }
+## 7. From historical compounding to future curves
 
-    kesonia_reference {
-        DATE value_date PK
-        DECIMAL kesonia_rate
-        BOOLEAN is_business_day
-        TIMESTAMP validated_ts
-    }
+A historical accumulation uses realised observations. A future curve is constructed at a valuation date from instrument quotations or explicit assumptions. Its inputs include settlement dates, cash-flow dates, day counts, coupon frequency, index, collateral/credit basis and quote conventions.
 
-    holiday_calendar {
-        DATE calendar_date PK
-        VARCHAR day_type "BUSINESS, WEEKEND, HOLIDAY"
-        INTEGER n_i_weight
-    }
+Consider synthetic instruments with annual payments, a one-year simple deposit rate $q_1=10\%$ and a two-year par coupon $c_2=12\%$. Under a single-curve teaching convention,
 
-    loan_master {
-        VARCHAR loan_id PK
-        DATE origination_date
-        DATE maturity_date
-        DECIMAL principal
-        DECIMAL risk_margin_k
-        VARCHAR day_count
-    }
+$$D_1=\frac{1}{1+q_1},\qquad
+1=c_2D_1+(1+c_2)D_2,$$
 
-    loan_interest_accrual {
-        VARCHAR loan_id PK, FK "REFERENCES loan_master"
-        DATE accrual_date PK
-        DECIMAL effective_rate
-        DECIMAL accrued_interest
-        TIMESTAMP last_calculated
-    }
+so
 
-    audit_log {
-        BIGINT log_id PK "GENERATED ALWAYS AS IDENTITY"
-        TIMESTAMP event_ts
-        VARCHAR layer
-        VARCHAR loan_id
-        DATE value_date
-        VARCHAR action
-        TEXT result
-    }
+$$D_2=\frac{1-c_2D_1}{1+c_2}.$$
 
-    loan_master ||--o{ loan_interest_accrual : "1-to-many"
-    loan_master ||--o{ audit_log : "1-to-many (logs)"
-    kesonia_raw_feed ||--|{ kesonia_reference : "feeds"
-    holiday_calendar ||--|{ kesonia_reference : "validates dates"
-    kesonia_reference ||--o{ loan_interest_accrual : "applied to"
-```
+These equations construct discounts from prices, rather than assuming a spot curve and naming it a bootstrap. With annual compounding, recover zero and one-year forward rates through
 
-*Figure 5: Entity-Relationship Diagram of the Core Table Schema.*
+$$z_2=D_2^{-1/2}-1,\qquad f_{1,2}=D_1/D_2-1.$$
 
-    ,  Immutable raw CBK publication record
-    CREATE TABLE kesonia_raw_feed (
-        feed_id         BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-        publication_date DATE NOT NULL,
-        kesonia_rate    DECIMAL(10,8) NOT NULL,
-        received_ts     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        source_hash     VARCHAR(64)   ,  SHA-256 of raw payload
-    );
+Reinsert the fitted discounts into both instrument prices. The residuals must meet the declared tolerance. A smooth plot is not a repricing check.
 
-    ,  Validated reference rate with calendar weights
-    CREATE TABLE kesonia_reference (
-        value_date      DATE PRIMARY KEY,
-        kesonia_rate    DECIMAL(10,8) NOT NULL,
-        is_business_day BOOLEAN NOT NULL,
-        validated_ts    TIMESTAMP
-    );
+Between pillars, a transparent choice is linear interpolation of log discount factors:
 
-    ,  Holiday and weekend calendar
-    CREATE TABLE holiday_calendar (
-        calendar_date   DATE PRIMARY KEY,
-        day_type        VARCHAR(20),  ,  'BUSINESS', 'WEEKEND', 'HOLIDAY'
-        n_i_weight      INTEGER       ,  Calendar days this obs. carries
-    );
+$$\log D(t)=(1-w)\log D(t_a)+w\log D(t_b),\quad
+w=\frac{t-t_a}{t_b-t_a}.$$
 
-    ,  Contract master
-    CREATE TABLE loan_master (
-        loan_id         VARCHAR(30) PRIMARY KEY,
-        origination_date DATE NOT NULL,
-        maturity_date   DATE NOT NULL,
-        principal       DECIMAL(18,2),
-        risk_margin_k   DECIMAL(10,8),
-        day_count       VARCHAR(10)  ,  'ACT/365'
-    );
+State the resulting forward behaviour and test sensitivity to another method. Positivity is necessary; declining discounts are not a universal requirement where negative rates are admissible. Extrapolation outside quoted maturities needs an explicit rule and a visible unsupported-tenor flag. The [curve module](../../research_lab/curves.py) supplies the laboratory implementation and repricing output.
 
-    ,  Daily accrual results
-    CREATE TABLE loan_interest_accrual (
-        loan_id         VARCHAR(30) REFERENCES loan_master(loan_id),
-        accrual_date    DATE,
-        effective_rate  DECIMAL(10,8),
-        accrued_interest DECIMAL(18,4),
-        last_calculated TIMESTAMP,
-        PRIMARY KEY (loan_id, accrual_date)
-    );
+## 8. Projection and discounting can differ
 
-    ,  Complete audit trail
-    CREATE TABLE audit_log (
-        log_id          BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-        event_ts        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        layer           VARCHAR(30),
-        loan_id         VARCHAR(30),
-        value_date      DATE,
-        action          VARCHAR(50),
-        result          TEXT
-    );
+For a reset interval with accrual fraction $\alpha_j$, a simple forward implied by a projection curve is
 
-## VI. SQL Compounding Engine: CTE Implementation
+$$L_j=\frac{D_p(t_{j-1})/D_p(t_j)-1}{\alpha_j}.$$
 
-The core compounding logic uses two chained Common Table Expressions
-(CTEs). The first CTE (`DailyWeights`) computes each observation's
-calendar-day weight using a `LEAD` window function. The second
-(`CompoundedRates`) applies the product via the logarithm-exponential
-identity, -converting a multiplicative product into an additive sum
-within `EXP(SUM(LN(...)))`, which is more numerically stable and
-SQL-native than explicit looping [11].
+For floating cash on notional $N$, its discounted value is
 
-    WITH
-    DailyWeights AS (
-        SELECT
-            k.loan_id,
-            k.value_date,
-            k.kesonia_rate,
-            ,  Calendar days this rate applies: distance to next business-day observation
-            COALESCE(
-                LEAD(k.value_date, 1) OVER (
-                    PARTITION BY k.loan_id
-                    ORDER BY k.value_date
-                ) - k.value_date,
-                1  ,  Last observation defaults to 1 calendar day
-            ) AS n_i
-        FROM kesonia_reference k
-        INNER JOIN loan_master lm ON k.value_date BETWEEN lm.origination_date AND lm.maturity_date
-        WHERE k.is_business_day = TRUE
-    ),
+$$PV_{float}=\sum_j N\alpha_j L_jD_d(t_j).$$
 
-    CompoundedRates AS (
-        SELECT
-            loan_id,
-            ,  Product via log-sum: EXP(SUM(LN(1 + r*n/365))) - 1
-            EXP(
-                SUM(LN(1.0 + (kesonia_rate * n_i) / 365.0))
-            ) - 1.0                         AS compounded_factor,
-            SUM(n_i)                        AS total_calendar_days
-        FROM DailyWeights
-        GROUP BY loan_id
-    )
+$D_p$ projects the indexed cash; $D_d$ discounts it under the chosen valuation purpose. They may coincide in a single-curve exercise but should remain separately named. Multi-curve bootstrapping solves the relevant instrument equations using both sets of assumptions. A government yield curve, historical KESONIA average and bank funding curve are not interchangeable substitutes.
 
-    SELECT
-        loan_id,
-        compounded_factor * (365.0 / total_calendar_days) AS CCR
-    FROM CompoundedRates;
+A forward is an implied rate under the construction, not an assured future fixing. A liquid local swap market is also not established by the existence of the benchmark. Kenyan instrument coverage, executable quotations, bid/ask, tenors and collateral arrangements remain evidence requirements in the source register. Synthetic quotes teach the mechanism without implying market availability.
 
-Window functions eliminate procedural loops: the entire portfolio
-computes in a single parallel SQL pass, maintaining performance for loan
-books of millions of contracts [12].
+## 9. Verification, correction and scale
 
-## VII. Five-Business-Day Lookback Implementation
+The minimum fixture set covers weekends, holidays, a non-business start, clipped final span, duplicate/missing observations, corrected fixing versions, lookback versus shift, margin treatment, principal changes and rounding. Check zero rates, one interval, positive/negative admissible rates and agreement between independent product and log-product calculations.
 
-Incorporating the five-business-day lookback requires filtering the
-`DailyWeights` CTE to observations published up to five business days
-before the statement date. A configurable parameter `:statement_date`
-controls the cutoff:
+A correction creates a new run and a linked adjustment; it does not overwrite history. Duplicate delivery must not duplicate an accrual or journal. Compare original-cutoff replay with revised-information replay to establish what changed. Part 4 develops the event controls.
 
-    ,  In the DailyWeights CTE, add to the WHERE clause:
-    WHERE k.value_date BETWEEN
-        (SELECT calendar_date
-         FROM (
-             SELECT calendar_date,
-                    ROW_NUMBER() OVER (ORDER BY calendar_date DESC) AS rn
-             FROM holiday_calendar
-             WHERE day_type = 'BUSINESS'
-               AND calendar_date <= :statement_date
-         ) biz
-         WHERE rn = 5)
-        AND :statement_date
+Performance evidence should state contracts, intervals, historical horizon, hardware, memory, database settings and correction workload. Measure throughput, latency and failure recovery as well as arithmetic accuracy. Partitioning, caching and parallel processing are engineering options to benchmark. They are not proof that millions of contracts can be processed within the institution's operating window.
 
-This implementation is **configurable**: changing `:lookback_days` from
-5 to any other regulatory-approved window requires no schema change,
-satisfying future regulatory refinement without architectural redesign
-[13].
+The result of Part 2 is a traceable contractual calculation and an explicit curve-construction method. Part 3 uses them to ask whether the facility's expected cash covers funding, servicing, loss and capital while fitting the borrower's operating cycle.
 
-## VIII. Automated Posting and Reconciliation
+## References and companion work
 
-Following computation, a posting step joins the CCR results to the loan
-master and updates the accrual table:
-
-    UPDATE loan_interest_accrual lia
-    SET
-        effective_rate   = cr.CCR + lm.risk_margin_k,
-        accrued_interest = lm.principal * ((cr.CCR + lm.risk_margin_k) / 365.0),
-        last_calculated  = CURRENT_TIMESTAMP
-    FROM CompoundedRates cr
-    INNER JOIN loan_master lm ON cr.loan_id = lm.loan_id
-    WHERE lia.loan_id = cr.loan_id
-      AND lia.accrual_date = :accrual_date;
-
-The reconciliation layer then queries the `loan_interest_accrual` table
-against expected contractual balances, flags any discrepancy exceeding a
-predefined tolerance (typically ±KES 1 for retail; ±KES 100 for
-corporate), and routes flagged records to the exception queue with a
-full audit entry:
-
-    INSERT INTO audit_log (layer, loan_id, value_date, action, result)
-    SELECT
-        'RECONCILIATION',
-        lia.loan_id,
-        :accrual_date,
-        'EXCEPTION_FLAGGED',
-        'Computed: ' || lia.accrued_interest::TEXT ||
-        ' Expected: ' || expected_accrual::TEXT
-    FROM loan_interest_accrual lia
-    INNER JOIN expected_balances eb ON lia.loan_id = eb.loan_id
-    WHERE ABS(lia.accrued_interest - eb.expected_accrual) > :tolerance;
-
-All processing events, -including successful postings, exception flags,
-and supervisor approvals, -are written to `audit_log` with millisecond
-timestamps and layer identifiers, creating a complete processing history
-for every contract [14].
-
-## IX. Performance and Scalability
-
-Commercial banks operating loan books of one million or more contracts
-require processing architectures beyond single-database SQL. Several
-techniques sustain performance at scale [15]:
-
--   **Partitioned tables**: Partition `kesonia_reference` and
-    `loan_interest_accrual` by date range, enabling partition pruning
-    during daily accrual queries.
--   **Parallel query execution**: Oracle Database, SQL Server, and
-    PostgreSQL all support parallel CTE evaluation; configuring degree
-    of parallelism to match available cores reduces wall-clock time.
--   **Incremental processing**: Only recalculate accruals for contracts
-    where `value_date` falls within the current observation window,
-    avoiding full-portfolio recalculation.
--   **Materialized views**: Cache intermediate compounding results for
-    periods already closed, preventing redundant recalculation of
-    historical observations.
--   **Azure Synapse Analytics**: For Dynamics 365 Finance environments,
-    Synapse's distributed SQL engine handles enterprise-scale ETL and
-    compounding workloads that exceed SQL Server's single-node capacity.
-
-## X. Conclusion and Bridge to Part 3
-
-The daily compounding engine is the computational foundation of the
-entire KESONIA compliance architecture. Its correctness, -mathematical,
-calendar-logical, and operational, -determines the accuracy of every
-downstream accounting entry, customer statement, and regulatory
-disclosure. SQL implementations using CTEs and window functions provide
-the deterministic, auditable execution environment that regulators
-require, while configurable lookback periods and partitioned table
-structures sustain performance at enterprise scale.
-
-Part 3 of this series addresses the risk premium K: the AI pricing
-engine that estimates PD, LGD, and EAD using gradient-boosted trees and
-neural networks, the role of Explainable AI in regulatory governance,
-monthly versus event-driven repricing cadence, and the integration of
-IFRS 9 Effective Interest Rate accounting, floating-rate loan accrual
-journals, contract modification accounting, Funds Transfer Pricing, ALM,
-and Interest Rate Risk in the Banking Book (IRRBB) into a unified
-interest rate risk management framework.
-
-## References
-
-[1] Schrimpf, A., & Sushko, V. (2019). Beyond LIBOR: A primer on the
-new benchmark rates. *BIS Quarterly Review*, March 2019, pp. 29-52.
-https://www.bis.org/publ/qtrpdf/r_qt1903e.pdf
-
-[2] Duffie, D., & Stein, J.C. (2015). Reforming LIBOR and other
-financial market benchmarks. *Journal of Economic Perspectives*, 29(2),
-191-212. https://doi.org/10.1257/jep.29.2.191
-
-[3] Financial Stability Board (FSB). (2021). *Global Transition
-Roadmap for LIBOR* (updated June 2021).
-https://www.fsb.org/2021/06/fsb-publishes-updated-global-transition-roadmap-for-libor/
-
-[4] Brigo, D., & Mercurio, F. (2006-2nd ed.). *Interest Rate Models
-, - Theory and Practice: With Smile, Inflation and Credit*. Springer
-Finance. https://doi.org/10.1007/978-3-540-34604-3
-
-[5] Bank of England / Working Group on Sterling Risk-Free Reference
-Rates. (2020). *Compounded SONIA in arrears: Summary of conventions and
-approaches used in sterling bond markets*. Bank of England.
-https://www.bankofengland.co.uk/markets/sonia-benchmark
-
-[6] Alternative Reference Rates Committee (ARRC). (2021). *SOFR "in
-arrears" conventions for syndicated business loans*. Federal Reserve
-Bank of New York.
-https://www.newyorkfed.org/medialibrary/Microsites/arrc/files/2021/ARRC-Daily-Simple-SOFR-in-Arrears-Conventions-for-Business-Loans.pdf
-
-[7] International Swaps and Derivatives Association (ISDA). (2021).
-*Supplement 70 to the 2006 ISDA Definitions: Overnight rate compounding
-and fallbacks*. https://www.isda.org/book/2006-isda-definitions/
-
-[8] Guggenheim, B., & Schrimpf, A. (2020). At the crossroads in the
-transition away from LIBOR: From overnight to term rates. *BIS Working
-Papers*, No. 888. https://www.bis.org/publ/work888.htm
-
-[9] Central Bank of Kenya (CBK). (2025). *Risk-Based Credit Pricing
-Model (RBCPM): Revised Framework Circular* (effective September 1-2025). Nairobi: CBK. https://www.centralbank.go.ke/
-
-[10] Suh, M., & Kim, D. (2022). Implementation of compounded overnight
-rate calculations in relational databases: A SQL framework for
-SOFR-linked loans. *Journal of Financial Data Science*, 4(2), 88-107.
-
-[11] Chen, R.R., & Scott, L. (2003). Overnight indexed swap pricing
-and risk. *Journal of Fixed Income*, 13(1), 32-47. \[Used as
-foundational compounding reference updated to RFR context by
-practitioners.\]
-
-[12] Arner, D.W., Barberis, J., & Buckley, R.P. (2017). FinTech,
-RegTech, and the reconceptualization of financial regulation.
-*Northwestern Journal of International Law & Business*, 37(3), 371-413.
-https://scholarlycommons.law.northwestern.edu/njilb/vol37/iss3/2/
-
-[13] Coase, I., & Lawler, J. (2020). Bank systems transformation in
-the digital age: Enterprise architecture as regulatory infrastructure.
-*Journal of Financial Regulation*, 6(1), 1-34.
-https://doi.org/10.1093/jfr/fjz012
-
-[14] Basel Committee on Banking Supervision (BCBS). (2021).
-*Principles for operational resilience*. BIS.
-https://www.bis.org/bcbs/publ/d516.htm
-
-[15] Broeders, D., & Prenio, J. (2018). Innovative technology in
-financial supervision (SupTech): The experience of early users. *FSI
-Insights on Policy Implementation*, No. 9. BIS/FSI.
-https://www.bis.org/fsi/publ/insights9.pdf
-
-*Word count (excluding abstract, diagrams, code blocks, and references):
-approximately 2,000 words.* *Diagrams: Figure 3 (accrual pipeline),
-Figure 4 (six-layer SQL architecture).*
+- [CBK August 2025 framework](https://www.centralbank.go.ke/wp-content/uploads/2025/08/Revised-Risk-based-Credit-Pricing-Model.pdf), Appendix I: compounding, index, lookback and publication conventions.
+- [September 25 teaching casebook](../../output/kesonia_treasury_deep_review_2026-09-25/02_CALCULATION_AND_CASEBOOK.md): dated historical index example and earlier independent arithmetic.
+- [Compounding, term structure and funding distinction](../../docs/research/kesonia/KESONIA_COMPOUNDING_TERM_STRUCTURE_AND_FUNDING_CURVE_NOTE.md).
+- [Current worked examples](../../docs/methods/WORKED_EXAMPLES.md) and [source register](../../docs/methods/SCOPE_AND_SOURCE_REGISTER.md): executable fixtures, assumptions and validation boundaries.

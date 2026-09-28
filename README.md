@@ -1,25 +1,54 @@
 # RegTech–KESONIA Treasury
 
-Authoritative standalone working repository, extracted on 26 September 2026 and consolidated with the original Documents publication project on 28 September 2026, retaining both Git histories. Initial scope: the four-part RegTech–KESONIA series, benchmark compounding, curve and FTP teaching cases, and governed Treasury workflows. The remaining-work register is a development backlog, not a claim of completed banking models or integrations.
+Research, articles and executable reference examples for Kenyan benchmark-linked credit pricing, treasury analysis and controlled financial workflows. The repository was extracted on 26 September 2026 and consolidated with the original publishing project on 28 September, retaining both histories.
+
+**28 September research revision:** all four manuscripts and their LinkedIn reading editions have been revised against the introduced reviews. The new standard-library Python laboratory develops dated compounding, curve construction, pricing, FTP, deposit estimation, cash/equity reconciliation and a durable local STP workflow. Synthetic demonstrations are clearly distinguished from institutional implementation.
 
 ## Start here
 
-- [Part 1: enterprise architecture](docs/research/kesonia/Part1_KESONIA_Reform_and_Enterprise_Architecture.md)
-- [Part 2: compounding mathematics and SQL](docs/research/kesonia/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md)
-- [Part 3: pricing and IFRS 9](docs/research/kesonia/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md)
-- [Part 4: platform and roadmap](docs/research/kesonia/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md)
-- [Review pack and worked cases](output/kesonia_treasury_deep_review_2026-09-25/00_READ_ME.md)
-- [18-item remaining-work register](docs/research/kesonia/TREASURY_REMAINING_WORK_REGISTER_2026-09-25.md)
-- [LinkedIn editions, figures and publication build guide](publications/README.md)
-- [Annotated bibliography](docs/research/kesonia/KESONIA_ERP_Reference_List.md)
-- [Historical drafts and broader neobank outline](source_library/regtech-origin/README.md)
-- [September 28 consolidation and preservation record](docs/governance/consolidation-2026-09-28/README.md)
-- [September 26 extraction provenance](MIGRATION.md)
+- [Worked examples and reproduction instructions](docs/methods/WORKED_EXAMPLES.md)
+- [Current rule, contract and accounting scope](docs/methods/SCOPE_AND_SOURCE_REGISTER.md)
+- [Cross-project boundaries and existing coverage](docs/methods/CROSS_PROJECT_BOUNDARIES.md)
+- [All review families and 18 remaining-work items](docs/methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md)
+- [Dated FTP, deposit and STP methodology](docs/methods/OPERATIONS_METHODOLOGY.md)
+- [Reproduced numerical output](research_lab/results/checked_examples.json)
 
-## Evidence and local checks
+## Revised series
 
-`python output/kesonia_treasury_deep_review_2026-09-25/verify_examples.py` checks illustrative arithmetic and regenerates its result JSON. `python output/kesonia_treasury_deep_review_2026-09-25/build_reading_pack.py` renders the eight local review notes with Pandoc. The renderer writes only within this repository; it no longer distributes files to other projects or modifies historical reading manifests.
+1. [KESONIA and enterprise architecture](docs/research/kesonia/Part1_KESONIA_Reform_and_Enterprise_Architecture.md)
+2. [Compounding, curves and SQL boundaries](docs/research/kesonia/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md)
+3. [Pricing, treasury and IFRS 9](docs/research/kesonia/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md)
+4. [Software, STP and development roadmap](docs/research/kesonia/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md)
 
-The two original pasted texts and the earlier formulations note are preserved in `output/pricing_treasury_cross_project_review_2026-09-23/`. Treat them as research evidence. Historical reading/delivery manifests retain their original paths and hashes. The current ownership and copy verification are in `MIGRATION_MANIFEST.json`.
+[Publication guide and LinkedIn editions](publications/README.md). HTML renders preserve formulas and source-aware links. Generated HTML lives under `publications/build/` and is ignored by Git; this revision creates no PDFs.
 
-The four manuscripts and notes in `docs/research/kesonia` are working source. The September 25 reading pack is a dated review edition; coordinate revisions explicitly if publishing a new edition. Broader credit, SPV and accounting specifications remain in Mwendo and are external research dependencies. Financial Material and the SokoIntel website project remain guest repositories; this repository does not write to them.
+## Run the reference laboratory
+
+Python 3.10+; no external Python packages:
+
+```text
+python -m unittest discover -s tests -v
+python -m research_lab.run_examples
+python publications/build_publications.py --refresh-diagrams
+```
+
+The publication command additionally needs Pandoc and Mermaid CLI. The laboratory writes a deterministic result file with source hashes and uses a temporary local SQLite database. It makes no external trades or reporting submissions.
+
+The historical `output/kesonia_treasury_deep_review_2026-09-25/verify_examples.py` remains available for the earlier teaching calculations. Historical reading/copy manifests and pasted originals retain their dates and provenance; new work does not recertify them by changing their timestamps.
+
+## Boundaries
+
+KESONIA observations, compounded coupon factors, customer K, note coupons, FTP and discount curves are distinct. A bank rule does not automatically govern an SPV or non-bank lender. The latest source register identifies verified Kenyan pricing and liquidity requirements. A reference calculation is not regulatory approval, empirical calibration, an accounting policy or a live vendor integration.
+
+Mwendo owns its financing structure and waterfall; Underwrite owns credit-lifecycle and collectability methods; Bayesian relativities owns insurance ratemaking; business/owner-earnings analysis retains its claim and cash definitions. SokoIntel's current specification already adopts the relevant analytical interfaces. Guest repositories were read for this review and are not modified by this repository's build commands.
+
+## Provenance and preserved work
+
+- [Current revision evidence](docs/governance/revision-2026-09-28/README.md)
+- [Superseded review originals](source_library/review-history/2026-09-28/README.md)
+- [September 25 review pack](output/kesonia_treasury_deep_review_2026-09-25/00_READ_ME.md)
+- [Original publication consolidation](docs/governance/consolidation-2026-09-28/README.md)
+- [Extraction provenance](MIGRATION.md)
+- [Historical drafts](source_library/regtech-origin/README.md)
+
+The inherited bibliography is retained as historical research material. Freshly checked authority is identified in the current source register; inherited titles and links are not all newly verified.

@@ -1,0 +1,42 @@
+{
+  "date_utc": "2026-09-28T08:21:54.503274+00:00",
+  "status": "passed",
+  "tests": 49,
+  "checks": [
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "log": "check_01.txt",
+      "sha256": "035164bf455138fd79231c6f51fa0f991b0a87bec9e8d4992f709bd95077254d"
+    },
+    {
+      "command": "python -m research_lab.run_examples",
+      "exit_code": 0,
+      "log": "check_02.txt",
+      "sha256": "5266940664086ce0da528c5a5d25aaaee2bd085c8fca35bc391e00fbeb4a4205"
+    },
+    {
+      "command": "python output/kesonia_treasury_deep_review_2026-09-25/verify_examples.py",
+      "exit_code": 0,
+      "log": "check_03.txt",
+      "sha256": "0f39ba53f087aaba5d7b50713f06e909ebaa98555f97a432f1edf9f162ed0e17"
+    }
+  ],
+  "preserved_review_hashes": {
+    "cbk_kesonia_k_framework.md": "9c300c59adc6a564c471315b4035e8dae13dc7a64886b127289f3b019fd288df",
+    "RegTech_Gap_Analysis_Report.md": "6c98e18a7ea7c46add237b3e8e420b93586ef5879f42c6f9ff408f108043c1d4",
+    "RegTech_KESONIA_Enhancement_Report.md": "e0d86e310b2b74d7e957cee4f482e5382b4ea2b95febf48ac83c0604bf4660d2"
+  },
+  "scope": "Deterministic arithmetic/control/renderer-link tests; not empirical validation, legal/accounting sign-off, live integration or complete regulatory models.",
+  "finalized_at_utc": "2026-09-28T08:25:59.324955+00:00",
+  "publication_build": {
+    "status": "passed",
+    "html_documents": 15,
+    "local_links": 120,
+    "warnings": 0,
+    "fresh_diagrams_visually_inspected": 2,
+    "report": "PUBLICATION_BUILD_REPORT.json"
+  },
+  "example_source_hashes_match": true,
+  "new_pdf_files": 0
+}
