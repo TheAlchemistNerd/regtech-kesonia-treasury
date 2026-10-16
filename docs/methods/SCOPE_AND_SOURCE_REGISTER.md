@@ -1,8 +1,10 @@
 # Scope and primary-source register
 
-**Reviewed 28 September 2026.** This is the current authority map for the revised four-part series. It distinguishes an issued requirement, an institution's contract or policy, a research convention, and a future capability. A local calculation passing tests does not establish compliance.
+**Reviewed 28 September 2026; implementation update 1 October 2026.** This is the current authority map for the revised four-part series. It distinguishes an issued requirement, an institution's contract or policy, a research convention, and a future capability. A local calculation passing tests does not establish compliance.
 
 ## 1. Kenyan benchmark and credit-pricing perimeter
+
+KESONIA supplies the benchmark within the revised RBCPM. Customer-specific risk pricing and internal FTP complement it: costs, risk and return feed an approved premium, while FTP attributes funding/liquidity economics. The [monetary case](WORKED_EXAMPLES.md) reconciles those quantities.
 
 The final [CBK revised credit-pricing framework](https://www.centralbank.go.ke/wp-content/uploads/2025/08/Revised-Risk-based-Credit-Pricing-Model.pdf), section 4 and Appendix I, adopts compounded-in-arrears KESONIA for the banking sector's variable-rate Kenya-shilling loans. Fixed-rate and foreign-currency loans are outside that stated scope. The customer premium K includes operating-cost, return and borrower-risk components. Separate charges require separate disclosure. Comment letters reproduced in the paper do not create final exemptions.
 
@@ -20,7 +22,7 @@ All deposit panels, curve quotations, bank balances, hedge sensitivities and wor
 
 ## 3. Liquidity and capital scope
 
-Kenya's [April 2025 LCR, NSFR and leverage guidelines](https://www.centralbank.go.ke/wp-content/uploads/2025/04/GUIDELINES-ON-BASEL-III-LIQUIDITY-STANDARDS-AND-LEVERAGE-RATIO.pdf) apply to institutions licensed under the Banking Act and took effect on 1 October 2025. The laboratory's cash buffer is an internal scenario assumption; it is not an LCR or NSFR calculation. Full returns still need eligible-asset, encumbrance, funding and exposure classifications. These requirements do not transfer automatically to an independent SPV.
+Kenya's [April 2025 LCR, NSFR and leverage guidelines](https://www.centralbank.go.ke/wp-content/uploads/2025/04/GUIDELINES-ON-BASEL-III-LIQUIDITY-STANDARDS-AND-LEVERAGE-RATIO.pdf) apply to institutions licensed under the Banking Act and took effect on 1 October 2025. The original laboratory cash buffer remains an internal scenario assumption. The [new regulatory cases](REGULATORY_WORKED_CASES.md) separately calculate classified synthetic LCR/NSFR examples. Full institutional returns still require verified classifications and return mapping. These requirements do not transfer automatically to an independent SPV.
 
 For additional topics use the [Basel Framework](https://www.bis.org/committees/bcbs/basel-framework) with an explicit Kenyan implementation/version assessment. IRRBB, trading-book market risk/FRTB, derivative counterparty exposure, CVA valuation, CVA capital, regulatory capital and economic capital are distinct quantities. Showing a cash loss or a duration hedge does not calculate all of them. The leverage guidance's derivative references should be checked when developing local exposure measures; they are not evidence that the repository implements a complete SA-CCR return.
 

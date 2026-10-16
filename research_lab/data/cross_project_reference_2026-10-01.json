@@ -1,0 +1,89 @@
+{
+  "snapshot_date": "2026-10-01",
+  "scope": "Read-only frozen evidence from owning repositories; these original results were not rerun as part of this RegTech audit.",
+  "sources": [
+    {
+      "project": "Mwendo",
+      "source_path": "research_lab/mwendo_operating_case/baseline_verification.json",
+      "sha256": "679ab48276e70866c00c71932bb29fabc6fb1ae46e9ce083c44e5a2248549cf5",
+      "selected_result": {
+        "case_date": "2026-10-01",
+        "inputs_sha256": "dc1cbb0a0f536afedb24fa5fced62fa44737959bcda913d7c1ee4b9728c1afb7",
+        "results_sha256": "c12a4cd7ddf28c9da3939c039f10928648867446c6ba3473be7e9c23f61fd9fb",
+        "result_encoding": "UTF-8 with LF newlines",
+        "validation": {
+          "tests_run": 28,
+          "failures": 0,
+          "errors": 0,
+          "scope": "Baseline numerical and behavioural tests; custom scenarios additionally receive invariants below",
+          "deterministic_repetition": true
+        },
+        "code": {
+          "model.py": "f416a5c0797583f671d402a069e98790d6f667538bc00cf5dcdc5156d8b3da20",
+          "run_case.py": "e61e68b18df9897917c493a266fee9738a7ae9a3a9ade87c98603e11e55f949f",
+          "test_model.py": "d4e3d82685afeadfd864d2adc219d189766096037ba5f7d581d721baeb4d46ea"
+        },
+        "main_results": {
+          "par_purchase_extra_funding": "427925189.893349558790062131787048575472",
+          "par_funded_C_cash_multiple": "1.054558350977555925310378379077514399443",
+          "originator_economic_profit": "-2430.993150684931506849315068493150684933",
+          "uniform_coupon_hurdle": "0.2961629452418926103136629452418926103135"
+        }
+      }
+    },
+    {
+      "project": "Underwrite",
+      "source_path": "research_lab/results/case_results.json",
+      "sha256": "ca013d8024f07c2c02af73a54c23334892588a6bb2022ed5eee169e7f7dcf6c2",
+      "selected_result": {
+        "borrower_on_time": {
+          "rows": [
+            {
+              "day": 0,
+              "date": "2026-10-01",
+              "opening": "250000",
+              "receipts": "200000",
+              "draw": "500000",
+              "operating": "600000",
+              "debt": "0",
+              "fee": "10000",
+              "closing": "340000",
+              "financing_needed": "0"
+            },
+            {
+              "day": 30,
+              "date": "2026-10-31",
+              "opening": "340000",
+              "receipts": "0",
+              "draw": "0",
+              "operating": "120000",
+              "debt": "0",
+              "fee": "0",
+              "closing": "220000",
+              "financing_needed": "0"
+            },
+            {
+              "day": 60,
+              "date": "2026-11-30",
+              "opening": "220000",
+              "receipts": "800000",
+              "draw": "0",
+              "operating": "100000",
+              "debt": "515000.00",
+              "fee": "0",
+              "closing": "405000.00",
+              "financing_needed": "0"
+            }
+          ],
+          "closing": "405000.00",
+          "minimum": "220000",
+          "peak_financing_needed": "0",
+          "finance_cost": "25000.00",
+          "terminal_headroom": "305000.00",
+          "operating_surplus": "180000",
+          "executable_without_new_finance": true
+        }
+      }
+    }
+  ]
+}

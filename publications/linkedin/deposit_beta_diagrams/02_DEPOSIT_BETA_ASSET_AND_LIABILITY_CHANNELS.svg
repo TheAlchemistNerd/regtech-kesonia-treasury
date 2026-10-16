@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1530" viewBox="0 0 1800 1530"><defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1 1 L10 6 L1 11" fill="none" stroke="#607286" stroke-width="2"/></marker></defs><rect width="1800" height="1530" fill="#ffffff"/>
+<text x="80" y="75" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="49" font-weight="700" fill="#17212b">How market rates reach bank risk</text>
+<text x="80" y="124" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="400" fill="#526478">Two transmission channels evaluated under a common set of scenarios</text>
+<rect x="80" y="165" width="1640" height="110" rx="12" fill="#eef3ff" stroke="#6381b6" stroke-width="2"/>
+<text x="108" y="208" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="650" fill="#17212b">Monetary policy, KESONIA and market conditions</text>
+<text x="108" y="248" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Shared scenarios also specify liquidity conditions and borrower business activity.</text>
+<path d="M900 275 V315 H470 V355" fill="none" stroke="#607286" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M900 315 H1330 V355" fill="none" stroke="#607286" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="470" y="390" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="700" fill="#087b72">LIABILITY CHANNEL</text>
+<text x="1330" y="390" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="700" fill="#9b5c11">ASSET CHANNEL</text>
+<rect x="80" y="420" width="780" height="140" rx="12" fill="#eff9f7" stroke="#4b9d91" stroke-width="2"/>
+<text x="108" y="463" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="650" fill="#17212b">Deposit rate response</text>
+<text x="108" y="503" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Immediate and lagged changes in rates paid</text>
+<text x="108" y="538" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Upward and downward beta by product and cohort</text>
+<rect x="940" y="420" width="780" height="140" rx="12" fill="#fff8ec" stroke="#c79146" stroke-width="2"/>
+<text x="968" y="463" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="650" fill="#17212b">Loan contract response</text>
+<text x="968" y="503" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Benchmark, reset date, repricing lag and tenor</text>
+<text x="968" y="538" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Fixed-rate and floating-rate exposure by facility</text>
+<path d="M470 560 V600" fill="none" stroke="#607286" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M1330 560 V600" fill="none" stroke="#607286" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="80" y="600" width="780" height="140" rx="12" fill="#eff9f7" stroke="#4b9d91" stroke-width="2"/>
+<text x="108" y="643" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="650" fill="#17212b">Deposit balances</text>
+<text x="108" y="683" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Withdrawals, within-bank migration and new inflows</text>
+<text x="108" y="718" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Rate sensitivity and retention estimated separately</text>
+<rect x="940" y="600" width="780" height="140" rx="12" fill="#fff8ec" stroke="#c79146" stroke-width="2"/>
+<text x="968" y="643" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="650" fill="#17212b">Borrower debt service and available cash</text>
+<text x="968" y="683" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Instalments, operating receipts and essential costs</text>
+<text x="968" y="718" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Repayment buffers, timing and refinancing needs</text>
+<path d="M470 740 V780" fill="none" stroke="#607286" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M1330 740 V780" fill="none" stroke="#607286" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="80" y="780" width="780" height="140" rx="12" fill="#eff9f7" stroke="#4b9d91" stroke-width="2"/>
+<text x="108" y="823" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="650" fill="#17212b">Funding cost and cash availability</text>
+<text x="108" y="863" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Rate paid and balance in each funding source</text>
+<text x="108" y="898" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Wholesale replacement, maturity and cash ladder</text>
+<rect x="940" y="780" width="780" height="140" rx="12" fill="#fff8ec" stroke="#c79146" stroke-width="2"/>
+<text x="968" y="823" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="650" fill="#17212b">Credit performance and asset cash flows</text>
+<text x="968" y="863" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Scheduled receipts, arrears, cure and recovery</text>
+<text x="968" y="898" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Uncertainty in default, exposure and loss severity</text>
+<path d="M470 920 V970 H900 V1010" fill="none" stroke="#607286" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M1330 920 V970 H900" fill="none" stroke="#607286" stroke-width="3"/>
+<text x="900" y="1048" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" fill="#243e61">JOINT BANK ASSESSMENT</text>
+<rect x="80" y="1080" width="312" height="145" rx="10" fill="#f3f5f8" stroke="#bcc8d6" stroke-width="2"/>
+<text x="98" y="1120" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="650" fill="#17212b">Earnings</text>
+<text x="98" y="1160" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#17212b">Net interest income</text>
+<text x="98" y="1191" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#17212b">Expenses and credit cost</text>
+<rect x="412" y="1080" width="312" height="145" rx="10" fill="#f3f5f8" stroke="#bcc8d6" stroke-width="2"/>
+<text x="430" y="1120" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="650" fill="#17212b">Liquidity</text>
+<text x="430" y="1160" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#17212b">Receipt and payment timing</text>
+<text x="430" y="1191" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#17212b">Funding gaps and buffers</text>
+<rect x="744" y="1080" width="312" height="145" rx="10" fill="#f3f5f8" stroke="#bcc8d6" stroke-width="2"/>
+<text x="762" y="1120" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="650" fill="#17212b">Economic value</text>
+<text x="762" y="1160" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#17212b">Asset and liability values</text>
+<text x="762" y="1191" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#17212b">Rate and basis sensitivity</text>
+<rect x="1076" y="1080" width="312" height="145" rx="10" fill="#f3f5f8" stroke="#bcc8d6" stroke-width="2"/>
+<text x="1094" y="1120" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="650" fill="#17212b">Credit loss</text>
+<text x="1094" y="1160" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#17212b">PD, LGD and EAD</text>
+<text x="1094" y="1191" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#17212b">Expected and stressed loss</text>
+<rect x="1408" y="1080" width="312" height="145" rx="10" fill="#f3f5f8" stroke="#bcc8d6" stroke-width="2"/>
+<text x="1426" y="1120" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="650" fill="#17212b">Capital</text>
+<text x="1426" y="1160" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#17212b">Retained earnings</text>
+<text x="1426" y="1191" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#17212b">Risk and lending capacity</text>
+<path d="M900 1225 V1260" fill="none" stroke="#607286" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="80" y="1260" width="1640" height="145" rx="12" fill="#eef3ff" stroke="#6381b6" stroke-width="2"/>
+<text x="108" y="1303" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="650" fill="#17212b">ALCO and Credit decisions with defined approval authority</text>
+<text x="108" y="1343" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Compare deposit prices, funding tenors, hedges, loan terms and portfolio growth.</text>
+<text x="108" y="1378" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="400" fill="#17212b">Review uncertainty, affordability, liquidity, capital and limits before executing approved actions.</text>
+<text x="80" y="1447" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="400" fill="#526478">PD = probability of default; LGD = loss given default; EAD = exposure at default.</text>
+<text x="80" y="1484" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="400" fill="#526478">Conceptual transmission map. Model each response and test it under the same dated scenarios.</text>
+</svg>

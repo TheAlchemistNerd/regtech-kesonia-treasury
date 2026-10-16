@@ -1,13 +1,13 @@
 # KESONIA, treasury and credit: boundaries across the project family
 
-**Review date:** 28 September 2026
+**Review date:** 28 September 2026; implementation status reconciled 1 October 2026
 **Purpose:** Give the RegTech revision a reliable account of what other projects already own, what can be reused, and what requires a distinct rule, contract, model or operational implementation.
 **Status:** Source-grounded editorial and interface review. This document does not approve a financial product, accounting treatment, regulatory interpretation or software integration.
 **Audit write scope:** The cross-project audit read the other projects without editing them. Its results are integrated into RegTech only; guest repositories remain unchanged.
 
 ## 1. Findings that should govern the revision
 
-1. **The common KESONIA reference, a customer's all-in rate, a note coupon, an FTP allocation, a valuation discount rate and a forecast curve are different objects.** They may share observations or scenarios, but their purposes, parties, horizons and approval authorities differ. The existing Underwrite Part 5 already provides much of the required bridge.
+1. **KESONIA, risk-based customer pricing, funding allocation and valuation are complementary layers with distinct financial quantities.** The common KESONIA reference, customer all-in rate, note coupon, FTP allocation, valuation discount rate and forecast curve connect through dated cash and approved policies. They may share observations or scenarios, but their purposes, parties, horizons and approval authorities differ. The existing Underwrite Part 5 already provides much of the required bridge.
 2. **The final CBK bank pricing framework adopts compound-in-arrears for its covered variable-rate KES lending.** The published rule is not merely an optional compounding illustration. Conversely, that banking-sector rule does not by itself prescribe a non-bank digital lender's product or an SPV note coupon. Entity, product and contract scope must be established before applying the rule.
 3. **Financing a business and financing an identified pool of receivables are already distinguished in Underwrite to Collect.** Mwendo's controlled documents further specify the SPV, eligible assets, accounts, reserves and waterfall. RegTech should consume these definitions instead of presenting the distinction as an undiscovered gap.
 4. **SokoIntel's current specification already incorporates the credit, SPV and owner-earnings interfaces.** The earlier September 2026 addenda describe their introduction; they are no longer sufficient evidence that the canonical requirements are missing. Adoption in a specification is still different from implemented, tested software.
@@ -94,7 +94,7 @@ customer_premium_bridge = funding_difference + loss_component + operating_compon
                           + profit_component + other_approved_components
 ```
 
-This is an **internal explanation and reconciliation**, not a claim that the regulator mandates this exact decomposition. Components must be expressed on compatible balances, horizons and units. If the borrower-risk allowance already contains expected loss, do not add that same expected loss again. If capital return is already contained in a specified shareholder-return component, do not duplicate it under another label. Margin, lifetime expected loss, a regulatory capital stock and a one-year return hurdle cannot be added without transformation.
+This internal reconciliation supports the bank-approved pricing model within CBK's benchmark-plus-premium framework. It explains how funding, loss, operating costs and shareholder return contribute to the price. The final framework allows bank-defined components; it does not mandate this exact FTP decomposition. Components must be expressed on compatible balances, horizons and units. If the borrower-risk allowance already contains expected loss, do not add that same expected loss again. If capital return is already contained in a specified shareholder-return component, do not duplicate it under another label. Margin, lifetime expected loss, a regulatory capital stock and a one-year return hurdle cannot be added without transformation.
 
 A daily data refresh does not itself authorize daily changes to a customer's instalment, margin or agreement. Separate scheduled accrual, contractual benchmark reset, correction of an input error, a new offer, a proposed modification and an approved amendment [U1, lines 35–62; M3, lines 426–436].
 
@@ -343,3 +343,20 @@ The RegTech revision can claim the cross-project review is incorporated when it:
 These criteria close the editorial and interface work. They do not claim that every item in the treasury remaining-work register has been implemented.
 
 The companion `SOURCE_READING_MANIFEST.json` records the cited file paths, SHA-256 hashes, byte/line counts and entry-point anchors. It also records the independently recalculated three-day accrual illustration. It is a source-state record, not a claim of a full line-by-line reread of every referenced manuscript.
+
+## 13. Current implementation status — 1 October 2026
+
+The September 28 source map above records that review's evidence. Later executable work changes its implementation status. The [current reconciliation](REVIEW_INTEGRATION_AND_REMAINING_WORK.md) and [SokoIntel candidate map](SOKOINTEL_CANDIDATE_MAP.md) supply the present delivery view.
+
+| Case / action | Now demonstrated | Still required |
+|---|---|---|
+| A / XB02 | Original money-to-rate bridge; current Underwrite borrower case; new connected borrower/originator/SPV cash ledger | One permissioned institution/customer dataset and approved product terms |
+| B / XB03 | Mwendo October 1 canonical stateful waterfall has funded reserve, trigger persistence, arrears and refund/recovery timing; frozen evidence referenced by RegTech | Transaction-specific legal terms, calibrated portfolio and live servicing |
+| C / XB09 | Curve and dated FTP laboratory; same-balance-sheet liquidity/NII/EVE/stress illustration in regulatory cases | Dynamic calibrated behaviour, ledger/return mapping and market quotes |
+| D / XB07 | Dated accepted-refund/right/settlement/loan-allocation fixture | Full insurer contract-group IFRS 17 measurement and entity-specific journals |
+| E / XB06 | Typed owner/cash distinction, bank retention and late parent remittance fixture | Real bank/insurer distribution rules, approval and evidence |
+| F / XB10 | Durable SQLite workflow plus isolated partial execution, missing acknowledgement and accrual-correction reference cases | Single vendor-connected workflow, authentication, recovery and performance acceptance |
+| XB01 | Original fixing/index check plus specified changing-balance convention and correction replay | Authoritative institution-specific five-day mapping |
+| XB04 | Existing Underwrite permission/evidence/no-action engine recognised; dated RegTech freshness gate | Connected source-refresh adapters and operational exception ownership |
+| XB05 | Typed quantities, reproducible exported cases and product candidate map | SokoIntel product selection and implementation; guest repository unchanged |
+| XB08 | Current wording clarified; active bibliography corrected and historical notes point to current status | Full independent verification of inherited bibliography metadata remains open |

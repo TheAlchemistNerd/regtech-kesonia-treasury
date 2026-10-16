@@ -1,0 +1,288 @@
+{
+  "date": "2026-10-01",
+  "files": [
+    {
+      "path": "docs/governance/implementation-2026-10-01/BASELINE_REVIEW_AUDIT.md",
+      "before_sha256": null,
+      "after_sha256": "7401c5daae44ca37f294db3c7bb93fd08e53fed0ccbf4cd13a4ecbe5a38f2f41",
+      "installed_sha256": "f89e8e648c857fc31619e18fcddb3facee961abb79fcbc982329408d114c2e1c"
+    },
+    {
+      "path": "docs/governance/implementation-2026-10-01/review_inventory.json",
+      "before_sha256": null,
+      "after_sha256": "9029593c1dea3289bb717c6b372e2ca1201d32d5a9903dfc801259ec97734e8f",
+      "installed_sha256": "88ddad10cc35cb4f02bdc585dface853d459896c70163c26c19c0d3a305a4d2a"
+    },
+    {
+      "path": "docs/methods/ACCOUNTING_AND_CONNECTED_CASES.md",
+      "before_sha256": null,
+      "after_sha256": "d35374a6bd33cf8cf21f2c6d5c51c74a01cadeadd7dcb85c0e34c4e58772df55",
+      "installed_sha256": "d35374a6bd33cf8cf21f2c6d5c51c74a01cadeadd7dcb85c0e34c4e58772df55"
+    },
+    {
+      "path": "docs/methods/CROSS_PROJECT_BOUNDARIES.md",
+      "before_sha256": "b6c2f481ecac86082e97d734878625e41876f3cadce9d39592fe6c11e0e0a980",
+      "after_sha256": "50e8d0871eff0d0c6a3af85eaf5540b73cf12ff483a5fff77834ff40d5fea4a3",
+      "installed_sha256": "91bf90a8b7f6f50337f672da6f701c38e224d70f99e9ebb57e4ad260ef0a6d47"
+    },
+    {
+      "path": "docs/methods/LIFECYCLE_WORKED_CASES.md",
+      "before_sha256": null,
+      "after_sha256": "1f71a50b130c336c8cf41d45501d5c6ba18c78178123151d578d03c07b23140b",
+      "installed_sha256": "1f71a50b130c336c8cf41d45501d5c6ba18c78178123151d578d03c07b23140b"
+    },
+    {
+      "path": "docs/methods/OPTION_AND_COLLATERAL_CASES.md",
+      "before_sha256": null,
+      "after_sha256": "a017b488251305f07f3e601a0b219a44f2d911061ce361715519f0709912638b",
+      "installed_sha256": "a017b488251305f07f3e601a0b219a44f2d911061ce361715519f0709912638b"
+    },
+    {
+      "path": "docs/methods/REGULATORY_WORKED_CASES.md",
+      "before_sha256": null,
+      "after_sha256": "19ca26ca96930f90d4dde24321b58d3574c18d6165f3f2a5e6e7e01f9cbedd11",
+      "installed_sha256": "19ca26ca96930f90d4dde24321b58d3574c18d6165f3f2a5e6e7e01f9cbedd11"
+    },
+    {
+      "path": "docs/methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md",
+      "before_sha256": "798b266b5874b5affd372d9aa92035ba69ccd7c96aa7bbfe96b3f5853f491c98",
+      "after_sha256": "3922fdc55638576eccd940c3dfac30f64df28f90d929d5dbc1588b23f61358da",
+      "installed_sha256": "3922fdc55638576eccd940c3dfac30f64df28f90d929d5dbc1588b23f61358da"
+    },
+    {
+      "path": "docs/methods/SCOPE_AND_SOURCE_REGISTER.md",
+      "before_sha256": "8d1fbf90dd63456bd2856ac483c484f4246a5f6b2a758feddd088558b8832e2c",
+      "after_sha256": "460aece426f717555c51a91810c7cfc7f4515390cd36f1bb1ecbce320826bb93",
+      "installed_sha256": "15cb0ec578a9ac96339c6368440df90836fc4d2b5ef775eca818c543ca590406"
+    },
+    {
+      "path": "docs/methods/SOKOINTEL_CANDIDATE_MAP.md",
+      "before_sha256": null,
+      "after_sha256": "9b8572534df68368994d4c7a2c65bfeda76fe83d1b6afa50f669635c7aba107b",
+      "installed_sha256": "9b8572534df68368994d4c7a2c65bfeda76fe83d1b6afa50f669635c7aba107b"
+    },
+    {
+      "path": "docs/methods/SYMBOLS_AND_UNITS.md",
+      "before_sha256": "15344c5bdfe264901270c1f8b10c59d323ceb32c40ff4c8772b96b71f786ca94",
+      "after_sha256": "3a311a7165fca451f789ca0adb564e8ec60794de613d7afa939c744b36da2920",
+      "installed_sha256": "7945b8c61691f1afec6feb04d9e969c16a6f74b08b4068ac9bf1f010ca32c359"
+    },
+    {
+      "path": "docs/methods/WORKED_EXAMPLES.md",
+      "before_sha256": "e1d3d4dd4deed45d386182fe157831d1756f06bf18848c59fa0f3104fabd6769",
+      "after_sha256": "23aaec56a94be9cfa5c8b39f107e7ad51a43a64c8fb68f2f030a6a53e6a17053",
+      "installed_sha256": "fe7140979da4e6048cd82e675250ec1f70c4d553159a5cb17a870ec168e0ee3d"
+    },
+    {
+      "path": "docs/research/kesonia/ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "before_sha256": "750aa87e920cce3f3bed6d5dc2601b4fe298bfca12933cc3ebc3d2c5e5f3cf3c",
+      "after_sha256": "20d303b569f89bf9f9001126c936e8d2362bfbd946b1f3e42b30f7afef62a0ec",
+      "installed_sha256": "20d303b569f89bf9f9001126c936e8d2362bfbd946b1f3e42b30f7afef62a0ec"
+    },
+    {
+      "path": "docs/research/kesonia/FRTB_SCOPE_AND_DEVELOPMENT_NOTE_2026-09-25.md",
+      "before_sha256": "aaf67d3b94140f4e01776394695be5736f4f482a8bffd27b0c2c940c37ac6911",
+      "after_sha256": "f64bb2befde00a9f31f14d74811929a53f7aa6d4abaa1c562bcc5e4654e3490e",
+      "installed_sha256": "f64bb2befde00a9f31f14d74811929a53f7aa6d4abaa1c562bcc5e4654e3490e"
+    },
+    {
+      "path": "docs/research/kesonia/KESONIA_ERP_Reference_List.md",
+      "before_sha256": "0742cb8a2d24734da04c46c806a8822b9b9ada7dbab99b885fb58c3b975f9e16",
+      "after_sha256": "553c5b166a0754a337268d05d8a09bb1ecbed319ce61301e3f73a2b0d49ddbdc",
+      "installed_sha256": "553c5b166a0754a337268d05d8a09bb1ecbed319ce61301e3f73a2b0d49ddbdc"
+    },
+    {
+      "path": "docs/research/kesonia/Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "before_sha256": "fe12e93d1e9c0d38bb4b761704f2e4b983920306f728adb2038ce449d778771f",
+      "after_sha256": "21304ba7e61698c05701a415e3b0a4a641fac6b26ec1826fd0d9527e6dcf0352",
+      "installed_sha256": "21c2aa1241585472fc3ad370613c21ba231c27151fe8e3dd08ce2310983437fb"
+    },
+    {
+      "path": "docs/research/kesonia/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "before_sha256": "3d0a7a7e0bc2b312b9ca379bedb76e07e110172b7c9a994211f8c4d3f32bc2db",
+      "after_sha256": "9d310d5d672ddd3acc8dafcef61a687d08b7579668f8832d6efae2377b4c3904",
+      "installed_sha256": "34b04f5f1eecd54095a831cc0c04a55c0a606d2ec562f70afa212124b1b04fbc"
+    },
+    {
+      "path": "docs/research/kesonia/STP_AND_ALM_FTP_SOFTWARE_REVIEW_2026-09-25.md",
+      "before_sha256": "9d0e8f2b586d2c71e0b96bc3ef0df210e445b3ed9b1b8de2f7327ec38dfcfeb5",
+      "after_sha256": "8c8d89d2c62a6fe2b3f912c80852f17405d28d26c9bf99cab4614d745b9d279a",
+      "installed_sha256": "8c8d89d2c62a6fe2b3f912c80852f17405d28d26c9bf99cab4614d745b9d279a"
+    },
+    {
+      "path": "docs/research/kesonia/TREASURY_CURVES_AND_BUSINESS_ANALYSIS_DETAILED_REVIEW_2026-09-25.md",
+      "before_sha256": "ca3bc0d9be7245010a769c944532765d3b7ffa59cc8a68fb1beeaf5d2d216d44",
+      "after_sha256": "19b06b8ebe18724377124da054f50596a518528f20964720fa9df13b69b90a9b",
+      "installed_sha256": "19b06b8ebe18724377124da054f50596a518528f20964720fa9df13b69b90a9b"
+    },
+    {
+      "path": "docs/research/kesonia/TREASURY_REMAINING_WORK_REGISTER_2026-09-25.md",
+      "before_sha256": "d68a8888fda25269255abe435c1833c1f4ccc83d7dc19abd645929302ad9a6d4",
+      "after_sha256": "b0bd7f1bfd857c40700d40fb4ba689ec9279ca5fe5c5027424e8a112a10b602d",
+      "installed_sha256": "b0bd7f1bfd857c40700d40fb4ba689ec9279ca5fe5c5027424e8a112a10b602d"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/00_READ_ME.md",
+      "before_sha256": "7eedde96c198999a8b7b2908c6411d6fde3d3171fb1b3a60aea42d40b112bb65",
+      "after_sha256": "aafa2e203e35f7f19c1ca3739435aaa564238d80cfd4368ab04f4f7a0644afcb",
+      "installed_sha256": "aafa2e203e35f7f19c1ca3739435aaa564238d80cfd4368ab04f4f7a0644afcb"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/01_DETAILED_MATERIAL_REVIEW.md",
+      "before_sha256": "dd6ee7b614308057020fbae1beb5dc3d60c1d0e731c6ea81faa4f0a80aa314e9",
+      "after_sha256": "a3cc7dde3a19f04759a272867ae78c3bbcf05d90a8b0d5cbd60590521d8f7525",
+      "installed_sha256": "a3cc7dde3a19f04759a272867ae78c3bbcf05d90a8b0d5cbd60590521d8f7525"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/02_CALCULATION_AND_CASEBOOK.md",
+      "before_sha256": "179140898930396e952e7d4523c6773c4a31a0855d03b7f24da99426be9eb136",
+      "after_sha256": "e678846ae1ceb084f45c6aa4ff07391910c788540167c6b540e76621e1713935",
+      "installed_sha256": "e678846ae1ceb084f45c6aa4ff07391910c788540167c6b540e76621e1713935"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/03_REVISION_BLUEPRINT_AND_INSERTS.md",
+      "before_sha256": "f568bdc9cd615c3c4c1d4d82876ed9d007cd6125fd29c5843f2bd64ae489ed65",
+      "after_sha256": "55e16623d7f70a9794afc4304fc75b95074991d13335505c007851ca44e0ca0e",
+      "installed_sha256": "55e16623d7f70a9794afc4304fc75b95074991d13335505c007851ca44e0ca0e"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/04_READING_MAP_AND_REFERENCES.md",
+      "before_sha256": "3cf05cbc1c1c0f2b6cd6b626d407af01abf9a5582f4b9615d3714f04db28bb62",
+      "after_sha256": "1331c501a17d8145c2aa2860e9173d9bde31472b0c0c42a91a43daa05d7ea02d",
+      "installed_sha256": "1331c501a17d8145c2aa2860e9173d9bde31472b0c0c42a91a43daa05d7ea02d"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.md",
+      "before_sha256": "6965130c1585713874f0430d8304172f39f9994ceaba9c943a174db2f842208e",
+      "after_sha256": "929f725aecfc314e77d816924ca71077c80981877978557766d948f528e58b48",
+      "installed_sha256": "57ae3d191f5f2e7d9ac691c602de53fb08d4e93fbf8aa3af04e39de53c2e66bb"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/06_WHAT_REMAINS_TO_BE_DEVELOPED.md",
+      "before_sha256": "b05c71eab953c2468fe541f51cd140a3bb32249fa5716151310264d134d8f4f3",
+      "after_sha256": "4959331171e55719a3266d8779218936675f85e092aa6a2ebf28c9e6a414fcec",
+      "installed_sha256": "4959331171e55719a3266d8779218936675f85e092aa6a2ebf28c9e6a414fcec"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.md",
+      "before_sha256": "59bc0b874452063eb4ff2ddce4285cb00b1645ff5d9fc71fbc00d5c4f2e63478",
+      "after_sha256": "f63839d38e1d43e24d64aa2ea0690a1b7c401526fb85b83a54a4aa4f261b307f",
+      "installed_sha256": "f63839d38e1d43e24d64aa2ea0690a1b7c401526fb85b83a54a4aa4f261b307f"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/build_reading_pack.py",
+      "before_sha256": "f2a6d9b3b9a85b49635368f1dee7d369c58bcf6c2dd50947a0e9403a6bbca806",
+      "after_sha256": "b0aaacf360703c6a3277739380daedfa93d3fb77f2157c83c01b387ea349a8b5",
+      "installed_sha256": "b0aaacf360703c6a3277739380daedfa93d3fb77f2157c83c01b387ea349a8b5"
+    },
+    {
+      "path": "publications/build_worked_examples_pdf.py",
+      "before_sha256": "627151ec9399a3ea7d030c7bfcee03d89886b2dc651de113a5ded7da8da6ccbc",
+      "after_sha256": "cfdbf4455c096163c4bf2db32008c50620aca7200fd587a5412804a95d6f0af0",
+      "installed_sha256": "a6a78a54809e695961e324ed31ad796ac95f9782adc12cef40bb6d9e9ff19152"
+    },
+    {
+      "path": "publications/linkedin/Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "before_sha256": "6137f035d09c743a50c046d1816cd59c8c15b58bf38def021cbd098109418b75",
+      "after_sha256": "6ea22d58e4de099598b9bee8ecedb62924f3d28cf441750262cac56b0f15e09b",
+      "installed_sha256": "349f2d897b28d0b7427760e03ba0509985624a42728a6d08dd4e80cd607e3abb"
+    },
+    {
+      "path": "publications/linkedin/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "before_sha256": "6329f87f1b9dff4a53962306b2a26b48d80c48dc39c1437ac4619bfada7e5b9a",
+      "after_sha256": "3864c8bbc8b1a73f200577124c05708a546310df8462174a9304f59d187a94b8",
+      "installed_sha256": "244893310a05950b74716933916eb6241e61f6570b54860e6da39729f10d5739"
+    },
+    {
+      "path": "publications/README.md",
+      "before_sha256": "5712d4679864973194e4fad6e635d7225149b9fed225cc8a909fd8b90f82a38b",
+      "after_sha256": "1bd7be456a4bada138492997ea6595ce6b08179b85c22a87e18f8a13839b6496",
+      "installed_sha256": "7beba87597035bd696e68c5930871f8c15ce5a575cdc31e446b7e2a75cbea144"
+    },
+    {
+      "path": "README.md",
+      "before_sha256": "5af283165ac7a44f9fa08a90f6faac4befc4ab747ee8ec001c8b16fa15ae47b6",
+      "after_sha256": "bac614b4a9bca193e70bd3f4a62292d81cb3df95b86fa5fdd04c5d78b7e351ee",
+      "installed_sha256": "1effcf5c3702af1cc6d7b3cb9f743c269179bd3202e085d6d2634cc3534f6f83"
+    },
+    {
+      "path": "research_lab/accounting_cases.py",
+      "before_sha256": null,
+      "after_sha256": "2796ac7e949f13a789383b01fcfaddcf3e582f194537f76e6430acecfd689e15",
+      "installed_sha256": "2796ac7e949f13a789383b01fcfaddcf3e582f194537f76e6430acecfd689e15"
+    },
+    {
+      "path": "research_lab/connected_cases.py",
+      "before_sha256": null,
+      "after_sha256": "09a6d1486a6a8ee3d04b54b612615e5cc01858dde27c5ca07baebcf9a1a0caf4",
+      "installed_sha256": "09a6d1486a6a8ee3d04b54b612615e5cc01858dde27c5ca07baebcf9a1a0caf4"
+    },
+    {
+      "path": "research_lab/data/cross_project_reference_2026-10-01.json",
+      "before_sha256": null,
+      "after_sha256": "24f1f6d00588be10c417bceb23bd7d5481753665d9e9bd5dcf3158d1d1063a2c",
+      "installed_sha256": "2d3cfe593fd1d385bca2c496aca25f59e6eef032ad7b4d86a1b1a849ea4073fd"
+    },
+    {
+      "path": "research_lab/lifecycle_cases.py",
+      "before_sha256": null,
+      "after_sha256": "e46104aa9e9506d214dccf9c274db1362d3682e0c441aab563025cc454c10e56",
+      "installed_sha256": "e46104aa9e9506d214dccf9c274db1362d3682e0c441aab563025cc454c10e56"
+    },
+    {
+      "path": "research_lab/option_cases.py",
+      "before_sha256": null,
+      "after_sha256": "d65fb0a2345906b483045b83e13484d5b50e81a696615d773bee278daa1ff301",
+      "installed_sha256": "d65fb0a2345906b483045b83e13484d5b50e81a696615d773bee278daa1ff301"
+    },
+    {
+      "path": "research_lab/regulatory_cases.py",
+      "before_sha256": null,
+      "after_sha256": "ac57065cd4e641adbea63d776c31ce35a5f5ae3fd01e950f658f3fd4ba94a66e",
+      "installed_sha256": "ac57065cd4e641adbea63d776c31ce35a5f5ae3fd01e950f658f3fd4ba94a66e"
+    },
+    {
+      "path": "research_lab/run_examples.py",
+      "before_sha256": "c09cd467fe83834ec2ce211aa055a9ed9e91509a915c7781810c0c5bb1c6feca",
+      "after_sha256": "6b5d8e590aaca7108b945876248564ee2a857b1c2383876114a52d39249b3744",
+      "installed_sha256": "6ff04f7b837443cb8cf739fd9bfae3e4887939df61b04298b4fb2397ad3dd696"
+    },
+    {
+      "path": "source_library/review-history/2026-10-01/KESONIA_ERP_Reference_List_pre_review.md",
+      "before_sha256": null,
+      "after_sha256": "640a9f9ee0ba9aabe2e45ce62d58379ee46e62e5dcf53b3f78279ce9c3cefc85",
+      "installed_sha256": "0742cb8a2d24734da04c46c806a8822b9b9ada7dbab99b885fb58c3b975f9e16"
+    },
+    {
+      "path": "tests/test_accounting_cases.py",
+      "before_sha256": null,
+      "after_sha256": "d123507772d0a93bb81114d4b8d8c072ba7e335de45264737c93187193256dc3",
+      "installed_sha256": "d123507772d0a93bb81114d4b8d8c072ba7e335de45264737c93187193256dc3"
+    },
+    {
+      "path": "tests/test_connected_cases.py",
+      "before_sha256": null,
+      "after_sha256": "f23e7035d575937bc6f47a513cd91b337e946b999a515d26abfb7bd428e9eb88",
+      "installed_sha256": "f23e7035d575937bc6f47a513cd91b337e946b999a515d26abfb7bd428e9eb88"
+    },
+    {
+      "path": "tests/test_lifecycle_cases.py",
+      "before_sha256": null,
+      "after_sha256": "0a1fd3f36a99f94bad31d39d778e9443093102d9c22919187cf1c8461a8ae445",
+      "installed_sha256": "0a1fd3f36a99f94bad31d39d778e9443093102d9c22919187cf1c8461a8ae445"
+    },
+    {
+      "path": "tests/test_option_cases.py",
+      "before_sha256": null,
+      "after_sha256": "b6a5e9dadd1bde6aae6810b690058fdcd09c82e11ef2f451574bb2852c67137a",
+      "installed_sha256": "b6a5e9dadd1bde6aae6810b690058fdcd09c82e11ef2f451574bb2852c67137a"
+    },
+    {
+      "path": "tests/test_regulatory_cases.py",
+      "before_sha256": null,
+      "after_sha256": "2ad708d7b761eac35ee1f4ae54b3242756626494a3c0830645f2c70847407cc0",
+      "installed_sha256": "2ad708d7b761eac35ee1f4ae54b3242756626494a3c0830645f2c70847407cc0"
+    }
+  ],
+  "finalisation_note": "Final hashes include preserved original line endings, PDF math/code rendering fixes and article copy polishing. Before hashes refer to the pre-install snapshot."
+}

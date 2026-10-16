@@ -1,0 +1,586 @@
+{
+  "scope": "Baseline parse of every repository Markdown/HTML outside caches/vendor folders; 1 October 2026 before this implementation update. Parsing is not financial validation.",
+  "directories": [
+    "."
+  ],
+  "count": 71,
+  "files": [
+    {
+      "path": "docs/governance/consolidation-2026-09-28/README.md",
+      "sha256": "bf12cb6b692e2342eed60897803017edcafe8801350b8b9d0c7264eda2643d27",
+      "bytes": 7552,
+      "lines": 63,
+      "visible_characters": 7546,
+      "visible_sha256": "bf12cb6b692e2342eed60897803017edcafe8801350b8b9d0c7264eda2643d27"
+    },
+    {
+      "path": "docs/governance/revision-2026-09-28/README.md",
+      "sha256": "b9d5d2730c7b3989e50bdf4e27fe50e0d80025ef0e6a8abf183fba474c3179b3",
+      "bytes": 1814,
+      "lines": 13,
+      "visible_characters": 1814,
+      "visible_sha256": "b9d5d2730c7b3989e50bdf4e27fe50e0d80025ef0e6a8abf183fba474c3179b3"
+    },
+    {
+      "path": "docs/methods/CROSS_PROJECT_BOUNDARIES.md",
+      "sha256": "b6c2f481ecac86082e97d734878625e41876f3cadce9d39592fe6c11e0e0a980",
+      "bytes": 53481,
+      "lines": 345,
+      "visible_characters": 53277,
+      "visible_sha256": "b6c2f481ecac86082e97d734878625e41876f3cadce9d39592fe6c11e0e0a980"
+    },
+    {
+      "path": "docs/methods/OPERATIONS_METHODOLOGY.md",
+      "sha256": "9f92fccb0341de78ceb97f1a8fbc85ada74537931328ca85b158e847640ebe5a",
+      "bytes": 15877,
+      "lines": 149,
+      "visible_characters": 15853,
+      "visible_sha256": "9f92fccb0341de78ceb97f1a8fbc85ada74537931328ca85b158e847640ebe5a"
+    },
+    {
+      "path": "docs/methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md",
+      "sha256": "798b266b5874b5affd372d9aa92035ba69ccd7c96aa7bbfe96b3f5853f491c98",
+      "bytes": 7532,
+      "lines": 54,
+      "visible_characters": 7524,
+      "visible_sha256": "798b266b5874b5affd372d9aa92035ba69ccd7c96aa7bbfe96b3f5853f491c98"
+    },
+    {
+      "path": "docs/methods/SCOPE_AND_SOURCE_REGISTER.md",
+      "sha256": "8d1fbf90dd63456bd2856ac483c484f4246a5f6b2a758feddd088558b8832e2c",
+      "bytes": 7479,
+      "lines": 54,
+      "visible_characters": 7479,
+      "visible_sha256": "8d1fbf90dd63456bd2856ac483c484f4246a5f6b2a758feddd088558b8832e2c"
+    },
+    {
+      "path": "docs/methods/SYMBOLS_AND_UNITS.md",
+      "sha256": "15344c5bdfe264901270c1f8b10c59d323ceb32c40ff4c8772b96b71f786ca94",
+      "bytes": 22480,
+      "lines": 255,
+      "visible_characters": 22480,
+      "visible_sha256": "15344c5bdfe264901270c1f8b10c59d323ceb32c40ff4c8772b96b71f786ca94"
+    },
+    {
+      "path": "docs/methods/WORKED_EXAMPLES.md",
+      "sha256": "e1d3d4dd4deed45d386182fe157831d1756f06bf18848c59fa0f3104fabd6769",
+      "bytes": 18533,
+      "lines": 192,
+      "visible_characters": 18527,
+      "visible_sha256": "e1d3d4dd4deed45d386182fe157831d1756f06bf18848c59fa0f3104fabd6769"
+    },
+    {
+      "path": "docs/research/kesonia/ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "sha256": "750aa87e920cce3f3bed6d5dc2601b4fe298bfca12933cc3ebc3d2c5e5f3cf3c",
+      "bytes": 5551,
+      "lines": 56,
+      "visible_characters": 5531,
+      "visible_sha256": "750aa87e920cce3f3bed6d5dc2601b4fe298bfca12933cc3ebc3d2c5e5f3cf3c"
+    },
+    {
+      "path": "docs/research/kesonia/cbk_kesonia_k_framework.md",
+      "sha256": "92406a0b854f9805946eda254557e5bbdc0a655f724472f0f3cfcb0864e5c822",
+      "bytes": 780,
+      "lines": 12,
+      "visible_characters": 780,
+      "visible_sha256": "92406a0b854f9805946eda254557e5bbdc0a655f724472f0f3cfcb0864e5c822"
+    },
+    {
+      "path": "docs/research/kesonia/FRTB_SCOPE_AND_DEVELOPMENT_NOTE_2026-09-25.md",
+      "sha256": "aaf67d3b94140f4e01776394695be5736f4f482a8bffd27b0c2c940c37ac6911",
+      "bytes": 9301,
+      "lines": 87,
+      "visible_characters": 9282,
+      "visible_sha256": "aaf67d3b94140f4e01776394695be5736f4f482a8bffd27b0c2c940c37ac6911"
+    },
+    {
+      "path": "docs/research/kesonia/KESONIA_COMPOUNDING_TERM_STRUCTURE_AND_FUNDING_CURVE_NOTE.md",
+      "sha256": "1318a5e0a483a8c2c10e4e0b3dd3878bad9df9421cb7e482d5d70f8641bae587",
+      "bytes": 914,
+      "lines": 9,
+      "visible_characters": 904,
+      "visible_sha256": "1318a5e0a483a8c2c10e4e0b3dd3878bad9df9421cb7e482d5d70f8641bae587"
+    },
+    {
+      "path": "docs/research/kesonia/KESONIA_ERP_Reference_List.md",
+      "sha256": "0742cb8a2d24734da04c46c806a8822b9b9ada7dbab99b885fb58c3b975f9e16",
+      "bytes": 23961,
+      "lines": 341,
+      "visible_characters": 23873,
+      "visible_sha256": "0742cb8a2d24734da04c46c806a8822b9b9ada7dbab99b885fb58c3b975f9e16"
+    },
+    {
+      "path": "docs/research/kesonia/Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "sha256": "fe12e93d1e9c0d38bb4b761704f2e4b983920306f728adb2038ce449d778771f",
+      "bytes": 17004,
+      "lines": 150,
+      "visible_characters": 16992,
+      "visible_sha256": "fe12e93d1e9c0d38bb4b761704f2e4b983920306f728adb2038ce449d778771f"
+    },
+    {
+      "path": "docs/research/kesonia/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "sha256": "b691809af0b43d1150f29fca5505a796eeb35cba51daa0a9c0200277e685f594",
+      "bytes": 15532,
+      "lines": 185,
+      "visible_characters": 15532,
+      "visible_sha256": "b691809af0b43d1150f29fca5505a796eeb35cba51daa0a9c0200277e685f594"
+    },
+    {
+      "path": "docs/research/kesonia/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "sha256": "3d0a7a7e0bc2b312b9ca379bedb76e07e110172b7c9a994211f8c4d3f32bc2db",
+      "bytes": 20461,
+      "lines": 185,
+      "visible_characters": 20440,
+      "visible_sha256": "3d0a7a7e0bc2b312b9ca379bedb76e07e110172b7c9a994211f8c4d3f32bc2db"
+    },
+    {
+      "path": "docs/research/kesonia/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "sha256": "7d4462e36322149cbbcc70eb90cca2c14aa957ea1701970b56b03f1d0eb25f20",
+      "bytes": 21111,
+      "lines": 187,
+      "visible_characters": 21075,
+      "visible_sha256": "7d4462e36322149cbbcc70eb90cca2c14aa957ea1701970b56b03f1d0eb25f20"
+    },
+    {
+      "path": "docs/research/kesonia/RegTech_Gap_Analysis_Report.md",
+      "sha256": "90fd3ebf1ae17ed58f8ec5d3339a9d5f352591371a060cd820649cb4adb4a43a",
+      "bytes": 773,
+      "lines": 12,
+      "visible_characters": 773,
+      "visible_sha256": "90fd3ebf1ae17ed58f8ec5d3339a9d5f352591371a060cd820649cb4adb4a43a"
+    },
+    {
+      "path": "docs/research/kesonia/RegTech_KESONIA_Enhancement_Report.md",
+      "sha256": "ecc2f3ce26e2f28788a91260df57a7c6a9608d954b1c0872bfd922a19aef020e",
+      "bytes": 797,
+      "lines": 12,
+      "visible_characters": 797,
+      "visible_sha256": "ecc2f3ce26e2f28788a91260df57a7c6a9608d954b1c0872bfd922a19aef020e"
+    },
+    {
+      "path": "docs/research/kesonia/STP_AND_ALM_FTP_SOFTWARE_REVIEW_2026-09-25.md",
+      "sha256": "9d0e8f2b586d2c71e0b96bc3ef0df210e445b3ed9b1b8de2f7327ec38dfcfeb5",
+      "bytes": 13114,
+      "lines": 93,
+      "visible_characters": 13087,
+      "visible_sha256": "9d0e8f2b586d2c71e0b96bc3ef0df210e445b3ed9b1b8de2f7327ec38dfcfeb5"
+    },
+    {
+      "path": "docs/research/kesonia/TREASURY_CURVES_AND_BUSINESS_ANALYSIS_DETAILED_REVIEW_2026-09-25.md",
+      "sha256": "ca3bc0d9be7245010a769c944532765d3b7ffa59cc8a68fb1beeaf5d2d216d44",
+      "bytes": 18766,
+      "lines": 132,
+      "visible_characters": 18744,
+      "visible_sha256": "ca3bc0d9be7245010a769c944532765d3b7ffa59cc8a68fb1beeaf5d2d216d44"
+    },
+    {
+      "path": "docs/research/kesonia/TREASURY_REMAINING_WORK_REGISTER_2026-09-25.md",
+      "sha256": "d68a8888fda25269255abe435c1833c1f4ccc83d7dc19abd645929302ad9a6d4",
+      "bytes": 15420,
+      "lines": 74,
+      "visible_characters": 15368,
+      "visible_sha256": "d68a8888fda25269255abe435c1833c1f4ccc83d7dc19abd645929302ad9a6d4"
+    },
+    {
+      "path": "MIGRATION.md",
+      "sha256": "e18bb1c6b32fe66bf4f1fc93ebc7315e76c55d5fa3d8b29dc869766846211bea",
+      "bytes": 1308,
+      "lines": 11,
+      "visible_characters": 1306,
+      "visible_sha256": "e18bb1c6b32fe66bf4f1fc93ebc7315e76c55d5fa3d8b29dc869766846211bea"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/00_READ_ME.html",
+      "sha256": "a5f3f39449792bee8b038a903be965dc23054fba650eb5334da3419ec9bc2754",
+      "bytes": 5720,
+      "lines": 120,
+      "visible_characters": 3408,
+      "visible_sha256": "9960407603190d046d4f659ed28b40bf1665116d404c7171860e492f19eddcac"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/00_READ_ME.md",
+      "sha256": "7eedde96c198999a8b7b2908c6411d6fde3d3171fb1b3a60aea42d40b112bb65",
+      "bytes": 3597,
+      "lines": 40,
+      "visible_characters": 3583,
+      "visible_sha256": "7eedde96c198999a8b7b2908c6411d6fde3d3171fb1b3a60aea42d40b112bb65"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/01_DETAILED_MATERIAL_REVIEW.html",
+      "sha256": "39380434150b5d120f3f4a0f6dea53147ace921f447123363b8bd8fcc8f1e3c4",
+      "bytes": 25043,
+      "lines": 535,
+      "visible_characters": 18209,
+      "visible_sha256": "857bea9382d4ca64c44e2097baf83045958ff552dd8702f2595835f01bc2fd37"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/01_DETAILED_MATERIAL_REVIEW.md",
+      "sha256": "dd6ee7b614308057020fbae1beb5dc3d60c1d0e731c6ea81faa4f0a80aa314e9",
+      "bytes": 18311,
+      "lines": 128,
+      "visible_characters": 18289,
+      "visible_sha256": "dd6ee7b614308057020fbae1beb5dc3d60c1d0e731c6ea81faa4f0a80aa314e9"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/02_CALCULATION_AND_CASEBOOK.html",
+      "sha256": "abf546d4c49abdb17f410e203845604691f6a82ea4c939a32fc638b6db601df7",
+      "bytes": 41577,
+      "lines": 597,
+      "visible_characters": 17520,
+      "visible_sha256": "923d44a83d346dbf98b0a5b2ac297b6791cc21a62d68a6ed492c86b535c67422"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/02_CALCULATION_AND_CASEBOOK.md",
+      "sha256": "179140898930396e952e7d4523c6773c4a31a0855d03b7f24da99426be9eb136",
+      "bytes": 16506,
+      "lines": 214,
+      "visible_characters": 16482,
+      "visible_sha256": "179140898930396e952e7d4523c6773c4a31a0855d03b7f24da99426be9eb136"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/03_REVISION_BLUEPRINT_AND_INSERTS.html",
+      "sha256": "59df11ad62e5116aea3de541d6400ab301c5ef2fb82edc69d9004efcfc16bfb2",
+      "bytes": 27265,
+      "lines": 689,
+      "visible_characters": 18006,
+      "visible_sha256": "c74424f03e102262ade867ff8f621c9f1149206e0b4da468ba6921abee09612c"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/03_REVISION_BLUEPRINT_AND_INSERTS.md",
+      "sha256": "f568bdc9cd615c3c4c1d4d82876ed9d007cd6125fd29c5843f2bd64ae489ed65",
+      "bytes": 17339,
+      "lines": 151,
+      "visible_characters": 17301,
+      "visible_sha256": "f568bdc9cd615c3c4c1d4d82876ed9d007cd6125fd29c5843f2bd64ae489ed65"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/04_READING_MAP_AND_REFERENCES.html",
+      "sha256": "3052ca509643c7c56067b3f862724dbb3c16d59f054ce6aeadfc55b452b2ee83",
+      "bytes": 16014,
+      "lines": 401,
+      "visible_characters": 8979,
+      "visible_sha256": "b31a336d3e40334b206fa4aa1de852b0af6f19eee17daac8803d2c5d8e5bc6db"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/04_READING_MAP_AND_REFERENCES.md",
+      "sha256": "3cf05cbc1c1c0f2b6cd6b626d407af01abf9a5582f4b9615d3714f04db28bb62",
+      "bytes": 10944,
+      "lines": 77,
+      "visible_characters": 10881,
+      "visible_sha256": "3cf05cbc1c1c0f2b6cd6b626d407af01abf9a5582f4b9615d3714f04db28bb62"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.html",
+      "sha256": "51844614489438de20f2fa7bf0f9ef6e23e63e2564f34c38a105468891d22d2f",
+      "bytes": 18071,
+      "lines": 413,
+      "visible_characters": 12061,
+      "visible_sha256": "a1f39cf10a49b5c93e93bd7bdfc2c3ec7993765819f69e48272b6325f463d13c"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.md",
+      "sha256": "6965130c1585713874f0430d8304172f39f9994ceaba9c943a174db2f842208e",
+      "bytes": 12906,
+      "lines": 89,
+      "visible_characters": 12879,
+      "visible_sha256": "6965130c1585713874f0430d8304172f39f9994ceaba9c943a174db2f842208e"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/06_WHAT_REMAINS_TO_BE_DEVELOPED.html",
+      "sha256": "eaa3d969983100ba2532dc23b361a459ba6e1bc68e51c23901034562505a593a",
+      "bytes": 19722,
+      "lines": 402,
+      "visible_characters": 14811,
+      "visible_sha256": "dafadcebb26cb4de642d38c62135ddd29b5c52b46a4ebd1dbd22f3e3f3ab4888"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/06_WHAT_REMAINS_TO_BE_DEVELOPED.md",
+      "sha256": "b05c71eab953c2468fe541f51cd140a3bb32249fa5716151310264d134d8f4f3",
+      "bytes": 14965,
+      "lines": 70,
+      "visible_characters": 14913,
+      "visible_sha256": "b05c71eab953c2468fe541f51cd140a3bb32249fa5716151310264d134d8f4f3"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.html",
+      "sha256": "44fc85cc73e0eb8f8ae5ba697c650570185d4f6180cd9fa7f326a6ba7dd97f0e",
+      "bytes": 14285,
+      "lines": 268,
+      "visible_characters": 9096,
+      "visible_sha256": "5a264a0e09aaf5d20c710bf8eae3e92e55bbe5ce611769686e3f4d8664d8d918"
+    },
+    {
+      "path": "output/kesonia_treasury_deep_review_2026-09-25/07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.md",
+      "sha256": "59bc0b874452063eb4ff2ddce4285cb00b1645ff5d9fc71fbc00d5c4f2e63478",
+      "bytes": 9126,
+      "lines": 83,
+      "visible_characters": 9107,
+      "visible_sha256": "59bc0b874452063eb4ff2ddce4285cb00b1645ff5d9fc71fbc00d5c4f2e63478"
+    },
+    {
+      "path": "output/pricing_treasury_cross_project_review_2026-09-23/02_WORKING_FORMULATIONS_AND_EXAMPLES.md",
+      "sha256": "02fbe55287181ee18d62c43c1deaf6aff4ebb0584290f883bd84c3670aa4edea",
+      "bytes": 17082,
+      "lines": 210,
+      "visible_characters": 17056,
+      "visible_sha256": "02fbe55287181ee18d62c43c1deaf6aff4ebb0584290f883bd84c3670aa4edea"
+    },
+    {
+      "path": "publications/build/core/Part1_KESONIA_Reform_and_Enterprise_Architecture.html",
+      "sha256": "a3dd50eff3adf1acbc5f7c7c4060c1c6fe2ccfc25f74a531570a1ddab3ab23dc",
+      "bytes": 61257,
+      "lines": 553,
+      "visible_characters": 16232,
+      "visible_sha256": "25c13077741dcc0ad0b1fc5d18201520f31a0ee0c8a4193fa09a4efb65d49557"
+    },
+    {
+      "path": "publications/build/core/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.html",
+      "sha256": "57177304dcdc8f59e8f1a5f7bbc4bf7460e9657b2877134b46e7d5b726885cf9",
+      "bytes": 36063,
+      "lines": 581,
+      "visible_characters": 15522,
+      "visible_sha256": "9e456fb9f86eba6a3544904a3d8c6c0790114344d5919edbea785153c15d5051"
+    },
+    {
+      "path": "publications/build/core/Part3_AI_Pricing_Engine_and_IFRS9_Integration.html",
+      "sha256": "0a059f5ec9311c429c429ca213c628e0a29512df2febf28d3217e4a409c26898",
+      "bytes": 36221,
+      "lines": 642,
+      "visible_characters": 19997,
+      "visible_sha256": "281c45fded08e512a3dcd353a5d7ba4eb98d14b58ec8424ab3099418be9486dc"
+    },
+    {
+      "path": "publications/build/core/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.html",
+      "sha256": "21010e49baffbbd8a6aa0e7379b6e9c4ade8424f94a20eebe17f8ff853740245",
+      "bytes": 67802,
+      "lines": 691,
+      "visible_characters": 19651,
+      "visible_sha256": "5a4679dacc7f4ca95f7bade1b37fd58d5ddc33382a9d53685a06fed8ef63f922"
+    },
+    {
+      "path": "publications/build/linkedin/linkedin_posts.html",
+      "sha256": "41dfe09d0e31677db411c71cb1fd94e43d24d6aaefc1dd47da66a32005e20cc9",
+      "bytes": 5474,
+      "lines": 212,
+      "visible_characters": 2450,
+      "visible_sha256": "e8cc5c426bdc56598348c76b50208e52192282709dbffd44141030ebbce460be"
+    },
+    {
+      "path": "publications/build/linkedin/Part1_KESONIA_Reform_and_Enterprise_Architecture.html",
+      "sha256": "681db13e06fc4c6544d899344b85ad6e48c744daa10a5d985eabf5b533af9d21",
+      "bytes": 61456,
+      "lines": 558,
+      "visible_characters": 16400,
+      "visible_sha256": "b396f5743bdc80c6e98290974095f11dc900ef4200085ac6d3b909b733f0f649"
+    },
+    {
+      "path": "publications/build/linkedin/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.html",
+      "sha256": "787762c6632a1c4eaba437439b47840612170e3f845f5040736fecdf20c91bb6",
+      "bytes": 36263,
+      "lines": 587,
+      "visible_characters": 15691,
+      "visible_sha256": "52ef934bcebc5d5f702248e7ee8dd8333b3e18374211a71f75eb21b06739ec88"
+    },
+    {
+      "path": "publications/build/linkedin/Part3_AI_Pricing_Engine_and_IFRS9_Integration.html",
+      "sha256": "924d4e0e313785a8d93a31ce1376dd8b7cf528e054c035a6a26d6b1443ae1f97",
+      "bytes": 36421,
+      "lines": 648,
+      "visible_characters": 20166,
+      "visible_sha256": "a20dd04a3ef36c13cefd54d178c14d4617429f983e76cd91a4fe9d9edb9e4e58"
+    },
+    {
+      "path": "publications/build/linkedin/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.html",
+      "sha256": "a1fadb285f782d92b1d4c6aab2d0eaa74e76086724dff25739f92f37d126484d",
+      "bytes": 68000,
+      "lines": 695,
+      "visible_characters": 19818,
+      "visible_sha256": "a0575bb52dd1c2d7044742fc998925281e563e44029153564e651ac338f00f68"
+    },
+    {
+      "path": "publications/build/methods/CROSS_PROJECT_BOUNDARIES.html",
+      "sha256": "62b3b556ed202bc8083559b5b4a50f09c3944c5c7fc079e2ec7f0714ad3fcb58",
+      "bytes": 65919,
+      "lines": 1415,
+      "visible_characters": 48397,
+      "visible_sha256": "f9f3c801fb239cdc36dc454d94a15f4720f2ed86c7238df1b762e0518843fc39"
+    },
+    {
+      "path": "publications/build/methods/OPERATIONS_METHODOLOGY.html",
+      "sha256": "51e1f643bf9dcaab1b63fe9626787e96d714533da022b4f3ebbd69902b33a304",
+      "bytes": 23668,
+      "lines": 618,
+      "visible_characters": 16036,
+      "visible_sha256": "720c86ff948fb404843e76590ff173448af56ebd44784b214a8df553d42491e8"
+    },
+    {
+      "path": "publications/build/methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.html",
+      "sha256": "b6f745628cc5833929653fda3c8842b45315fdb539a9a5a63dcd5273191712c6",
+      "bytes": 12698,
+      "lines": 445,
+      "visible_characters": 7608,
+      "visible_sha256": "54c0832015ca25876a655a4896a1024833216b0ce0b2c908b96e6615e5c718ed"
+    },
+    {
+      "path": "publications/build/methods/SCOPE_AND_SOURCE_REGISTER.html",
+      "sha256": "506a0ac80d9f9293a78533dc1dec73f350b41db4409bee679fe0976867e2b686",
+      "bytes": 11715,
+      "lines": 337,
+      "visible_characters": 6459,
+      "visible_sha256": "f1e9662b9ec09b1f387da3f84de197ff83d3d57765d7713597081c48c7201030"
+    },
+    {
+      "path": "publications/build/methods/SYMBOLS_AND_UNITS.html",
+      "sha256": "7ed3ed1f409051f6be3ba5d6dba597feb22329e4965555678fa402f3a1faea13",
+      "bytes": 35219,
+      "lines": 1225,
+      "visible_characters": 22556,
+      "visible_sha256": "58034a0713e8353d94fc08c1c996a3a8c0231756c0648da7b6ecf5fd58e9f289"
+    },
+    {
+      "path": "publications/build/methods/WORKED_EXAMPLES.html",
+      "sha256": "0a27888f94eb2e31eb5457b723a294a6b6b5c299ce3d8479716151acf37daee7",
+      "bytes": 32065,
+      "lines": 661,
+      "visible_characters": 18495,
+      "visible_sha256": "12715e06f1075223e16f406197d9ba35e473250561c51e531e8916ba867f69fc"
+    },
+    {
+      "path": "publications/build/references/KESONIA_ERP_Reference_List.html",
+      "sha256": "1244f24eac57fd90052b2fd61a9ce48c6488e8c552cbe145aa501850937cb05a",
+      "bytes": 33003,
+      "lines": 859,
+      "visible_characters": 23063,
+      "visible_sha256": "481488b65a9f9314546c43d75162151ec86f0f9cec933081d4c1684cd89b1fbb"
+    },
+    {
+      "path": "publications/linkedin/linkedin_posts.md",
+      "sha256": "f6e04d47ed09db8af0173384ad9dbb1f0404f45acd3ce78d557540f4a54d1b16",
+      "bytes": 2362,
+      "lines": 19,
+      "visible_characters": 2360,
+      "visible_sha256": "f6e04d47ed09db8af0173384ad9dbb1f0404f45acd3ce78d557540f4a54d1b16"
+    },
+    {
+      "path": "publications/linkedin/Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "sha256": "6137f035d09c743a50c046d1816cd59c8c15b58bf38def021cbd098109418b75",
+      "bytes": 17234,
+      "lines": 152,
+      "visible_characters": 17222,
+      "visible_sha256": "6137f035d09c743a50c046d1816cd59c8c15b58bf38def021cbd098109418b75"
+    },
+    {
+      "path": "publications/linkedin/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "sha256": "732c540280bb48aa48abcf8385c45ca2dcf10264bcea996ce32a1d7e738ef751",
+      "bytes": 15729,
+      "lines": 187,
+      "visible_characters": 15729,
+      "visible_sha256": "732c540280bb48aa48abcf8385c45ca2dcf10264bcea996ce32a1d7e738ef751"
+    },
+    {
+      "path": "publications/linkedin/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "sha256": "6329f87f1b9dff4a53962306b2a26b48d80c48dc39c1437ac4619bfada7e5b9a",
+      "bytes": 20627,
+      "lines": 187,
+      "visible_characters": 20606,
+      "visible_sha256": "6329f87f1b9dff4a53962306b2a26b48d80c48dc39c1437ac4619bfada7e5b9a"
+    },
+    {
+      "path": "publications/linkedin/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "sha256": "ad9b06a3fb304e9e434489e65a3a674e8770a4491f1b0cda510a2595babd1b05",
+      "bytes": 21403,
+      "lines": 189,
+      "visible_characters": 21367,
+      "visible_sha256": "ad9b06a3fb304e9e434489e65a3a674e8770a4491f1b0cda510a2595babd1b05"
+    },
+    {
+      "path": "publications/README.md",
+      "sha256": "5712d4679864973194e4fad6e635d7225149b9fed225cc8a909fd8b90f82a38b",
+      "bytes": 4073,
+      "lines": 47,
+      "visible_characters": 4073,
+      "visible_sha256": "5712d4679864973194e4fad6e635d7225149b9fed225cc8a909fd8b90f82a38b"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5af283165ac7a44f9fa08a90f6faac4befc4ab747ee8ec001c8b16fa15ae47b6",
+      "bytes": 4553,
+      "lines": 54,
+      "visible_characters": 4551,
+      "visible_sha256": "5af283165ac7a44f9fa08a90f6faac4befc4ab747ee8ec001c8b16fa15ae47b6"
+    },
+    {
+      "path": "source_library/regtech-origin/Drafts/Implementing Automated ERP RegTech Sweep under the CBK KESONIA Framework for Commercial Banks and Traditional Variable.md",
+      "sha256": "e38503a7356330def73469ebbfd8b94697d6bd4d097b7b759d7640d6d6e2bf7c",
+      "bytes": 63792,
+      "lines": 1669,
+      "visible_characters": 63695,
+      "visible_sha256": "e38503a7356330def73469ebbfd8b94697d6bd4d097b7b759d7640d6d6e2bf7c"
+    },
+    {
+      "path": "source_library/regtech-origin/Drafts/neobank & fintech outline.md",
+      "sha256": "7256c2f0900133eb83d0f6061af8e90c0e93f83306ac1c369957e4d35188e6e1",
+      "bytes": 3837,
+      "lines": 80,
+      "visible_characters": 3837,
+      "visible_sha256": "7256c2f0900133eb83d0f6061af8e90c0e93f83306ac1c369957e4d35188e6e1"
+    },
+    {
+      "path": "source_library/regtech-origin/Drafts/regtech.md",
+      "sha256": "f20bac297d1bd66eb2116506b816b9782bb9aba8f007a23d0378f4484d27ce61",
+      "bytes": 218831,
+      "lines": 5719,
+      "visible_characters": 218503,
+      "visible_sha256": "f20bac297d1bd66eb2116506b816b9782bb9aba8f007a23d0378f4484d27ce61"
+    },
+    {
+      "path": "source_library/regtech-origin/README.md",
+      "sha256": "0516f01a2a91bea0a212b8913432369be4d158f8bddeed5aba7a885a1a37cdaa",
+      "bytes": 1299,
+      "lines": 12,
+      "visible_characters": 1299,
+      "visible_sha256": "0516f01a2a91bea0a212b8913432369be4d158f8bddeed5aba7a885a1a37cdaa"
+    },
+    {
+      "path": "source_library/review-history/2026-09-28/cbk_kesonia_k_framework.md",
+      "sha256": "9c300c59adc6a564c471315b4035e8dae13dc7a64886b127289f3b019fd288df",
+      "bytes": 2320,
+      "lines": 20,
+      "visible_characters": 2318,
+      "visible_sha256": "9c300c59adc6a564c471315b4035e8dae13dc7a64886b127289f3b019fd288df"
+    },
+    {
+      "path": "source_library/review-history/2026-09-28/README.md",
+      "sha256": "94b3bf60c8a532d0575c029478f7a906c3e42589b5a48486d110efcefeb87400",
+      "bytes": 640,
+      "lines": 9,
+      "visible_characters": 640,
+      "visible_sha256": "94b3bf60c8a532d0575c029478f7a906c3e42589b5a48486d110efcefeb87400"
+    },
+    {
+      "path": "source_library/review-history/2026-09-28/RegTech_Gap_Analysis_Report.md",
+      "sha256": "6c98e18a7ea7c46add237b3e8e420b93586ef5879f42c6f9ff408f108043c1d4",
+      "bytes": 14844,
+      "lines": 133,
+      "visible_characters": 14842,
+      "visible_sha256": "6c98e18a7ea7c46add237b3e8e420b93586ef5879f42c6f9ff408f108043c1d4"
+    },
+    {
+      "path": "source_library/review-history/2026-09-28/RegTech_KESONIA_Enhancement_Report.md",
+      "sha256": "e0d86e310b2b74d7e957cee4f482e5382b4ea2b95febf48ac83c0604bf4660d2",
+      "bytes": 6090,
+      "lines": 76,
+      "visible_characters": 6088,
+      "visible_sha256": "e0d86e310b2b74d7e957cee4f482e5382b4ea2b95febf48ac83c0604bf4660d2"
+    }
+  ],
+  "baseline_code_hash_matches": {
+    "__init__.py": true,
+    "benchmark.py": true,
+    "curves.py": true,
+    "operations.py": true,
+    "pricing.py": true,
+    "run_examples.py": true,
+    "scenarios.py": true
+  }
+}

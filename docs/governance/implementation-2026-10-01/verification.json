@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-01",
+  "reviewed_baseline_documents": {
+    "markdown": 47,
+    "html": 24,
+    "total": 71
+  },
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 139,
+    "failed": 0,
+    "run_seconds": 51.945,
+    "status": "passed",
+    "note": "Full suite ran after substantive code fixes. Subsequent code-file changes preserved content and only restored line endings; publication renderer changes were checked by rebuilding and visual review."
+  },
+  "numerical_results": {
+    "path": "research_lab/results/checked_examples.json",
+    "sha256": "3cd5b1b53bae875f5386ad3dc50823f48236c1b78c4c68d885e45706fa214660",
+    "repeated_identical_output": true,
+    "source_and_data_hashes_match": true
+  },
+  "calculation_source_sha256": {
+    "__init__.py": "996cfe5922121cbe589d70c92aab82f41a3ede946ab43aea8d77d4e1b5523e70",
+    "accounting_cases.py": "2796ac7e949f13a789383b01fcfaddcf3e582f194537f76e6430acecfd689e15",
+    "benchmark.py": "80cb705d267cdcd7999751b275e812ddb6740702e599733f82fe6755cee528c3",
+    "connected_cases.py": "09a6d1486a6a8ee3d04b54b612615e5cc01858dde27c5ca07baebcf9a1a0caf4",
+    "curves.py": "a94da19ea1f306b19dd7de269af74b6927bf7a08545ae2f7ff1280e490737a7a",
+    "lifecycle_cases.py": "e46104aa9e9506d214dccf9c274db1362d3682e0c441aab563025cc454c10e56",
+    "operations.py": "f814e1042c906f8b7084127da23cdc53e09412d8eef2a56b68ee29e3857bffe0",
+    "option_cases.py": "d65fb0a2345906b483045b83e13484d5b50e81a696615d773bee278daa1ff301",
+    "pricing.py": "4468418dff5a8dc1fba552f80c48874360c590934351301c3391cdce5d064497",
+    "regulatory_cases.py": "ac57065cd4e641adbea63d776c31ce35a5f5ae3fd01e950f658f3fd4ba94a66e",
+    "run_examples.py": "6b5d8e590aaca7108b945876248564ee2a857b1c2383876114a52d39249b3744",
+    "scenarios.py": "b9d969618cf322321d7af80714f43cd5e42349b3f9311563da1f751b0cbd783a"
+  },
+  "test_source_sha256": {
+    "test_accounting_cases.py": "d123507772d0a93bb81114d4b8d8c072ba7e335de45264737c93187193256dc3",
+    "test_benchmark_curves_scenarios.py": "0c16b4093f80077849ed0689fc4a4386e6ecda5c934d8b25cc2354cba9189bf5",
+    "test_connected_cases.py": "f23e7035d575937bc6f47a513cd91b337e946b999a515d26abfb7bd428e9eb88",
+    "test_lifecycle_cases.py": "0a1fd3f36a99f94bad31d39d778e9443093102d9c22919187cf1c8461a8ae445",
+    "test_operations.py": "718ad89f1c831c9c54009035d47c00215bc9aff3c53ed23a0b777e0ec37bcb37",
+    "test_option_cases.py": "b6a5e9dadd1bde6aae6810b690058fdcd09c82e11ef2f451574bb2852c67137a",
+    "test_pricing.py": "d298cf5caf80897fe6c868375ff624354260b30e2117e3b04804bbd07e3764a3",
+    "test_publications.py": "a015947bf44ef16e1d6dd332eccf2662f03d245538dbaa09c9dcb06873885a1a",
+    "test_regulatory_cases.py": "2ad708d7b761eac35ee1f4ae54b3242756626494a3c0830645f2c70847407cc0"
+  },
+  "html": {
+    "standalone_documents": 21,
+    "build_and_local_links": "passed",
+    "historical_review_pages_refreshed": 8,
+    "build_report_sha256": "aff8279fc5d3e38e978e5bb72513da5af8d69bd25a75090ca021a30fb617e75f"
+  },
+  "pdf": {
+    "path": "output/pdf/RegTech_KESONIA_Worked_Examples_2026-10-01.pdf",
+    "sha256": "f496529d739126756a23cfb94c373e89a4616fdbcd0f8a8d3a51a7195aebe092",
+    "pages": 64,
+    "source_hashes_and_bounds": "passed",
+    "visual_review": "Passed: all 64 rendered pages reviewed through eight contact sheets, with full-size inspection of dense formula/table pages and the corrected code blocks."
+  },
+  "diff_whitespace": "passed using cr-at-eol for the inherited CRLF files",
+  "scope": "Scoped synthetic/reference examples; the 18-item register retains substantive research, owning-project and institutional work.",
+  "guest_repositories_modified": false,
+  "commit_or_push_performed": false
+}

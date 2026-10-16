@@ -18,6 +18,8 @@ Repository-relative paths below refer to the preserved originals; physical line 
 
 This reading record identifies the passages used for the operations module. It does not claim that this module reread every later option, capital, insurance and modelling passage in both full pastes. Those broader modules have their own work packages.
 
+The [symbol and unit reference](SYMBOLS_AND_UNITS.md) explains the exposure-time terms, regression coefficients, matrix operators, retention measures and transaction units used below.
+
 ## 1. Dated product-level FTP
 
 ### Definitions

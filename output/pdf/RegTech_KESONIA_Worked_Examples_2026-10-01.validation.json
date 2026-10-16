@@ -1,0 +1,21 @@
+{
+  "revision": "2026-10-16",
+  "output": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\pdf\\RegTech_KESONIA_Worked_Examples_2026-10-01.pdf",
+  "sha256": "0bf84c5eeb448d221c2f42e436123360694919a7708d919c82405e480010146a",
+  "pages": 60,
+  "renderer": "Pandoc + XeLaTeX; native TeX math",
+  "display_equations": 49,
+  "tex_checks": {
+    "missing_glyphs": 0,
+    "undefined_references": 0,
+    "overfull_boxes": 0
+  },
+  "external_links": 40,
+  "internal_links": 96,
+  "unresolved_internal_links": [],
+  "source_hashes_match": true,
+  "visual_review": "All 60 pages inspected across 15 contact sheets; final individual pages 5, 8, 15, 16 and 19 inspected after notation corrections. No material clipping, overlapping tables or equation glyph defects found.",
+  "scope": "Existing nine-source worked-examples casebook; research prose and numerical code unedited. Presentation conversion only.",
+  "render_folder": "publications/build/worked_examples_tex/qa",
+  "numerical_tests": "No numerical code changes; this validation covers typesetting and document navigation."
+}

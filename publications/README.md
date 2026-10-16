@@ -21,7 +21,7 @@ Mermaid PNG names use the full diagram-source SHA1. Old caption-based images rem
 
 `build_report.json` records source SHA256, output hashes, diagram-source hashes, image counts, local-link checks and warnings. All renders and link checks pass before HTML is copied into its final locations. This preserves earlier HTML on a parse/render/link failure; it is not a transaction against a disk failure during final copying. Avoid simultaneous builds into the same destination.
 
-The build validates rendering and local navigation, not external URL availability, financial assertions, regulatory applicability, or PDF/Word pagination. No PDFs or Word files are created. Browser support determines MathML display. Guest project files are only linked, never copied or edited by the build.
+The build validates rendering and local navigation, not external URL availability, financial assertions, regulatory applicability, or PDF/Word pagination. The HTML command creates no PDFs or Word files. The separate worked-example PDF command is described below. Browser support determines MathML display. Guest project files are only linked, never copied or edited by the build.
 
 ## Browser and timeout configuration
 
@@ -35,3 +35,13 @@ python publications/build_publications.py --refresh-diagrams --command-timeout-s
 ```
 
 Choose the executable path present on your own machine. Ordinary cached builds use the checked source-hash PNGs and do not need a browser unless a diagram changes or its cache is missing.
+
+## Standalone worked-example PDF
+
+The expanded 1 October 2026 edition combines the original examples, FTP/deposit/STP methodology and glossary with lifecycle, options/collateral, liquidity/capital, accounting and connected-finance cases. It includes the implementation register and SokoIntel candidate map. Original September 28 numerical cases remain alongside new October 1 reference cases. Internal source-reading inventories remain in the repository; the PDF supplies the explanatory content directly.
+
+```text
+python publications/build_worked_examples_pdf.py
+```
+
+Requires Python 3.10+, Pandoc, XeLaTeX and the installed `fancyvrb`/`etoolbox` packages. The 16 October typesetting revision uses native TeX mathematics, equation numbers by part, a linked contents page and the existing nine-source casebook. The default output remains `output/pdf/RegTech_KESONIA_Worked_Examples_2026-10-01.pdf`, with a source/output hash manifest alongside it. The builder keeps its TeX source and log in `publications/build/worked_examples_tex/` and preserves the research Markdown. The released worked-example PDF and its verification manifests are versioned with the source documents and builder; intermediate build files remain ignored. See `REGTECH_TEX_PDF_VALIDATION_2026-10-16.md` for the source scope and verified build. The existing HTML builder also renders the notation reference.
