@@ -1,0 +1,46 @@
+{
+  "checked_on": "2026-10-18",
+  "article_sha256": "7cf4e12277c73c65e40734317d9fd58e3f357fa4bcf19da535b456b76c0aa0ad",
+  "word_sha256": "0d2cd143f2209a1227df76675f940f9c2de5c0a04e4f11b540889273b1454ba9",
+  "word_render_method": "Microsoft Word ExportAsFixedFormat through a private application instance",
+  "canonical_renderer_status": "Unavailable because bundled LibreOffice is not present on this Windows runtime",
+  "rasterizer": "bundled pypdfium2",
+  "rendered_pages": 16,
+  "visually_inspected_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "visual_result": "Pass: no clipping, overlap, broken figures, missing glyphs or detached figure captions observed",
+  "standalone_charts_visually_inspected": [
+    "03_MONTHLY_RATE_TRANSMISSION.png",
+    "04_DEPOSITS_LOANS_AND_FUNDING.png",
+    "05_NII_CREDIT_COST_AND_PROFIT.png",
+    "06_ALCO_POLICY_COMPARISON.png",
+    "07_EQUITY_AND_CASH_RECONCILIATION.png",
+    "08_LINKED_BANK_CASE_FLOW.png"
+  ],
+  "structural_checks": {
+    "manifest_hashes": "pass",
+    "figures_and_captions": 8,
+    "consecutive_references": 16,
+    "final_holdout_wording": "present",
+    "cash_equity_and_workflow_explanations": "present"
+  },
+  "article_words_approx": 4835,
+  "post_characters": 1889,
+  "qa_intermediates": "Internal PDF and page PNGs are excluded from publication deliverables"
+}

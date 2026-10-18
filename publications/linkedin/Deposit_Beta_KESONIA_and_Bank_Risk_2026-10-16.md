@@ -1,4 +1,4 @@
-**Editorial metadata:** Article body: 3,500 words, including title, headings, research questions and equations; captions, diagram labels and reference list excluded. Count method is documented in the accompanying source/coverage note. Prepared 16 October 2026.
+**Editorial metadata:** Updated 18 October 2026. Article body approximately 4,835 words including headings, captions and equations. Includes the complete original discussion and a reproducible monthly case.
 
 <!-- ARTICLE BODY START -->
 
@@ -107,7 +107,7 @@ The population mean μ and between-segment variance τ² are estimated jointly w
 
 Nonlinearity can enter through rate-level splines or interactions with a clearly defined regime. Model comparison should determine whether that flexibility improves forecasts enough to justify its complexity.
 
-A synthetic reference laboratory provides a useful starting point: synthetic segment panels, separate upward and downward coefficients, one-month lags, and a frozen future holdout. Its training error rises materially when the invented future repricing regime changes. That demonstrates a validation workflow and a failure mode.
+A synthetic reference laboratory provides a useful starting point: synthetic segment panels, separate upward and downward coefficients, one-month lags, and a frozen future holdout. Its frozen model produces a materially larger error on the future holdout when the invented repricing regime changes. That demonstrates a validation workflow and a failure mode.
 
 The next advance is permissioned bank data, robust uncertainty estimates and testing across genuine regime changes. Report forecast intervals and economically meaningful errors, including the funding-cost impact of a missed beta. A statistically small error on a large deposit base can still change a lending decision.
 
@@ -217,13 +217,68 @@ The NII improvement falls to KES 656,000. Finally, assume one-year PD rises from
 
 The change in NII less this expected-loss charge is now negative KES 244,000. All numbers are scenario assumptions. The calculation isolates why attractive repricing can coexist with weaker risk-adjusted contribution.
 
+
+<!-- DYNAMIC CASE START -->
+## A reproducible monthly loan deposit and funding case
+
+The annual bridge above is now an independently tested limiting example within a larger research package. A new 24-month case starts in January 2027 with KES 100 million of performing loans, KES 80 million of deposits, KES 10 million of wholesale funding and KES 6 million of cash. A KES 1.062 million opening management allowance leaves KES 14.938 million of opening equity. Each subsequent month reconciles assets, liabilities and equity. The scenario amounts describe an invented bank and make the funding mechanism reproducible. The borrower interpretation builds on *Underwrite for Collection*, especially its treatment of cash provenance, contractual payment obligations, expected loss and funding over a facility's life. [12]
+
+Three opening loan cohorts amortise over 36, 24 and 18 months. Their illustrative coupon-reset frequencies are one, three and six months. New lending is proposed at KES 5 million a month and is admitted through explicit cash, funding and capital-capacity tests. Operating accounts, savings and term deposits have different price and withdrawal behaviour. Savings can move into the bank's term product, preserving bank funding while changing its cost. External withdrawals leave the bank. Newly acquired deposits carry their own identifiers, so they can never replenish the original-cohort retention measure.
+
+![Rates and deposit offers through the joint stress](deposit_beta_diagrams/03_MONTHLY_RATE_TRANSMISSION.png)
+
+Figure 3. Market-rate changes reach deposit products at different speeds. Existing term cohorts retain their contracted rate until renewal; the chart's term rate is the offer for newly placed or renewing money.
+
+The simulator reuses the repository's existing segmented asymmetric-lag estimates and dated compounding functions. It then adds the missing connections: loan amortisation, contract resets, deposit cohort migration, external runoff, wholesale maturity, replacement funding, borrower coverage, default transfers and delayed recovery. A rate increase changes scheduled debt service; a separate operating shock changes estimated cash available for debt service. Their ratio feeds an explicitly assumed default-risk relationship. Expected collections follow the surviving loan cohorts. This is a deterministic expected-cash path: the full merchant operating-ledger applications in Underwrite provide the deeper borrower-level implementation. [12]
+
+The central accounting check is:
+
+Cash + performing principal + gross workout claims + interest receivable − allowance = deposits + wholesale funding + equity.
+
+Loan interest is accrued this month and collected next month. Expected default principal moves into a separate workout balance. Three months later, 55% is recovered and 45% is written off. The allowance roll is equally explicit:
+
+Credit expenseₜ = allowanceₜ − allowanceₜ₋₁ + writeoffsₜ.
+
+This identity makes the distinction between an expense, a principal write-off and a cash recovery visible. The case's allowance is an undiscounted 12-month expected-principal-loss approximation; the IFRS 9 measurement framework supplies the institutional accounting specification when this research is extended to bank records. [13]
+
+![Loans deposits and wholesale funding through the joint stress](deposit_beta_diagrams/04_DEPOSITS_LOANS_AND_FUNDING.png)
+
+Figure 4. A smaller performing book can coexist with sustained funding pressure. Collections, new lending, deposit withdrawals and recoveries all have different dates.
+
+Across the 24 months, the baseline produces KES 17.640 million of NII and KES 12.731 million of profit after the modelled operating and credit costs. A 200-basis-point increase on its own produces KES 13.898 million of profit. Combine that increase with additional deposit runoff, weaker deposit acquisition and a 25% borrower cash shock, however, and NII becomes KES 16.013 million while profit becomes KES 2.584 million. The joint scenario generates KES 9.829 million of credit expense, versus KES 1.309 million in the baseline. A large allowance increase appears immediately when the changed outlook is recognised; cash recoveries arrive later.
+
+![NII credit expense and profit in the joint stress](deposit_beta_diagrams/05_NII_CREDIT_COST_AND_PROFIT.png)
+
+Figure 5. Positive monthly NII can coexist with a loss when the expected-loss outlook changes. The cash ledger separately records when the underlying payments and recoveries settle.
+
+Management choices now have a common comparison basis. A 50-basis-point savings premium retains more money under the assumed response but reduces joint-stress profit to KES 2.532 million. Pre-specified KES 10 million term prefunding produces KES 2.679 million. Combining retention with term funding and a lower lending plan produces KES 3.611 million, alongside KES 90 million of new lending compared with KES 120 million under the standard plan. Volume is part of that result. The term-funding comparison evaluates a stated decision made in month two; it demonstrates a policy trade-off under a scenario. Article 4 of the five-article research series develops the wider stochastic-control and ALCO framework, and Article 5 explains how registered computation, approval and execution records fit into a bank-controlled workflow. [14], [15]
+
+![ALCO policy comparison showing profit lending and funding together](deposit_beta_diagrams/06_ALCO_POLICY_COMPARISON.png)
+
+Figure 6. The same joint shock is used across the four policies. Profit, new lending, funding needs and minimum capital headroom are shown together.
+
+Every main scenario maintains the KES 6 million teaching cash floor and the 12% internal capital proxy. Separate tests tighten the funding and capital constraints and verify that proposed lending is curtailed. Nine additional sensitivity runs vary repricing coefficients and runoff assumptions; their range is a scenario sensitivity, with Bayesian posterior uncertainty remaining a bank-data estimation step. The package includes 21 passing tests, monthly loan and deposit records, scenario summaries and SHA-256 hashes. The complete case narrative explains each formula, cash convention and result; readers can rerun the calculation from the repository. [16]
+
+The cash and equity paths provide another useful explanation. At month 24, the baseline holds KES 30.866 million of cash and KES 27.668 million of equity. Joint stress leaves KES 6.000 million of cash and KES 17.522 million of equity. Baseline cash builds because scheduled collections eventually exceed the fixed new-lending plan and other payments; surplus cash earns the specified 3% yield. ALCO could compare reinvestment or different lending plans using the same ledger. Equity instead accumulates earnings after credit expense. Reading these curves together prevents a cash balance from being mistaken for profit or capital capacity.
+
+![Cash and equity through baseline and joint stress](deposit_beta_diagrams/07_EQUITY_AND_CASH_RECONCILIATION.png)
+
+Figure 7. Monthly cash and equity have distinct drivers. The baseline's later cash build reflects amortisation and the stated lending plan, while the joint case continues to rely on replacement funding to meet its floor.
+
+The complete flow chart shows the order in which these connections enter the calculation. A shared market and business scenario reaches contract pricing and customer behaviour. Borrower outcomes generate principal, interest and workout records; those dates then determine Treasury's cash requirement. Accounting carries the same evidence into earnings and equity. Finally, the policy checks determine feasible new lending and the next month's opening state. A reviewer can follow this sequence in the CSV records, and a bank-controlled workflow can attach source versions, the committee decision and an execution receipt to the relevant transition. This is the point at which a reproducible research case becomes a concrete specification for a governed decision-support service. [15]
+
+![The complete monthly bank scenario workflow](deposit_beta_diagrams/08_LINKED_BANK_CASE_FLOW.png)
+
+Figure 8. The linked calculation runs from scenario assumptions to closing balances and the next decision. Each stage exposes its input, economic meaning and reconciliation record.
+<!-- DYNAMIC CASE END -->
+
 ## 10. Connect credit risk through cash flows
 
 The starting credit approximation is:
 
 EL = PD × LGD × EAD.
 
-All inputs require the same horizon and consistent definitions. A one-period expected principal loss is useful for scenario analysis; IFRS 9 measurement additionally requires the relevant expected-credit-loss framework and forward-looking assessment. [12]
+All inputs require the same horizon and consistent definitions. A one-period expected principal loss is useful for scenario analysis; IFRS 9 measurement additionally requires the relevant expected-credit-loss framework and forward-looking assessment. [13]
 
 Model borrower stress through contractual payments and cash available for debt service. For a business, the debt-service coverage ratio compares that cash with scheduled interest and principal. Recalculate both when sales, costs, rates or working capital change.
 
@@ -287,6 +342,14 @@ The opportunity is to turn deposit beta into a bridge between customer behaviour
 
 [11] Board of Governors of the Federal Reserve System, “SR 16-3: Interagency Guidance on Funds Transfer Pricing Related to Funding and Contingent Liquidity Risks,” Mar. 1, 2016. [Online]. Available: [Source](https://www.federalreserve.gov/supervisionreg/srletters/sr1603.htm)
 
-[12] IFRS Foundation, “IFRS 9 Financial Instruments,” issued-standard and implementation resources. [Online]. Available: [Source](https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/)
+[12] N. Maloba, *Underwrite for Collection*, integrated research edition, 2026, especially Parts 2 and 5. doi: 10.5281/zenodo.23343888. [Online]. Available: https://doi.org/10.5281/zenodo.23343888
 
-All online sources accessed October 16, 2026.
+[13] IFRS Foundation, “IFRS 9 Financial Instruments,” issued-standard and implementation resources. [Online]. Available: [Source](https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/)
+
+[14] N. Maloba, "Can Reinforcement Learning Help Run a Bank's Balance Sheet?", Article 4 in *Causal Credit and Treasury Decision-Making*, 2026. [Online]. Available: https://github.com/TheAlchemistNerd/underwrite-for-collection/blob/main/series/publications/linkedin/2026-10-08_causal_credit_series/ARTICLE_4_TREASURY_ALM_STOCHASTIC_CONTROL.md
+
+[15] N. Maloba, "Bringing the Methods into the Bank", Article 5 in *Causal Credit and Treasury Decision-Making*, 2026. [Online]. Available: https://github.com/TheAlchemistNerd/underwrite-for-collection/blob/main/series/publications/linkedin/2026-10-08_causal_credit_series/ARTICLE_5_BANK_CONTROLLED_AGENTIC_AI_CREDIT_AND_TREASURY.md
+
+[16] N. Maloba, "Deposit Beta Dynamic Loan Deposit and Funding Case", RegTech KESONIA research laboratory, Oct. 18, 2026. [Online]. Available: https://github.com/TheAlchemistNerd/regtech-kesonia-treasury/tree/codex/kesonia-reviewed-reference-lab/research_lab/deposit_beta_dynamic_case
+
+Sources rechecked for the dynamic case on 18 October 2026.

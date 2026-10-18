@@ -1,0 +1,10 @@
+{
+  "tests_run": 21,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "case_count": 9,
+  "sensitivity_cases": 9,
+  "maximum_reconciliation_error_KES": 5.21540641784668e-08,
+  "scope": "Deterministic expected-cohort scenario engine. All inputs synthetic. Independent arithmetic, conservation, timing and monotonicity checks."
+}

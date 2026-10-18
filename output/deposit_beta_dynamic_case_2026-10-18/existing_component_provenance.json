@@ -1,0 +1,68 @@
+{
+  "fit": {
+    "operating": {
+      "n": 23,
+      "train_start": "2023-02-01",
+      "train_end": "2024-12-01",
+      "coefficients": {
+        "intercept_bps": -0.04172334801354863,
+        "beta_up": 0.15026612642618248,
+        "beta_down": 0.10291657726780785,
+        "lag_beta_up": 0.1020239730850894,
+        "lag_beta_down": 0.046564438885499035
+      },
+      "standard_errors_iid_only": {
+        "intercept_bps": 0.05353833920609309,
+        "beta_up": 0.0013348245882655457,
+        "beta_down": 0.002475556399330487,
+        "lag_beta_up": 0.0015832176940268226,
+        "lag_beta_down": 0.0021462368219495203
+      },
+      "training_rmse_bps": 0.12072964300158222,
+      "cumulative_up_beta": 0.2522900995112719,
+      "cumulative_down_beta": 0.1494810161533069
+    },
+    "rate_sensitive": {
+      "n": 23,
+      "train_start": "2023-02-01",
+      "train_end": "2024-12-01",
+      "coefficients": {
+        "intercept_bps": -0.04172334801355193,
+        "beta_up": 0.5002661264261825,
+        "beta_down": 0.40291657726780783,
+        "lag_beta_up": 0.2020239730850895,
+        "lag_beta_down": 0.14656443888549897
+      },
+      "standard_errors_iid_only": {
+        "intercept_bps": 0.05353833920609302,
+        "beta_up": 0.001334824588265544,
+        "beta_down": 0.002475556399330484,
+        "lag_beta_up": 0.0015832176940268206,
+        "lag_beta_down": 0.0021462368219495177
+      },
+      "training_rmse_bps": 0.12072964300158208,
+      "cumulative_up_beta": 0.702290099511272,
+      "cumulative_down_beta": 0.5494810161533068
+    }
+  },
+  "future_holdout": {
+    "operating": {
+      "n": 13,
+      "start": "2025-01-01",
+      "end": "2026-01-01",
+      "rmse_bps": 4.209267414430774,
+      "mae_bps": 2.376185136506851,
+      "mean_error_bps": 2.2918683341387873
+    },
+    "rate_sensitive": {
+      "n": 13,
+      "start": "2025-01-01",
+      "end": "2026-01-01",
+      "rmse_bps": 4.209267414430773,
+      "mae_bps": 2.3761851365068507,
+      "mean_error_bps": 2.2918683341387873
+    }
+  },
+  "source": "research_lab.operations; frozen synthetic training through 2024-12-01",
+  "application": "Up/down and lag coefficients reused. Intercept set to zero to avoid deterministic rate drift."
+}

@@ -1,0 +1,32 @@
+{
+  "article_words_approx": 4835,
+  "post_characters": 1889,
+  "chart_files": [
+    "03_MONTHLY_RATE_TRANSMISSION.png",
+    "04_DEPOSITS_LOANS_AND_FUNDING.png",
+    "05_NII_CREDIT_COST_AND_PROFIT.png",
+    "06_ALCO_POLICY_COMPARISON.png",
+    "07_EQUITY_AND_CASH_RECONCILIATION.png",
+    "08_LINKED_BANK_CASE_FLOW.png"
+  ],
+  "article_sha256": "7cf4e12277c73c65e40734317d9fd58e3f357fa4bcf19da535b456b76c0aa0ad",
+  "word_sha256": "0d2cd143f2209a1227df76675f940f9c2de5c0a04e4f11b540889273b1454ba9",
+  "reference_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ]
+}

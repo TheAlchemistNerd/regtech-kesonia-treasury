@@ -1,26 +1,23 @@
-# Companion LinkedIn post
+Deposit Beta, KESONIA and Bank Risk
 
-**Editorial metadata:** 1,521 characters in the post body, including spaces and hashtags; heading and this metadata excluded.
+How does a change in market rates travel through a bank's deposits, loans and lending decisions?
 
-KESONIA makes loan repricing more transparent. Deposit behaviour determines how much of that movement reaches a bank's funding bill.
+The answer is now backed by a reproducible 24-month synthetic case in RegTech KESONIA. It connects deposit repricing and product migration with external withdrawals, loan resets, borrower debt service, expected defaults, delayed recovery and replacement funding. Every month reconciles cash and the balance sheet.
 
-A 200-basis-point benchmark increase can look attractive when loan yields reprice fully and deposit beta is 35%. The simple loan-minus-deposit spread widens by 130 basis points.
+Three questions guide the case:
 
-The bank-wide result depends on what happens next.
+1. When does slower deposit repricing improve earnings, and when do withdrawals make that funding advantage expensive?
+2. How do higher loan payments and weaker borrower cash flows change collections, credit costs and capital headroom?
+3. Which ALCO response preserves an acceptable combination of funding, profitability and lending capacity?
 
-Do customers accept the rate, move into more expensive products, or withdraw? How quickly does wholesale replacement funding reprice? Can borrowers meet their higher debt service?
+Starting with KES 100m of loans, the baseline produces KES 12.73m of modelled profit over 24 months. A 200-basis-point increase alone produces KES 13.90m. Combining it with runoff and borrower stress reduces profit to KES 2.58m.
 
-My new article develops these questions into one framework:
+The comparison also shows the cost of action. Paying more for savings retains funding but reduces profit under these assumptions. Term prefunding changes refinancing exposure. Lower planned lending improves the joint-stress outcome while delivering KES 90m of new credit rather than KES 120m. Both results belong in the decision.
 
-• Dynamic deposit beta, including lags and different responses to rising and falling rates.
-• Original-cohort retention, product migration and external withdrawals.
-• Replicating portfolios, internal funds transfer pricing, NII and economic value.
-• Borrower cash flows, expected loss and practical ALCO decisions.
+The article builds on Underwrite for Collection's borrower cash-flow and funding framework, and the five-article series on causal credit, Treasury control and bank-controlled workflows.
 
-A worked KES 100 million bank example shows how a KES 1.24 million NII improvement can become a KES 244,000 decline in NII less a simplified expected-loss charge after deposit replacement and borrower deterioration.
+Whitepaper: https://doi.org/10.5281/zenodo.23343888
 
-The figures are illustrative. The research agenda is concrete: estimate Kenyan customer behaviour, test it across rate regimes, and compare funding and pricing decisions under uncertainty.
+The accompanying code, named charts, monthly records and 21 tests make the assumptions and calculations open to inspection. These are synthetic research scenarios for a practical bank-data study.
 
-Deposit beta is one part of monetary transmission. Connecting it to funding quantities and borrower cash flows makes it useful for bank strategy.
-
-#KESONIA #Banking #Treasury #CreditRisk #ALM
+#KESONIA #Banking #Treasury #CreditRisk #ALM #FinancialModelling

@@ -1,0 +1,26 @@
+test_all_period_accounting_identities (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_all_period_accounting_identities) ... ok
+test_allowance_and_writeoffs_are_not_double_counted (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_allowance_and_writeoffs_are_not_double_counted) ... ok
+test_calendar_and_leap_year (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_calendar_and_leap_year) ... ok
+test_capital_limit_constrains_new_lending (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_capital_limit_constrains_new_lending) ... ok
+test_cash_is_independently_reconstructed (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_cash_is_independently_reconstructed) ... ok
+test_default_recovery_and_writeoff_timings (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_default_recovery_and_writeoff_timings) ... ok
+test_deposit_interest_matches_cohort_rate_and_opening_balance (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_deposit_interest_matches_cohort_rate_and_opening_balance) ... ok
+test_deterministic_repeat (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_deterministic_repeat) ... ok
+test_funding_limit_constrains_lending (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_funding_limit_constrains_lending) ... ok
+test_interest_receivable_separates_accrual_and_cash (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_interest_receivable_separates_accrual_and_cash) ... ok
+test_invalid_inputs_fail_early (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_invalid_inputs_fail_early) ... ok
+test_lower_capacity_increases_pd_at_fixed_rate (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_lower_capacity_increases_pd_at_fixed_rate) ... ok
+test_migration_is_internal_and_does_not_move_bank_cash (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_migration_is_internal_and_does_not_move_bank_cash) ... ok
+test_original_cohort_depletes_without_new_money (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_original_cohort_depletes_without_new_money) ... ok
+test_paired_retention_changes_cost_and_volume (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_paired_retention_changes_cost_and_volume) ... ok
+test_prefunding_is_explicit_cash_and_liability (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_prefunding_is_explicit_cash_and_liability) ... ok
+test_repricing_lags_and_contract_resets (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_repricing_lags_and_contract_resets) ... ok
+test_static_bridge_matches_independent_arithmetic (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_static_bridge_matches_independent_arithmetic) ... ok
+test_survival_and_declining_exposure_in_reserve (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_survival_and_declining_exposure_in_reserve) ... ok
+test_term_rate_remains_fixed_until_renewal (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_term_rate_remains_fixed_until_renewal) ... ok
+test_zero_lending_is_a_true_runoff_book (tests.test_deposit_beta_dynamic_case.DynamicCaseTests.test_zero_lending_is_a_true_runoff_book) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 8.103s
+
+OK
