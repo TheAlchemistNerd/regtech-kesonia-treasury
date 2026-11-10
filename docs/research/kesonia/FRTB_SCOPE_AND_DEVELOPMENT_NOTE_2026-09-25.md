@@ -1,3 +1,5 @@
+> **Historical review.** Current completion status and reproducible cases are tracked in [the 1 October implementation register](../../methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md).
+
 # FRTB: scope, useful contribution and development requirements
 
 **25 September 2026 · Companion to the KESONIA and treasury review**

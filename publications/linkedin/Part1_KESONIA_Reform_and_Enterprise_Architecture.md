@@ -2,13 +2,13 @@
 
 **Series:** Operationalising KESONIA: benchmark calculations, credit economics, treasury and governed operations
 **Author:** Nevil Maloba
-**Revision:** 28 September 2026
+**Revision:** 1 October 2026
 
-> LinkedIn reading edition, synchronised with the 28 September technical revision. Formulas are retained for the downloadable HTML; launch-post copy is separate.
+> LinkedIn reading edition, synchronised with the 1 October technical revision. Formulas are retained for the downloadable HTML; launch-post copy is separate.
 
 ## Abstract
 
-Kenya's revised risk-based credit-pricing framework connects in-scope variable-rate lending to compounded KESONIA and an institution-determined premium. Implementing that relationship requires more than replacing a rate field. The institution must connect a dated contract, the benchmark observations available at the calculation time, an approved price, the accounting event and the eventual cash receipt. This article develops a responsibility-based architecture for doing so. It distinguishes observed rates from future curves, customer prices from internal funding charges, and borrower cash from investor distributions. The companion laboratory supplies reproducible teaching calculations; production interfaces, empirical models and institution-specific applicability require their own evidence.
+Kenya's adoption of KESONIA within the revised Risk-Based Credit Pricing Model (RBCPM) links a common interest-rate benchmark to institution-specific credit pricing. KESONIA and RBCPM are complementary: the benchmark provides the reference, while the approved pricing model determines the customer premium. The series examines the architecture needed to connect benchmark data, contracts, pricing, funding, accounting and controls. The institution must connect a dated contract, the benchmark observations available at the calculation time, an approved price, the accounting event and the eventual cash receipt. This article develops a responsibility-based architecture for doing so. It distinguishes observed rates from future curves, customer prices from internal funding charges, and borrower cash from investor distributions. The companion laboratory supplies reproducible teaching calculations; production interfaces, empirical models and institution-specific applicability require their own evidence.
 
 ## 1. Start with the payment, then follow the information
 
@@ -150,3 +150,7 @@ The [worked examples](../../docs/methods/WORKED_EXAMPLES.md), [source and scope 
 - [Treasury review and business-analysis connections](../../docs/research/kesonia/TREASURY_CURVES_AND_BUSINESS_ANALYSIS_DETAILED_REVIEW_2026-09-25.md), which supplies the development lineage.
 - [STP and software review](../../docs/research/kesonia/STP_AND_ALM_FTP_SOFTWARE_REVIEW_2026-09-25.md), primary vendor sources and documented limitations.
 - [Remaining-work register](../../docs/methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md), for empirical, advanced capital and live-integration work beyond the deterministic core.
+
+## Implementation update: 1 October 2026
+
+The current reference laboratory now includes dated contract events, fixing corrections, optionality and collateral, liquidity/capital components, hedge-accounting journals and connected cash handoffs. Each case retains its data and scope limitations. See [the implementation register](../../docs/methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md).

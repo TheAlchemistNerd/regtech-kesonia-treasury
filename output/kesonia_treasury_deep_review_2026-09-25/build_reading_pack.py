@@ -16,7 +16,7 @@ def main():
     pack = Path(__file__).resolve().parent
     docs = sorted(pack.glob('[0-9][0-9]_*.md'))
     for md in docs:
-        title = md.read_text(encoding='utf-8-sig').splitlines()[0].lstrip('# ')
+        title = re.search(r'^# (.+)$', md.read_text(encoding='utf-8-sig'), re.M).group(1)
         run = subprocess.run([args.pandoc, str(md), '--standalone', '--toc', '--mathml',
             '--from=markdown+tex_math_single_backslash', '--css=review.css',
             '--metadata', 'pagetitle='+title], check=True, capture_output=True, encoding='utf-8')
@@ -24,6 +24,8 @@ def main():
             raw = html.unescape(match.group(1))
             target, sep, fragment = unquote(raw).partition('#')
             p = Path(target)
+            if target == '../../docs/methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md':
+                return 'href="../../publications/build/methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.html"'
             if p.is_absolute():
                 raw = p.as_uri()+('#'+fragment if sep else '')
             elif target.endswith('.md') and (md.parent/target).with_suffix('.html').exists():

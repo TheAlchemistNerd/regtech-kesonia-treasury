@@ -1,3 +1,5 @@
+> **Historical review.** Current completion status and reproducible cases are tracked in [the 1 October implementation register](../../methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md).
+
 # Straight-through processing and ALM/FTP software
 
 **25 September 2026 · Targeted check of the treasury paste and KESONIA vendor discussions**

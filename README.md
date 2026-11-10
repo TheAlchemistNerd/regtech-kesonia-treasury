@@ -4,7 +4,17 @@ Research, articles and executable reference examples for Kenyan benchmark-linked
 
 **28 September research revision:** all four manuscripts and their LinkedIn reading editions have been revised against the introduced reviews. The new standard-library Python laboratory develops dated compounding, curve construction, pricing, FTP, deposit estimation, cash/equity reconciliation and a durable local STP workflow. Synthetic demonstrations are clearly distinguished from institutional implementation.
 
+## Lending question and reading route
+
+The project asks how a bank can translate benchmark-linked loan terms and borrower cash evidence into sustainable credit pricing, funding and balance-sheet decisions. The connected case follows those quantities through a shared economic scenario, while the technical methods expose the calculations for reproduction and extension.
+
+- [Reading guide to the manuscripts, methods and research agenda](docs/READING_GUIDE.md).
+- [Loan economics: connected synthetic bank and borrower cases](docs/methods/LOAN_ECONOMICS_SYNTHETIC_CASEBOOK.md).
+- [Reader-first TeX casebook](output/pdf/RegTech_KESONIA_Worked_Examples_2026-10-01.pdf), opening with the connected narrative and retaining the supporting calculations.
+
 ## Start here
+
+- [IFoA practical-depth review: ALCO, Treasury and implementation requirements](docs/methods/IFOA_PRACTICAL_APPLICATION_REVIEW_2026-10-03.md) — 3 October 2026 assessment; proposed extensions retain their open status.
 
 - [Worked examples and reproduction instructions](docs/methods/WORKED_EXAMPLES.md)
 - [Current rule, contract and accounting scope](docs/methods/SCOPE_AND_SOURCE_REGISTER.md)
@@ -20,7 +30,7 @@ Research, articles and executable reference examples for Kenyan benchmark-linked
 3. [Pricing, treasury and IFRS 9](docs/research/kesonia/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md)
 4. [Software, STP and development roadmap](docs/research/kesonia/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md)
 
-[Publication guide and LinkedIn editions](publications/README.md). HTML renders preserve formulas and source-aware links. Generated HTML lives under `publications/build/` and is ignored by Git; this revision creates no PDFs.
+[Publication guide and LinkedIn editions](publications/README.md). HTML renders preserve formulas and source-aware links. Generated HTML lives under `publications/build/` and is ignored by Git; the original revision created HTML. A [standalone worked-example PDF](output/pdf/RegTech_KESONIA_Worked_Examples_2026-10-01.pdf) now combines the cases, detailed operations methodology and [symbol-and-unit reference](docs/methods/SYMBOLS_AND_UNITS.md). Its reproduction command is in the publication guide.
 
 ## Run the reference laboratory
 
@@ -52,3 +62,7 @@ Mwendo owns its financing structure and waterfall; Underwrite owns credit-lifecy
 - [Historical drafts](source_library/regtech-origin/README.md)
 
 The inherited bibliography is retained as historical research material. Freshly checked authority is identified in the current source register; inherited titles and links are not all newly verified.
+
+## October 1 implementation reconciliation
+
+KESONIA is the common reference inside the revised RBCPM. Risk-based customer pricing, internal FTP and financial modelling complement that reference. The [updated register](docs/methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md) traces implemented examples and remaining requirements. New laboratories cover lifecycle corrections, OAS/hedges/collateral, liquidity and capital components, hedge accounting and connected cash. The [SokoIntel candidate map](docs/methods/SOKOINTEL_CANDIDATE_MAP.md) identifies product destinations without editing the guest project.

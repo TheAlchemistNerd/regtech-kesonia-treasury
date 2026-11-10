@@ -4,11 +4,13 @@
 **Author:** Nevil Maloba
 **Revision:** 28 September 2026
 
-> LinkedIn reading edition, synchronised with the 28 September technical revision. Formulas are retained for the downloadable HTML; launch-post copy is separate.
+> LinkedIn reading edition, synchronised with the 1 October technical revision. Formulas are retained for the downloadable HTML; launch-post copy is separate.
 
 ## Abstract
 
 A default estimate becomes useful for pricing when it changes a defined monetary cash-flow case. This article derives the customer margin from expected income, funding, servicing, credit loss and an explicit capital hurdle. It then develops matched funding for term and revolving credit, distinguishes deposit pass-through from retention, and carries assumptions into separate earnings, economic-value and liquidity views. Machine learning remains a challenger within this framework. Accounting follows the business event and applicable policy, so a model refresh, ordinary rate reset, renegotiation and hedge designation cannot share an automatic posting rule.
+
+KESONIA, customer risk-based pricing and internal funds-transfer pricing support the same economic reconciliation. The benchmark supplies the common reference; lending costs, borrower risk and shareholder return inform the bank-approved premium. Internal FTP attributes funding and liquidity cost to products. The monetary bridge below connects these layers without charging the same loss or capital return twice. The final CBK framework permits bank-defined premium components; the bridge is an explicit institutional policy example, rather than a quoted regulatory formula.
 
 ## 1. Begin with money rather than a score-to-rate shortcut
 

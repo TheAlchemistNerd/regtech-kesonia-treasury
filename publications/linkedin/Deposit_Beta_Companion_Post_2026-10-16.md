@@ -2,7 +2,7 @@ Deposit Beta, KESONIA and Bank Risk
 
 How does a change in market rates travel through a bank's deposits, loans and lending decisions?
 
-The answer is now backed by a reproducible 24-month synthetic case in RegTech KESONIA. It connects deposit repricing and product migration with external withdrawals, loan resets, borrower debt service, expected defaults, delayed recovery and replacement funding. Every month reconciles cash and the balance sheet.
+The answer is now backed by a reproducible 24-month synthetic case. It connects deposit repricing and product migration with external withdrawals, loan resets, borrower debt service, expected defaults, delayed recovery and replacement funding. Every month reconciles cash and the balance sheet.
 
 Three questions guide the case:
 

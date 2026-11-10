@@ -15,3 +15,13 @@ scratchpad/
 *.docx
 /publications/build/
 /publications/temp_mermaid.mmd
+
+# Reproducible worked-example PDF output and rendering cache
+/output/pdf/
+/tmp/pdfs/
+
+# Local pre-edit safety copies
+/tmp/completion_audit_backup_2026-10-01/
+
+# Local Word rendering previews
+/output/*/word_qa/

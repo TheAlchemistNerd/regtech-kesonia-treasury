@@ -1,3 +1,5 @@
+> **Historical review.** Current completion status and reproducible cases are tracked in [the 1 October implementation register](../../methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md).
+
 # RegTech–KESONIA: useful material for a future series overhaul
 
 **23 September 2026 · Review of the two latest pastes · Outline, not an implemented overhaul**

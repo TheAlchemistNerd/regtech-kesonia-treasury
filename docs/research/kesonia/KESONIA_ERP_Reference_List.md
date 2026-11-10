@@ -1,11 +1,11 @@
-# Peer-Reviewed Reference List
+# Annotated reference list and verification status
 ## *How Commercial Banks and Traditional Lenders Operationalize KESONIA within Enterprise ERP Systems to Automate Pricing, Accounting, and Regulatory Reporting*
 ### 4-Part Article Series — Annotated Bibliography
 
 ---
 
 > [!NOTE]
-> All sources are peer-reviewed journal articles, BIS/FSB/IMF/Federal Reserve/Bank of England working papers, or primary regulatory documents published from 2017 onward. Sources are numbered [1]–[36] and cross-referenced to the article part(s) they support.
+> This inherited bibliography mixes research, institutional publications and regulatory sources. Its complete metadata has not been independently re-verified. Current authority is recorded in [the source register](../../methods/SCOPE_AND_SOURCE_REGISTER.md); implementation is recorded in [the current register](../../methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md). The pre-review text is preserved under source_library/review-history/2026-10-01. Source numbers retain their historical meaning.
 
 ---
 
@@ -23,7 +23,7 @@
 **[2]** Duffie, D., & Stein, J. C. (2015). *Reforming LIBOR and other financial market benchmarks.* Journal of Economic Perspectives, 29(2), 191–212.
 - **DOI:** 10.1257/jep.29.2.191
 - **Parts Supported:** Part 1
-- **Key Point:** Seminal theoretical treatment of why LIBOR's design was structurally compromised. Establishes that reliable benchmarks must be grounded in liquid, transaction-based markets—the rationale underpinning Kenya's KESONIA transition from CBR/RBCPM.
+- **Key Point:** Seminal theoretical treatment of why LIBOR's design was structurally compromised. Establishes that reliable benchmarks must be grounded in liquid, transaction-based markets—the rationale underpinning the adoption of KESONIA as the reference within Kenya's revised RBCPM.
 
 ---
 
@@ -51,7 +51,7 @@
 **[6]** Central Bank of Kenya (CBK). (2025). *Risk-Based Credit Pricing Model (RBCPM): Revised Framework Circular* (effective September 1, 2025). Central Bank of Kenya, Nairobi.
 - **URL:** https://www.centralbank.go.ke/
 - **Parts Supported:** Parts 1, 2, 3
-- **Key Point:** The primary regulatory instrument mandating Kenya's transition from CBR-anchored pricing to the KESONIA + Premium (K) framework for all variable-rate KES loans. Establishes the legal and operational perimeter that ERP systems must operationalize.
+- **Key Point:** The issued August 2025 framework adopts compounded KESONIA plus a bank-determined premium for covered variable-rate KES bank lending. RBCPM continues as the pricing framework. See the current source register for scope and conventions.
 
 ---
 
@@ -131,7 +131,7 @@
 **[16]** Lundberg, S. M., & Lee, S.-I. (2017). *A unified approach to interpreting model predictions.* Advances in Neural Information Processing Systems (NeurIPS), 30, 4765–4774.
 - **URL:** https://proceedings.neurips.cc/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html
 - **Parts Supported:** Part 3
-- **Key Point:** Introduces SHAP (SHapley Additive exPlanations), now the industry standard for explaining ML model outputs. Regulatory acceptance of AI credit pricing in KESONIA requires SHAP-level interpretability to explain per-borrower K premiums.
+- **Key Point:** Introduces SHAP (SHapley Additive exPlanations), now the industry standard for explaining ML model outputs. SHAP can support model explanation; the checked CBK framework does not prescribe SHAP as the required technique for explaining customer premiums.
 
 ---
 
@@ -187,7 +187,7 @@
 **[24]** IFRS Foundation / IASB. (2019). *Interest Rate Benchmark Reform (Amendments to IFRS 9, IAS 39, and IFRS 7) — Phase 1 and Phase 2.* IFRS Foundation, London.
 - **URL:** https://www.ifrs.org/news-and-events/news/2019/09/iasb-issues-amendments-for-interest-rate-benchmark-reform/
 - **Parts Supported:** Parts 1, 3
-- **Key Point:** Phase 1 and Phase 2 amendments provide practical expedients allowing prospective EIR adjustment (rather than derecognition) when KESONIA replaces RBCPM/CBR in existing floating-rate loan contracts.
+- **Key Point:** Benchmark-reform amendments provide scoped accounting relief subject to their conditions. KESONIA is a benchmark within the revised RBCPM. Actual contractual changes require an applicable accounting assessment; replacement of a benchmark does not automatically qualify every modification for relief.
 
 ---
 
@@ -221,7 +221,7 @@
 **[28]** Basel Committee on Banking Supervision (BCBS). (2021). *Principles for operational resilience.* Bank for International Settlements, March 2021.
 - **URL:** https://www.bis.org/bcbs/publ/d516.htm
 - **Parts Supported:** Part 4
-- **Key Point:** Mandates immutable media for critical data backup (Principle 7 – Resilient ICT). Provides the regulatory foundation for WORM logs, AES-256 encryption, and audit trail requirements in KESONIA ERP implementations.
+- **Key Point:** Operational-resilience principles support governed ICT, continuity and recoverability. WORM retention and a particular encryption suite are possible engineering controls; this citation does not establish that exact implementation as a universal KESONIA mandate.
 
 ---
 

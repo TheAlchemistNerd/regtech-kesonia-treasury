@@ -1,3 +1,5 @@
+> **Historical review.** Current completion status and reproducible cases are tracked in [the 1 October implementation register](../../methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md).
+
 # KESONIA, treasury curves and the business decisions they support
 
 **25 September 2026 · Detailed development review · Proposed additions, not an implemented treasury system**

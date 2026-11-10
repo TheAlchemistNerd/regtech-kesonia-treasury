@@ -1,3 +1,5 @@
+> **Historical review, 25 September 2026.** For current executable evidence and open requirements, use the [1 October implementation register](../../docs/methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md). The dated review below retains its original scope.
+
 # Reading map and primary references
 
 **25 September 2026 · Traceability for the detailed KESONIA review**

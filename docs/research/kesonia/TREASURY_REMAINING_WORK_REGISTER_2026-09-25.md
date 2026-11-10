@@ -1,3 +1,5 @@
+> **Historical review.** Current completion status and reproducible cases are tracked in [the 1 October implementation register](../../methods/REVIEW_INTEGRATION_AND_REMAINING_WORK.md).
+
 # After reading the full treasury paste: what remains to be developed?
 
 **25 September 2026 · Remaining-work register, grounded in the reviewed documents**

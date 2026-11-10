@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the existing nine-chapter casebook with Pandoc and native XeLaTeX math.
+"""Build the loan-led narrative and supporting casebook with native XeLaTeX math.
 Research source Markdown is read-only; the PDF is replaced after compilation.
 """
 from __future__ import annotations
@@ -14,15 +14,19 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 EDITION = '2026-10-01'
-SOURCES = ['WORKED_EXAMPLES.md', 'OPERATIONS_METHODOLOGY.md', 'SYMBOLS_AND_UNITS.md',
+SOURCES = ['LOAN_ECONOMICS_SYNTHETIC_CASEBOOK.md', 'WORKED_EXAMPLES.md', 'OPERATIONS_METHODOLOGY.md', 'SYMBOLS_AND_UNITS.md',
     'LIFECYCLE_WORKED_CASES.md', 'OPTION_AND_COLLATERAL_CASES.md', 'REGULATORY_WORKED_CASES.md',
     'ACCOUNTING_AND_CONNECTED_CASES.md', 'REVIEW_INTEGRATION_AND_REMAINING_WORK.md', 'SOKOINTEL_CANDIDATE_MAP.md']
-TITLES = ['Part I. Original worked examples', 'Part II. Funding, deposits and processing',
-    'Part III. Symbols and units', 'Part IV. Contract and execution lifecycle',
-    'Part V. Options, hedges and collateral', 'Part VI. Liquidity and capital components',
-    'Part VII. Accounting and connected finance', 'Part VIII. Implementation and remaining work',
-    'Part IX. SokoIntel candidates']
-GITHUB = 'https://github.com/TheAlchemistNerd/regtech-kesonia-treasury/blob/main/'
+TITLES = ['Part I. Loan economics: a connected synthetic bank and borrower case',
+    'Part II. Benchmark, pricing and balance-sheet calculations', 'Part III. Funding, deposits and processing',
+    'Part IV. Symbols and units', 'Part V. Contract and execution lifecycle',
+    'Part VI. Options, hedges and collateral', 'Part VII. Liquidity and capital components',
+    'Part VIII. Accounting and connected finance', 'Part IX. Implementation and remaining work',
+    'Part X. SokoIntel candidates']
+# Public source links follow the branch that contains this release.
+SOURCE_REF = subprocess.run(['git','branch','--show-current'],cwd=ROOT,capture_output=True,text=True).stdout.strip() or 'main'
+GITHUB = 'https://github.com/TheAlchemistNerd/regtech-kesonia-treasury/blob/'+SOURCE_REF+'/'
+
 MATH_CODES = {
  'H_D = drawn x days / 365': r'H_D=\mathrm{drawn}\times\mathrm{days}/365',
  'H_U = (limit - drawn) x days / 365': r'H_U=(\mathrm{limit}-\mathrm{drawn})\times\mathrm{days}/365',
@@ -182,6 +186,15 @@ def main():
      else:
       c[2][0]=GITHUB+resolved.relative_to(ROOT).as_posix()+('#'+fragment if fragment else '')
     links.append(c[2][0])
+   if kind=='Image':
+    target=c[2][0]
+    if not re.match(r'^(https?://|data:)',target):
+     image=(ROOT/'docs/methods'/name).parent/target
+     image=image.resolve()
+     if not image.is_file():raise FileNotFoundError(image)
+     c[2][0]=image.as_posix()
+     c[0][2]=[[k,v] for k,v in c[0][2] if k not in ('width','height')]+[['width','6.2in']]
+     counts['embedded_figures']+=1
    if kind=='CodeBlock':
     escape={'\\':r'\textbackslash{}','{':r'\{','}':r'\}','#':r'\#','%':r'\%','&':r'\&','_':r'\_','$':r'\$','~':r'\textasciitilde{}','^':r'\textasciicircum{}'}
     lines=[''.join(escape.get(ch,ch) for ch in line) for line in c[1].splitlines()]
@@ -189,7 +202,7 @@ def main():
    return {k:walk(v) for k,v in node.items()}
   ast['blocks']=walk(ast['blocks']);equation_counts[name]=counter
  blocks=[]
- lead='This casebook combines the original benchmark, pricing and funding cases with their symbol reference, dated contract events, options and collateral, liquidity and capital components, hedge accounting, connected finance, the implementation register and SokoIntel candidate map. Symbols and units are defined beside the equations and in Part III. Equations are numbered by part. The numerical edition remains 1 October 2026; this TeX typesetting revision was produced on 16 October 2026.'
+ lead='This edition begins with a connected synthetic bank and borrower case: loan terms change debt service, borrower cash and collections; deposit behaviour changes funding cost and liquidity; Credit, Treasury and ALCO compare the resulting lending choices. Part I develops that economic narrative and reproduces its scenario results. Parts II-VIII provide the benchmark, pricing, funding, lifecycle, valuation, regulatory-component and accounting calculations behind the wider project. Parts IX-X trace implementation and possible analytical applications. Symbols and units are defined beside the equations and in Part IV. Equations are numbered by part. The original 1 October numerical fixtures are retained alongside the 16 October loan-economics extension.'
  blocks.extend(json.loads(run([pandoc,'-f','markdown','-t','json'],text=lead))['blocks'])
  for i,(title,ast) in enumerate(zip(TITLES,asts),1):
   blocks.append({'t':'RawBlock','c':['latex',r'\clearpage']})
@@ -200,6 +213,8 @@ def main():
  header=build/'preamble.tex'
  header.write_text(r'''\usepackage{etoolbox}
 \usepackage{fancyvrb}
+\usepackage{float}
+\floatplacement{figure}{H}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 \RecustomVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
 \AtBeginEnvironment{longtable}{\footnotesize\setlength{\tabcolsep}{3pt}}
@@ -213,8 +228,8 @@ def main():
  run([pandoc,jsonpath,'-f','json','-t','latex','--standalone','--toc','--toc-depth=2',
       '-V','geometry:margin=0.7in','-V','mainfont:Segoe UI','-V','fontsize:11pt',
       '-V','documentclass:article','-V','linestretch:1.08',
-      '-M','title:RegTech KESONIA: Worked Examples, Symbols and Units',
-      '-M','author:Nevil Maloba','-M','date:1 October 2026',
+      '-M','title:RegTech KESONIA: Loan Economics and Reproducible Worked Cases',
+      '-M','author:Nevil Maloba','-M','date:16 October 2026',
       '--include-in-header',header,'--output',tex])
  content=tex.read_text(encoding='utf-8').replace(r'\real{0.1667}',r'\real{0.166666}').replace('Deposit/wholesale',r'Deposit/\allowbreak wholesale').replace(r'research\_lab/option\_cases.py',r'research\_lab/\allowbreak option\_cases.py').replace(r'tests/test\_option\_cases.py',r'tests/\allowbreak test\_option\_cases.py')
  content=content.replace('}.\n'+r'\texttt{option\_examples()}', '}.\n\n'+r'\texttt{option\_examples()}')
@@ -225,11 +240,11 @@ def main():
     'undefined_references':r'(?:Reference|Citation) .+ undefined','overfull_boxes':r'Overfull \\[hv]box'}.items()}
  if issues['missing_glyphs'] or issues['undefined_references']:raise RuntimeError('TeX validation failed: '+str(issues))
  staged=tex.with_suffix('.pdf');output.write_bytes(staged.read_bytes())
- manifest={'edition':EDITION,'typesetting_revision':'2026-10-16','output':str(output),
+ manifest={'edition':EDITION,'content_revision':'2026-10-16','source_ref':SOURCE_REF,'typesetting_revision':'2026-10-16','output':str(output),
  'sha256':sha256(output.read_bytes()).hexdigest(),'bytes':output.stat().st_size,'renderer':'Pandoc + XeLaTeX; native TeX math',
  'sources':{n:sha256((ROOT/'docs/methods'/n).read_bytes()).hexdigest() for n in SOURCES},
  'equations_by_part':equation_counts,'conversion_counts':dict(counts),'tex_checks':issues,
- 'links':links,'presentation_transformations':['Same nine sources and original operations inventory omission as prior PDF.',
+ 'links':links,'presentation_transformations':['Connected loan-economics narrative first; nine supporting sources retain their numerical fixtures and original operations inventory omission.',
  'Code-formula expressions typeset in TeX; added local aliases defined beside them.',
  'Known damaged separators, paragraph symbols and scientific exponent repaired in render input only.',
  'Local included-source links point to chapter anchors; other local links point to GitHub.',
